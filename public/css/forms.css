@@ -1,0 +1,269 @@
+/* setting box*/
+.option-box {
+text-align: center;
+position: fixed;
+top: 40px;
+left: 0;
+z-index: 9999;
+}
+
+.option-box .color-option {
+background: #333;
+color: #f0f;
+float: left;
+padding: 10px;
+width: 250px;
+border: 3px solid #333;
+display: none;
+}
+.option-box .color-option ul li {
+width: 20px;
+height: 20px;
+display: inline-block;
+margin-right: 3px;
+}
+.option-box .gear-ch {
+padding: 5px;
+background: #333;
+color: #fff;
+cursor: pointer;
+}
+html {
+direction: rtl;
+
+}
+
+body {
+    cursor: auto;
+
+font-family:sans-serif;
+}
+.bod {
+text-align: right;
+padding-top: 20px;
+}
+.bod .right {
+float: right;
+}
+.bod .left {
+float: left;
+}
+.bod .center {
+text-align: center;
+}
+input {
+text-align: right;
+}
+.bod .padding {
+margin-bottom: 1rem;
+}
+.bod .padding-md {
+margin-bottom: 28.5px;
+}
+.bod .padding-lg {
+margin-bottom: 40px;
+}
+.bod .padding-xl {
+margin-bottom: 70px;
+}
+.bod .padding-l {
+margin-left: 1rem;
+}
+.bod .padding-l-md {
+margin-left: 28.5px;
+}
+.bod .padding-l-lg {
+margin-left: 40px;
+}
+.bod .padding-l-xl {
+margin-left: 50px;
+}
+.bod .padding-r {
+margin-right: 1rem;
+}
+.bod .padding-r-md {
+margin-right: 28.5px;
+}
+.bod .padding-r-lg {
+margin-right: 40px;
+}
+.bod .padding-r-xl {
+margin-right: 80px;
+}
+.bod .padding-t {
+margin-top: 1rem;
+}
+.bod .padding-t-md {
+margin-top: 28.5px;
+}
+.bod .padding-t-lg {
+margin-top: 40px;
+}
+.bod .padding-t-xl {
+margin-top: 60px;
+}
+.mx-sm-3 {
+margin-left: 0 !important;
+}
+.p {
+font-size: 1.25rem
+}
+.p-sm {
+font-size: 12px;
+}
+.bold {
+font-weight: bold;
+}
+/*daliy work prog*/
+.m {
+position: relative;
+left: 80px;
+}
+.m-t {
+position: relative;
+top: 45px;
+}
+.m-t-sm {
+position: relative;
+top: 10px;
+}
+.dir {
+writing-mode: vertical-lr;
+}
+/*viction*/
+.padding-lg-s {
+margin-bottom: 31px;
+}
+/*promotin plan*/
+.display {
+display: inline-flex;
+}
+.m-r {
+position: relative;
+right: 71%;
+}
+
+
+/*show*/
+
+
+.search
+{
+
+    height: 58px;
+    margin-bottom: 20px;
+    padding: 20px;
+    border: none;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1), -1px 0 2px rgba(0, 0, 0, 0.05);
+}
+
+th
+{
+    text-align: center;
+}
+
+/*loading*/
+
+.cssload-container{
+    position:fixed;
+    top:350px;
+    left: 50%;
+    display: none;
+}
+
+.cssload-whirlpool,
+.cssload-whirlpool::before,
+.cssload-whirlpool::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border: 1px solid rgb(204,204,204);
+    border-left-color: rgb(0,0,0);
+    border-radius: 974px;
+    -o-border-radius: 974px;
+    -ms-border-radius: 974px;
+    -webkit-border-radius: 974px;
+    -moz-border-radius: 974px;
+}
+
+.cssload-whirlpool {
+    margin: -24px 0 0 -24px;
+    height: 49px;
+    width: 49px;
+    animation: cssload-rotate 1150ms linear infinite;
+    -o-animation: cssload-rotate 1150ms linear infinite;
+    -ms-animation: cssload-rotate 1150ms linear infinite;
+    -webkit-animation: cssload-rotate 1150ms linear infinite;
+    -moz-animation: cssload-rotate 1150ms linear infinite;
+}
+
+.cssload-whirlpool::before {
+    content: "";
+    margin: -22px 0 0 -22px;
+    height: 43px;
+    width: 43px;
+    animation: cssload-rotate 1150ms linear infinite;
+    -o-animation: cssload-rotate 1150ms linear infinite;
+    -ms-animation: cssload-rotate 1150ms linear infinite;
+    -webkit-animation: cssload-rotate 1150ms linear infinite;
+    -moz-animation: cssload-rotate 1150ms linear infinite;
+}
+
+.cssload-whirlpool::after {
+    content: "";
+    margin: -28px 0 0 -28px;
+    height: 55px;
+    width: 55px;
+    animation: cssload-rotate 2300ms linear infinite;
+    -o-animation: cssload-rotate 2300ms linear infinite;
+    -ms-animation: cssload-rotate 2300ms linear infinite;
+    -webkit-animation: cssload-rotate 2300ms linear infinite;
+    -moz-animation: cssload-rotate 2300ms linear infinite;
+}
+
+
+
+@keyframes cssload-rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@-o-keyframes cssload-rotate {
+    100% {
+        -o-transform: rotate(360deg);
+    }
+}
+
+@-ms-keyframes cssload-rotate {
+    100% {
+        -ms-transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes cssload-rotate {
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@-moz-keyframes cssload-rotate {
+    100% {
+        -moz-transform: rotate(360deg);
+    }
+}
+/*media*/
+@media (max-width: 1200px) {
+    /*price Show*/
+    .total,.one
+    {
+        margin-bottom:  16px !important;
+    }
+}
+
+td
+{
+font-weight:bold;
+}
+
+

@@ -1,0 +1,33 @@
+.btn-danger,.dropbtn,.dropdown-content,.main-nav .nav,.option-box .color-option ul li,.option-box .gear-ch
+{
+    background-color: rgb(241, 104, 118) ;
+    
+}
+
+.nicescroll-cursors
+{
+    background-color: rgb(241, 104, 118) !important;
+    
+}
+
+
+.posts .post h2 a,.posts .fa,.event .carousel-caption h3,.contact .mail,.about h2,.scroll,.MultiCarousel .fa,.posts .post .fa
+{
+	
+	color: rgb(241, 104, 118);
+   
+}
+
+.dropdown-content a {
+   
+    border-bottom: 1px solid rgb(241, 104, 118);
+  
+}
+
+.option-box .color-option
+{
+   
+    border: 4px solid rgb(241, 104, 118);
+   
+    
+}

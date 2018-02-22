@@ -1,0 +1,634 @@
+body {
+font-family: 'Droid Sans', sans-serif;
+overflow: hidden;
+    padding-top: 42px;
+}
+
+
+/*start header style*/
+.he {
+    background: url("../image/computer-1149148_1920.jpg") no-repeat center center  fixed;
+    background-size: cover;
+
+    -moz-background-size:cover ;
+    -webkit-background-size:cover ;
+height: 300px;
+}
+.he .inner
+{
+    background-color: rgba(37, 45, 68, 0.6);
+    height: 300px;
+}
+#active-cv
+{
+    float: left;font-size: 25px;padding-top: 2px;
+}
+
+.he .he-img {
+text-align: center;
+}
+.he .he-img img {
+width: 150px;
+height: 150px;
+text-align: center;
+}
+.as {
+text-align: center;
+position: absolute;
+left: 40%;
+    top:95px;
+}
+
+@media (max-width:414px) {
+.as {
+left: 31%;
+}
+
+}
+.he .peso {
+color: #fff;
+text-align: center;
+}
+.he .peso h2 {
+font-weight: bolder;
+}
+.he .peso small {
+font-size: 16px;
+color: #d1d1d1;
+}
+
+@media (max-width:1058px) {
+.he .he-img {
+position: relative;
+left: 3%;
+}
+}
+@media (max-width:575px) {
+.he .peso {
+color: #fff;
+padding-top: 0px;
+text-align: center;
+}
+.he .peso h2 {
+font-weight: 500;
+}
+.he .peso small {
+font-size: 14px;
+color: #d1d1d1;
+}
+}
+.he .he-icon a {
+color: #fafdff;
+}
+.he .he-icon {
+float: right;
+color: #fdcc52;
+font-size: 25px;
+
+    padding-top: 10px;
+    display: flex;
+}
+.he .he-icon i:hover {
+-ms-transform: scale(1.5, 1.5);
+/* IE 9 */
+-webkit-transform: scale(1.5, 1.5);
+/* Safari */
+transform: scale(1.5, 1.5);
+/* Standard syntax */
+-webkit-transition-duration: 1s;
+-moz-transition-duration: 1s;
+-o-transition-duration: 1s;
+transition-duration: 1s;
+}
+
+/*bod style*/
+.bod .posts {
+background: #edeff4;
+padding: 10px;
+box-shadow: 1px 18px 20px rgba(221, 222, 227, 0.72);
+}
+.bod {
+padding-top: 0;
+background-color: #DDDEE3;
+}
+/*start nav style*/
+.bod .nav {
+border-radius: 15px;
+background-color: #848d96;
+
+position: relative;
+bottom: 38px;
+width: 100%;
+padding: 10px 0px 10px 10px;
+box-shadow: 1px 18px 20px rgba(221, 222, 227, 0.72);
+}
+.bod .nav li a {
+padding-left: 50px !important;
+font-weight: bold;
+}
+#active a {
+color: white !important;
+}
+.nav-link {
+color: rgb(255, 255, 255);
+}
+@media (max-width:1200px) {
+.bod .nav li a {
+font-size: 13px;
+}
+}
+@media (max-width:991px) {
+.bod .nav {
+display: none;
+}
+
+}
+
+@media (max-width:1200px) {
+.bod .navbar li a {
+font-size: 13px;
+}
+}
+@media (max-width:991px) {
+.bod .navbar {
+margin-left: 15px;
+margin-right: 15px;
+height: 100px;
+}
+}
+/*repost style*/
+.bod .rpost {
+
+background-color: #FFF;
+margin-top: 50px;
+margin-left: 40px;
+margin-right: 15px;
+margin-bottom: 70px;
+box-shadow: 1px 18px 20px rgba(221, 222, 227, 0.72);
+}
+.bod .rpost .file
+{
+    padding-left: 50px;
+    padding-bottom: 50px;
+    text-align: left;
+    line-height: inherit;
+    position: relative;
+    border-bottom: 1px solid #e2e5ea;
+    border-radius: 25px;
+    bottom: 41px;
+    height: 82px;
+
+    display: -moz-box;
+
+    display: -webkit-box;
+
+
+}
+.bod .rpost h2 {
+color: #6495d7;
+padding-left: 50px;
+position: relative;
+bottom: 70px;
+font-size: 25px;
+}
+.bod .rpost small {
+color: #6495d7;
+font-size: 14px;
+font-weight: bold;
+}
+.bod .rpost .h {
+padding-left: 50px;
+position: relative;
+bottom: 75px;
+}
+.bod .rpost p {
+font-weight: bold;
+padding-left: 50px;
+padding-top: 20px;
+width: 65%;
+position: relative;
+bottom: 70px;
+}
+.bod .rpost .hr {
+width: 87%;
+color: #6495d7;
+position: relative;
+bottom: 11px;
+height: 3px;
+border-top: 1.4px solid #6495d7;
+}
+
+.bod .rpost i {
+float: right;
+padding-right: 40px;
+padding-top: 15px;
+color: #6495d7;
+font-size: 26px;
+}
+.bod .rpost #ic
+{
+
+    position: relative;
+    z-index: 999;
+    right: -42%;
+}
+.bod .rpost .logo {
+text-align: center;
+position: relative;
+bottom: 9px;
+}
+.bod .rpost img {
+height: 80px;
+width: 80px;
+position: relative;
+bottom: 40px;
+right: 40px;
+}
+.bod .rpost .url
+{
+    height: 100px; bottom: 23px;
+    width: 100%;
+    text-align: left;
+}
+.bod .rpost .url #down,.bod .rpost .url small
+{
+    position: relative;left: 17%;bottom: 155px;
+
+}
+@media (max-width:991px) {
+.bod .rpost p {
+padding-top: 0px;
+width: 90%;
+bottom: 70px;
+}
+.bod .rpost .logo {
+bottom: 0px;
+    left: 7%;
+}
+    .bod .rpost .hr {
+        bottom: 5px;
+        height: 3px;
+    }
+    .bod .rpost .url #down, .bod .rpost .url small
+    {
+        left: 29%;
+    }
+}
+
+@media (max-width:476px) {
+.bod .rpost .hr {
+bottom: 25px;
+height: 3px;
+}
+.bod .rpost .logo {
+text-align: center;
+position: relative;
+
+bottom: 25px;
+}
+.bod .rpost i {
+float: right;
+padding-right: 10px;
+padding-top: 11px;
+color: #6495d7;
+font-size: 26px;
+}
+}
+@media (max-width:375px) {
+    .bod .rpost .logo {
+        left: 13%;
+    }
+.bod .rpost h2 {
+padding-left: 50px;
+position: relative;
+bottom: 70px;
+font-size: 11px;
+}
+.bod .rpost i {
+float: right;
+padding-right: 10px;
+padding-top: 10px;
+color: #6495d7;
+font-size: 24px;
+}
+.bod .rpost p {
+width: 90%;
+font-size: 10px;
+bottom: 70px;
+}
+    .bod .rpost h4 {
+font-size: 10px;
+        left: 54%!important;
+}    .bod .rpost .url #down, .bod .rpost .url small
+     {
+font-size: 10px;
+             left:55%;
+}.bod .rpost .url i
+     {
+font-size: 70px !important;
+}
+}
+/*feed style*/
+.he .feed {
+height: 200px;
+width: 40px;
+position: absolute;
+z-index: 50;
+background-color: #252d44;
+top: 450px;
+border-bottom-right-radius: 15px;
+border-top-right-radius: 15px;
+}
+.he .feed:hover {
+cursor: pointer;
+    background-color: #666666;
+}
+.he .feed span {
+writing-mode: tb-rl;
+color: white;
+font-size: 25px;
+font-weight: bold;
+letter-spacing: 7px;
+padding-top: 15px;
+text-align: center;
+}
+@media (max-width:414px) {
+.he .feed {
+height: 150px;
+width: 25px;
+}
+.he .feed span {
+font-size: 17px;
+font-weight: bold;
+letter-spacing: 10px;
+}
+}
+.send-icon i {
+padding-right: 20px;
+color: #727b84;
+}
+.send-icon i:hover {
+color: #007bff;
+}
+/*loading*/
+.overlay
+{
+    background: #FFFFFF;
+    color: #FFF;
+    position: fixed;
+    left: 0;
+    top:0;
+    z-index: 9999;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+.overlay img
+{
+    position: relative;
+    top:35%;
+
+}
+
+/*nav*/
+
+
+.navbar-nav .nav-item .nav-link{
+    font-size: 14px;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+.navbar-nav .nav-item .nav-link:hover{
+    font-size: 14px;
+    color: #6495d7;
+    font-family: 'Roboto', sans-serif;
+}
+
+.navbar{
+    background: #252d44;
+}
+.navbar-light .navbar-toggler
+{
+    border-color: #fff;
+    cursor: pointer;
+    background: #fff;
+    outline: 0;
+}
+.navbar-light .navbar-brand
+{
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    color: #fff;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out
+}
+
+/*end nav*/
+
+
+/*model feed*/
+
+.mod-feed
+{
+    width: 500px;
+    background: url("../image/sde.jpg") no-repeat ;
+    background-size: cover;
+    position: fixed;
+    z-index: 9999;
+
+    top: 85px;
+    padding: 20px;
+    box-shadow: 0px 10px 0 0 rgba(37, 45, 68, 0.8705882352941177);
+}
+.mod-feed h2
+{
+    text-align: center;
+    font-weight: bold;
+}
+.mod-feed input
+{
+    border: none;
+    border-bottom: 1px solid #e3e3e3;
+    border-radius:0;
+}.mod-feed textarea
+ {
+     border: none;
+     border-bottom: 1px solid #e3e3e3;
+     border-radius:0;
+ }
+.mod-feed .mod-body
+{
+
+
+}
+.mod-feed .footer
+{
+    display: flex;
+
+
+}
+.mod-feed .send-icon
+{
+    padding-right: 10px;
+    color: #252d44;
+
+}
+.mod-feed .bt
+{
+    width: 67%;
+    text-align: center;
+}
+.mod-feed .bt .primary
+{
+    background-color: #000;
+    color: white;
+}
+
+/*end feed*/
+#icon-hover:hover
+{
+    color: #666666;
+}
+
+#profile-home
+{
+    display: none;
+}
+.he-icon2
+{
+    display: none;
+}
+
+
+/*media*/
+
+@media (max-width:991px) {
+    .he .he-icon {
+        position: relative;
+        bottom: -2px;
+    }
+    #active-cv
+    {
+        padding-top: 6px;
+    }
+}
+@media (max-width:720px) {
+    .he .he-icon {
+        font-size: 18px;
+    }
+    .mod-feed
+    {
+        width: 450px;
+    }
+
+}
+
+@media (max-width:575px) {
+    .bod .rpost p {
+        width: 80%;
+        font-size: 14px;
+        bottom: 70px;
+    }
+    .bod .rpost .url #down, .bod .rpost .url small
+    {
+        left:150px;
+    }
+    .bod .rpost
+    {
+        font-size: 14px;
+    }
+
+
+    .bod .rpost .hr {
+        bottom: 25px;
+        height: 3px;
+    }
+    .bod .rpost .logo {
+        text-align: center;
+        position: relative;
+        left: 5%;
+        bottom: 25px;
+    }
+    .bod .rpost h2 {
+        color: #6495d7;
+        padding-left: 50px;
+        position: relative;
+        bottom: 70px;
+        font-size: 14px;
+    }
+    .bod .rpost h4
+    {
+        font-size: 14px;
+    }
+
+    .he .he-icon {
+        position: relative;
+        bottom: -2px;
+        font-size: 16px;
+    }
+    .mod-feed
+    {
+        width: 400px!important;
+    }
+
+
+
+}
+
+@media (max-width:414px) and (min-width:336px) {
+    .he .he-icon {
+        bottom: 8px;
+        font-size: 14px;
+    }
+    .mod-feed
+    {
+        width: 320px!important;
+    }
+}
+    @media (max-width:336px) {
+    .he .he-icon
+   {
+      display: none;
+   }
+        .he-icon2
+        {
+            display: block;
+        }
+        #profile-home
+        {
+            display: block;
+        }
+        #active-cv
+        {
+            position: relative;
+            bottom: -10px;
+        }
+        .mod-feed
+        {
+            width: 290px!important;
+        }
+        .bod .rpost h4
+        {
+            font-size: 11px;
+        }
+        .bod .rpost .url #down, .bod .rpost .url small
+        {
+            left:110px;
+        }
+
+
+    }
+
+
+

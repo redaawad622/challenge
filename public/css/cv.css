@@ -1,0 +1,148 @@
+body
+{
+    font-family: 'Arimo', sans-serif;
+    color: #343434;
+    cursor: auto;
+    overflow: scroll;
+}
+.pref
+{
+    background-color: #05998D;
+    color: #fff;
+}
+h1{
+    font-weight: bold;
+}
+.content,.content-2
+{
+    padding-left: 20px;
+    padding-right: 40px;
+    padding-top: 20px;
+}
+.content .name
+{
+    margin-bottom: 40px;
+}
+.info .info-h,.skill .skill-h
+{
+    background-color: #017C73;
+    width: 100%;
+    padding: 5px 5px 1px 20px;
+
+
+}
+.info .email,.skill .skill-o
+{
+    padding: 20px 40px 20px 20px;
+}
+a{
+    text-underline: none;
+    color: #fff;
+}
+.content-2
+{
+    line-height: 30px;
+    color: #343434;
+}
+.content-2 .p
+{
+    text-align: justify;
+    margin-bottom: 35px;
+
+
+}
+.content-2 .prg
+{
+
+
+    border-bottom: 2px solid #EAEAEA;
+
+}
+
+.content-2 .prg h2
+{
+    padding-top: 5px;
+    padding-bottom: 1px;
+    color: #017C73;
+}
+
+
+/*bootstrap*/
+.progress
+{
+    background-color: #017C73;
+    margin-bottom: 20px;
+    margin-top: 5px;
+}
+.progress-bar
+{
+    background-color: #fff;
+    color: #666666;
+}
+
+.content-2 .expr
+{
+    display: flex;
+}
+.content-2 .expr-s
+{
+    margin-left: 110px;
+}
+
+.content-2 .expr span
+{
+    padding-right: 55px;
+}
+
+.content-2 .expr .p1
+{
+    font-weight: bold;
+}
+.content-2 .experience
+{
+    border-bottom: 2px solid #EAEAEA;
+}
+
+
+ .menu-btn span {
+    width: 20px;
+    height: 2px;
+    background: #fafdff;
+
+    display: block;
+    margin: 4px auto 0;
+    transition: all 0.3s cubic-bezier(0.81, -0.33, 0.345, 1.375);
+}
+
+ .menu-btn span:nth-of-type(2) {
+    position: relative;
+    width: 35px;
+
+
+}
+
+
+ .menu-btn span:nth-of-type(2)::before, .menu-btn span:nth-of-type(2)::after {
+    content: '';
+    width: 6px;
+    height: 2px;
+    display: block;
+     background: #fafdff;
+    transform: rotate(45deg);
+    position: absolute;
+    top: 2px;
+    left: 0;
+    transition: all 0.7s;
+}
+
+.menu-btn span:nth-of-type(2)::after {
+    transform: rotate(145deg);
+    position: absolute;
+    top: -2px;
+    left: 0;
+}
+h4{
+    padding-bottom: 11px;
+}
+
+
