@@ -69,7 +69,7 @@
                 <button style="float: left;position: relative;" type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
             </div>
             <div class="col-sm-3">
-                <input type="month" name="date" class="form-control">
+                <input type="month" name="date" value="{{old('date')}}" class="form-control">
             </div>
 
 

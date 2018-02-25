@@ -10,7 +10,7 @@
                 {{csrf_field()}}
                 <div class="form-group">
                     <label for="exampleFormControlTextarea1">performance date</label>
-                    <input type="date" class="form-control <?php if ($errors->has('pdate')){echo 'is-invalid';} ?>" name="pdate" >
+                    <input type="date" class="form-control <?php if ($errors->has('pdate')){echo 'is-invalid';} ?>" name="pdate" value="{{old('pdate')}}" >
                     <div class="invalid-feedback">
                         @foreach ($errors->get('pdate') as $message)
                             {{$message}}

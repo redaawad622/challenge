@@ -64,7 +64,7 @@
             <div class="form-inline">
                <div class="form-group">
                   <label style="width: 86px;"   class="bold p" for="inputPassword6">  فرع:  </label>
-                  <input type="text" name="pranch" id="inputPassword6" class="form-control mx-sm-3 sp_input" required>
+                  <input type="text" name="pranch" value="{{old('pranch')}}"id="inputPassword6" class="form-control mx-sm-3 sp_input" required>
                </div>
             </div>
 
@@ -90,8 +90,8 @@
                <tr>
                   <td style="padding-top: 46px;font-weight: bold;"><span >المستهدف</span></td>
                   <td><input style="margin-top: 33px;" name="work_days_pa" type="text" class="form-control"></td>
-                  <td><input style="margin-top: 33px;" type="text" name="doctors_clinic_pa" class="form-control"></td>
-                  <td><input style="margin-top: 33px;" type="text" name="pharmacy_pa" class="form-control"></td>
+                  <td><input style="margin-top: 33px;" type="text" name="doctors_clinic_pa"value="{{old('doctors_clinic_pa')}}" class="form-control"></td>
+                  <td><input style="margin-top: 33px;" type="text" name="pharmacy_pa" value="{{old('pharmacy_pa')}}"class="form-control"></td>
 
 
                   <td>
@@ -101,7 +101,7 @@
                            <!--left-->
                            <h4 class="center"> هيئات </h4>
                            <div class="form-group">
-                              <input type="text" name="station_h_pa" class="form-control <?php if ($errors->has('station_h_pa')) {echo 'is-invalid';} ?>">
+                              <input type="text" name="station_h_pa" value="{{old('station_h_pa')}}"class="form-control <?php if ($errors->has('station_h_pa')) {echo 'is-invalid';} ?>">
 
                               <div class="invalid-feedback">
                                  @foreach ($errors->get('station_h_pa') as $message)
@@ -113,7 +113,7 @@
                         <div class="col-md-4">
                            <h4 class="center"> مدارس </h4>
                            <div class="form-group">
-                              <input type="text" name="station_m_pa" class="form-control  <?php if ($errors->has('station_m_pa')) {echo 'is-invalid';} ?>">
+                              <input type="text" name="station_m_pa"value="{{old('station_m_pa')}}" class="form-control  <?php if ($errors->has('station_m_pa')) {echo 'is-invalid';} ?>">
 
                               <div class="invalid-feedback">
                                  @foreach ($errors->get('station_m_pa') as $message)
@@ -125,7 +125,7 @@
                         <div class="col-md-4">
                            <h4 class="center"> وحدات </h4>
                            <div class="form-group">
-                              <input type="text" name="station_w_pa" class="form-control  <?php if ($errors->has('station_w_pa')) {echo 'is-invalid';} ?>">
+                              <input type="text" name="station_w_pa" value="{{old('station_w_pa')}}" class="form-control  <?php if ($errors->has('station_w_pa')) {echo 'is-invalid';} ?>">
 
                               <div class="invalid-feedback">
                                  @foreach ($errors->get('station_w_pa') as $message)
@@ -144,7 +144,7 @@
                            <!--left-->
                            <h4 class="center"> هيئات </h4>
                            <div class="form-group">
-                              <input type="text" name="doctors_num_h_pa" class="form-control <?php if ($errors->has('doctors_num_h_pa')) {echo 'is-invalid';} ?>">
+                              <input type="text" name="doctors_num_h_pa" value="{{old('doctors_num_h_pa')}}"class="form-control <?php if ($errors->has('doctors_num_h_pa')) {echo 'is-invalid';} ?>">
 
                               <div class="invalid-feedback">
                                  @foreach ($errors->get('doctors_num_h_pa') as $message)
@@ -156,7 +156,7 @@
                         <div class="col-md-4">
                            <h4 class="center"> مدارس </h4>
                            <div class="form-group">
-                              <input type="text" name="doctors_num_m_pa" class="form-control  <?php if ($errors->has('doctors_num_m_pa')) {echo 'is-invalid';} ?>">
+                              <input type="text" name="doctors_num_m_pa" value="{{old('doctors_num_m_pa')}}"class="form-control  <?php if ($errors->has('doctors_num_m_pa')) {echo 'is-invalid';} ?>">
 
                               <div class="invalid-feedback">
                                  @foreach ($errors->get('doctors_num_m_pa') as $message)
@@ -168,7 +168,7 @@
                         <div class="col-md-4">
                            <h4 class="center"> وحدات </h4>
                            <div class="form-group">
-                              <input type="text" name="doctors_num_w_pa" class="form-control  <?php if ($errors->has('doctors_num_w_pa')) {echo 'is-invalid';} ?>">
+                              <input type="text" name="doctors_num_w_pa" value="{{old('doctors_num_w_pa')}}"class="form-control  <?php if ($errors->has('doctors_num_w_pa')) {echo 'is-invalid';} ?>">
 
                               <div class="invalid-feedback">
                                  @foreach ($errors->get('doctors_num_w_pa') as $message)
@@ -181,7 +181,7 @@
 
                   </td>
                   </td>
-                  <td><input  style="margin-top: 33px;" name="eg_pranch_pa" type="text" class="form-control"></td>
+                  <td><input  style="margin-top: 33px;" name="eg_pranch_pa"value="{{old('eg_pranch_pa')}}" type="text" class="form-control"></td>
 
 
                </tr>
@@ -191,9 +191,9 @@
 
                <tr>
                   <td style="padding-top: 46px;font-weight: bold;"><span >الفعلي</span></td>
-                  <td><input style="margin-top: 33px;" name="work_days_ac" id="work_days_ac" type="text" class="form-control"></td>
-                  <td><input style="margin-top: 33px;" type="text" name="doctors_clinic_ac" id="doctors_clinic_ac" class="form-control"></td>
-                  <td><input style="margin-top: 33px;" type="text" name="pharmacy_ac"  id="pharmacy_ac" class="form-control"></td>
+                  <td><input style="margin-top: 33px;" name="work_days_ac" value="{{old('work_days_ac')}}"id="work_days_ac" type="text" class="form-control"></td>
+                  <td><input style="margin-top: 33px;" type="text" name="doctors_clinic_ac" value="{{old('doctors_clinic_ac')}}"id="doctors_clinic_ac" class="form-control"></td>
+                  <td><input style="margin-top: 33px;" type="text" name="pharmacy_ac" value="{{old('pharmacy_ac')}}" id="pharmacy_ac" class="form-control"></td>
 
 
                   <td>
@@ -203,7 +203,7 @@
                            <!--left-->
                            <h4 class="center"> هيئات </h4>
                            <div class="form-group">
-                              <input type="text" name="station_h_ac"  id="station_h_ac" class="form-control <?php if ($errors->has('station_h_ac')) {echo 'is-invalid';} ?>">
+                              <input type="text" name="station_h_ac" value="{{old('station_h_ac')}}" id="station_h_ac" class="form-control <?php if ($errors->has('station_h_ac')) {echo 'is-invalid';} ?>">
 
                               <div class="invalid-feedback">
                                  @foreach ($errors->get('station_h_ac') as $message)
@@ -215,7 +215,7 @@
                         <div class="col-md-4">
                            <h4 class="center"> مدارس </h4>
                            <div class="form-group">
-                              <input type="text" name="station_m_ac" id="station_m_ac" class="form-control  <?php if ($errors->has('station_m_ac')) {echo 'is-invalid';} ?>">
+                              <input type="text" name="station_m_ac" value="{{old('station_m_ac')}}"id="station_m_ac" class="form-control  <?php if ($errors->has('station_m_ac')) {echo 'is-invalid';} ?>">
 
                               <div class="invalid-feedback">
                                  @foreach ($errors->get('station_m_ac') as $message)
@@ -227,7 +227,7 @@
                         <div class="col-md-4">
                            <h4 class="center"> وحدات </h4>
                            <div class="form-group">
-                              <input type="text" name="station_w_ac" id="station_w_ac" class="form-control  <?php if ($errors->has('station_w_ac')) {echo 'is-invalid';} ?>">
+                              <input type="text" name="station_w_ac"value="{{old('station_w_ac')}}" id="station_w_ac" class="form-control  <?php if ($errors->has('station_w_ac')) {echo 'is-invalid';} ?>">
 
                               <div class="invalid-feedback">
                                  @foreach ($errors->get('station_w_ac') as $message)
@@ -246,7 +246,7 @@
                            <!--left-->
                            <h4 class="center"> هيئات </h4>
                            <div class="form-group">
-                              <input type="text" name="doctors_num_h_ac" id="doctors_num_h_ac" class="form-control <?php if ($errors->has('doctors_num_h_ac')) {echo 'is-invalid';} ?>">
+                              <input type="text" name="doctors_num_h_ac" value="{{old('doctors_num_h_ac')}}"id="doctors_num_h_ac" class="form-control <?php if ($errors->has('doctors_num_h_ac')) {echo 'is-invalid';} ?>">
 
                               <div class="invalid-feedback">
                                  @foreach ($errors->get('doctors_num_h_ac') as $message)
@@ -258,7 +258,7 @@
                         <div class="col-md-4">
                            <h4 class="center"> مدارس </h4>
                            <div class="form-group">
-                              <input type="text" name="doctors_num_m_ac"  id="doctors_num_m_ac" class="form-control  <?php if ($errors->has('doctors_num_m_ac')) {echo 'is-invalid';} ?>">
+                              <input type="text" name="doctors_num_m_ac"  value="{{old('doctors_num_m_ac')}}"id="doctors_num_m_ac" class="form-control  <?php if ($errors->has('doctors_num_m_ac')) {echo 'is-invalid';} ?>">
 
                               <div class="invalid-feedback">
                                  @foreach ($errors->get('doctors_num_m_ac') as $message)
@@ -270,7 +270,7 @@
                         <div class="col-md-4">
                            <h4 class="center"> وحدات </h4>
                            <div class="form-group">
-                              <input type="text" name="doctors_num_w_ac" id="doctors_num_w_ac" class="form-control  <?php if ($errors->has('doctors_num_w_ac')) {echo 'is-invalid';} ?>">
+                              <input type="text" name="doctors_num_w_ac"value="{{old('doctors_num_w_ac')}}" id="doctors_num_w_ac" class="form-control  <?php if ($errors->has('doctors_num_w_ac')) {echo 'is-invalid';} ?>">
 
                               <div class="invalid-feedback">
                                  @foreach ($errors->get('doctors_num_w_ac') as $message)
@@ -283,7 +283,7 @@
 
                   </td>
                   </td>
-                  <td><input  style="margin-top: 33px;" name="eg_pranch_ac"  id="eg_pranch_ac" type="text" class="form-control"></td>
+                  <td><input  style="margin-top: 33px;" name="eg_pranch_ac" value="{{old('eg_pranch_ac')}}" id="eg_pranch_ac" type="text" class="form-control"></td>
 
 
                </tr>
@@ -302,7 +302,7 @@
             <div class="form-inline">
                <div class="form-group">
                   <label  class="bold p" for="inputPassword6">  اسم المندوب:  </label>
-                  <input type="text" name="name"  id="inputPassword6" class="form-control mx-sm-3 sp_input" required>
+                  <input type="text" name="name" value="{{old('name')}}" id="inputPassword6" class="form-control mx-sm-3 sp_input" required>
                </div>
             </div>
 
@@ -314,7 +314,7 @@
             <div class="form-inline">
                <div class="form-group">
                   <label style="width: 86px;"   class="bold p" for="inputPassword6">  مقر السكن:  </label>
-                  <input type="text"  name="place" id="inputPassword6" class="form-control mx-sm-3 sp_input" required>
+                  <input type="text"  name="place" value="{{old('place')}}"id="inputPassword6" class="form-control mx-sm-3 sp_input" required>
                </div>
             </div>
 
@@ -325,7 +325,7 @@
             <div class="form-inline">
                <div class="form-group">
                   <label style="width: 86px;" class="bold p" for="inputPassword6">  المنطقة:  </label>
-                  <input type="text" name="area" id="inputPassword6" class="form-control mx-sm-3 sp_input" required>
+                  <input type="text" name="area"value="{{old('area')}}" id="inputPassword6" class="form-control mx-sm-3 sp_input" required>
                </div>
             </div>
 
@@ -346,10 +346,10 @@
                <tbody>
                <tr>
                   <td></td>
-                  <td><input  type="text" id="km_start" name="km_start" class="form-control" required></td>
-                  <td><input type="text" id="km_end" name="km_end" class="form-control" required></td>
-                  <td><input type="text" id="km_consum" name="km_consum" class="form-control" required></td>
-                  <td><input type="text" name="km_paid" class="form-control" required></td>
+                  <td><input  type="text" id="km_start" name="km_start"value="{{old('km_start')}}" class="form-control" required></td>
+                  <td><input type="text" id="km_end" name="km_end" value="{{old('km_end')}}"class="form-control" required></td>
+                  <td><input type="text" id="km_consum" name="km_consum" value="{{old('km_consum')}}"class="form-control" required></td>
+                  <td><input type="text" name="km_paid" value="{{old('km_paid')}}"class="form-control" required></td>
                </tr>
 
                </tbody>
@@ -502,13 +502,13 @@
             <td colspan="4">
                <div class="row">
                   <div class="col-md-4">
-                     <input name="route_pm{{$i}}" id="route_pm{{$i}}" type="text" class="form-control" required>
+                     <input name="route_pm{{$i}}" value="{{old('route_pm'.$i)}}"id="route_pm{{$i}}" type="text" class="form-control" required>
                   </div>
                   <div class="col-md-4">
-                     <input type="text" id="doctors_pm{{$i}}" name="doctors_pm{{$i}}" class="form-control">
+                     <input type="text" id="doctors_pm{{$i}}" name="doctors_pm{{$i}}"value="{{old('doctors_pm'.$i)}}" class="form-control">
                   </div>
                   <div class="col-md-4">
-                     <input type="text"  name="pharma_pm{{$i}}" id="pharma_pm{{$i}}" class="form-control">
+                     <input type="text"  name="pharma_pm{{$i}}"value="{{old('pharma_pm'.$i)}}" id="pharma_pm{{$i}}" class="form-control">
                   </div>
 
                </div>
@@ -518,19 +518,19 @@
 
                <div class="row">
                   <div class="col-md-4">
-                     <input type="text" name="route_am{{$i}}" id="route_am{{$i}}" class="form-control" required>
+                     <input type="text" name="route_am{{$i}}" value="{{old('route_am'.$i)}}"id="route_am{{$i}}" class="form-control" required>
 
                   </div>
                   <div class="col-md-4">
                      <div class="row">
                         <div class="col-md-4">
-                           <input type="text" name="station_h_am{{$i}}" id="station_h_am{{$i}}" class="form-control">
+                           <input type="text" name="station_h_am{{$i}}"value="{{old('station_h_am'.$i)}}" id="station_h_am{{$i}}" class="form-control">
                         </div>
                         <div class="col-md-4">
-                           <input type="text" name="station_m_am{{$i}}" id="station_m_am{{$i}}" class="form-control">
+                           <input type="text" name="station_m_am{{$i}}" value="{{old('station_m_am'.$i)}}"id="station_m_am{{$i}}" class="form-control">
                         </div>
                         <div class="col-md-4">
-                           <input type="text" name="station_w_am{{$i}}" id="station_w_am{{$i}}" class="form-control">
+                           <input type="text" name="station_w_am{{$i}}"value="{{old('station_w_am'.$i)}}" id="station_w_am{{$i}}" class="form-control">
                         </div>
                      </div>
 
@@ -539,13 +539,13 @@
                   <div class="col-md-4">
                      <div class="row">
                         <div class="col-md-4">
-                           <input type="text" name="doctors_num_h_am{{$i}}" id="doctors_num_h_am{{$i}}" class="form-control">
+                           <input type="text" name="doctors_num_h_am{{$i}}"value="{{old('doctors_num_h_am'.$i)}}" id="doctors_num_h_am{{$i}}" class="form-control">
                         </div>
                         <div class="col-md-4">
-                           <input type="text" name="doctors_num_m_am{{$i}}"  id="doctors_num_m_am{{$i}}" class="form-control">
+                           <input type="text" name="doctors_num_m_am{{$i}}" value="{{old('doctors_num_m_am'.$i)}}" id="doctors_num_m_am{{$i}}" class="form-control">
                         </div>
                         <div class="col-md-4">
-                           <input type="text" name="doctors_num_w_am{{$i}}" id="doctors_num_w_am{{$i}}" class="form-control">
+                           <input type="text" name="doctors_num_w_am{{$i}}"value="{{old('doctors_num_w_am'.$i)}}" id="doctors_num_w_am{{$i}}" class="form-control">
                         </div>
                      </div>
 
@@ -555,8 +555,8 @@
             </td>
 
 
-            <td> <input type="text" name="egption_pranch{{$i}}" id="egption_pranch{{$i}}" class="form-control"></td>
-            <td> <input type="text" name="actual_paid{{$i}}" id="actual_paid{{$i}}" class="form-control" required></td>
+            <td> <input type="text" name="egption_pranch{{$i}}" value="{{old('egption_pranch'.$i)}}"id="egption_pranch{{$i}}" class="form-control"></td>
+            <td> <input type="text" name="actual_paid{{$i}}" value="{{old('actual_paid'.$i)}}"id="actual_paid{{$i}}" class="form-control" required></td>
 
 
          </tr>
@@ -572,10 +572,10 @@
                   nothing
                   </div>
                   <div class="col-md-4">
-                     <input type="text" id="doc" name="doc" class="form-control" required>
+                     <input type="text" id="doc" name="doc" value="{{old('doc')}}"class="form-control" required>
                   </div>
                   <div class="col-md-4">
-                     <input type="text" id="ph" name="ph" class="form-control" required>
+                     <input type="text" id="ph" name="ph" value="{{old('ph')}}"class="form-control" required>
                   </div>
 
                </div>
@@ -591,13 +591,13 @@
                   <div class="col-md-4">
                      <div class="row">
                         <div class="col-md-4">
-                           <input type="text" id="station_h" name="station_h" class="form-control" required>
+                           <input type="text" id="station_h" name="station_h" value="{{old('station_h')}}"class="form-control" required>
                         </div>
                         <div class="col-md-4">
-                           <input type="text" id="station_m" name="station_m" class="form-control" required>
+                           <input type="text" id="station_m" name="station_m"value="{{old('station_m')}}" class="form-control" required>
                         </div>
                         <div class="col-md-4">
-                           <input type="text" id="station_w" name="station_w" class="form-control" required>
+                           <input type="text" id="station_w" name="station_w" value="{{old('station_w')}}"class="form-control" required>
                         </div>
                      </div>
 
@@ -606,13 +606,13 @@
                   <div class="col-md-4">
                      <div class="row">
                         <div class="col-md-4">
-                           <input type="text" id="num_h" name="num_h" class="form-control" required>
+                           <input type="text" id="num_h" name="num_h"value="{{old('num_h')}}" class="form-control" required>
                         </div>
                         <div class="col-md-4">
-                           <input type="text" id="num_m" name="num_m" class="form-control" required>
+                           <input type="text" id="num_m" name="num_m"value="{{old('num_m')}}" class="form-control" required>
                         </div>
                         <div class="col-md-4">
-                           <input type="text" id="num_w" name="num_w" class="form-control" required>
+                           <input type="text" id="num_w" name="num_w" value="{{old('num_w')}}"class="form-control" required>
                         </div>
                      </div>
 
@@ -622,8 +622,8 @@
             </td>
 
 
-            <td> <input type="text" id="pr" name="pr" class="form-control" required></td>
-            <td> <input type="text" id="actual" name="actual" class="form-control" required></td>
+            <td> <input type="text" id="pr" name="pr"value="{{old('pr')}}" class="form-control" required></td>
+            <td> <input type="text" id="actual" name="actual"value="{{old('actual')}}" class="form-control" required></td>
 
 
          </tr>
@@ -646,8 +646,8 @@
          <tbody>
          <tr>
 
-            <td><input type="text" name="total_samples" class="form-control"></td>
-            <td><input type="text" name="paid_samples" class="form-control"></td>
+            <td><input type="text" name="total_samples"value="{{old('')}}" class="form-control"></td>
+            <td><input type="text" name="paid_samples"value="{{old('')}}" class="form-control"></td>
             <td><input type="text" name="back_samples" class="form-control"></td>
             <td><input type="text" name="average_samples" class="form-control"></td>
          </tr>

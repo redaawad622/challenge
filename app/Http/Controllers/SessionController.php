@@ -11,7 +11,7 @@ class SessionController extends Controller
     {
     	if(!auth()->attempt(request(['email','password']))) {
 
-            return redirect()->back()->withErrors(['your email or password not correct!!']);
+            return redirect()->back()->withInput()->withErrors(['your email or password not correct!!']);
 
     	}
     	else
@@ -32,7 +32,7 @@ class SessionController extends Controller
 		}
 		else
 		{
-			return redirect('/');
+			return redirect('/')->withInput();
 		}
 		
 		}

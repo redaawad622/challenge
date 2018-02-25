@@ -91,7 +91,7 @@
                <div class="form-inline">
                   <div class="form-group">
                      <label class="bold " > المحافظة </label>
-                     <input type="text" name="city"   class="form-control mx-sm-3 <?php if ($errors->has('city')) {echo 'is-invalid';} ?>" required>
+                     <input type="text" name="city" value="{{old('city')}}"  class="form-control mx-sm-3 <?php if ($errors->has('city')) {echo 'is-invalid';} ?>" required>
                      <div class="invalid-feedback">
                         @foreach ($errors->get('city') as $message)
                            {{$message}}
@@ -105,7 +105,7 @@
                <div class="form-inline">
                   <div class="form-group">
                      <label class="bold " > المنطقة </label>
-                     <input type="text" name="area"  class="form-control mx-sm-3 <?php if ($errors->has('area')) {echo 'is-invalid';} ?>" required>
+                     <input type="text" name="area" value="{{old('area')}}" class="form-control mx-sm-3 <?php if ($errors->has('area')) {echo 'is-invalid';} ?>" required>
                      <div class="invalid-feedback">
                         @foreach ($errors->get('area') as $message)
                            {{$message}}
@@ -181,20 +181,20 @@
                         <h4 class="center"> المنطقة </h4>
 
                         <div class="form-group">
-                           <input  type="text" name="location{{$i}}" class="form-control " required>
+                           <input  type="text" name="location{{$i}}"value="{{old('location'.$i)}}" class="form-control " required>
                         </div>
                      </div>
                      <div class="col-md-3">
                         <h4 class="center" style="font-size: 13px"> STARTING POINT </h4>
                         <div class="form-group">
-                           <input    type="text" name="pharm{{$i}}" class="form-control " required>
+                           <input    type="text" name="pharm{{$i}}"value="{{old('pharm'.$i)}}" class="form-control " required>
                         </div>
 
                      </div>
                      <div class="col-md-3">
                         <h4 style="font-size:13px" class="center"> STARTING TIME </h4>
                         <div class="form-group">
-                           <input   type="text" name="time{{$i}}" class="form-control " required>
+                           <input   type="text" name="time{{$i}}"value="{{old('time'.$i)}}" class="form-control " required>
                         </div>
 
                      </div>
@@ -205,14 +205,14 @@
                      <div class="col-md-6">
                         <h4 class="center"> المنطقة </h4>
                         <div class="form-group">
-                           <input   type="text" name="locationPm{{$i}}" class="form-control " required>
+                           <input   type="text" name="locationPm{{$i}}" value="{{old('locationPm'.$i)}}"class="form-control " required>
                         </div>
 
                      </div>
                      <div class="col-md-3">
                         <h4 class="center" style="font-size:13px"> STARTING POINT </h4>
                         <div class="form-group">
-                           <input   type="text" name="pharmPm{{$i}}" class="form-control " required>
+                           <input   type="text" name="pharmPm{{$i}}"value="{{old('pharmPm'.$i)}}" class="form-control " required>
                         </div>
 
                      </div>
@@ -220,7 +220,7 @@
                         <h4 style="font-size:13px" class="center"> STARTING TIME </h4>
 
                         <div class="form-group">
-                           <input   type="text" name="timePm{{$i}}" class="form-control " required>
+                           <input   type="text" name="timePm{{$i}}" value="{{old('timePm'.$i)}}"class="form-control " required>
                         </div>
 
                      </div>
@@ -228,7 +228,7 @@
                </td>
                <td>
                   <div class="form-group mar-t">
-                     <input    type="text" name="note{{$i}}" class="form-control ">
+                     <input    type="text" name="note{{$i}}" value="{{old('note'.$i)}}"class="form-control ">
                   </div>
                </td>
             </tr>

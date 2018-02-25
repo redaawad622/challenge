@@ -5,14 +5,14 @@
         <!-- Start Promotion Plan form-->
 
         <div class="statistic  align-items-center bg-white has-shadow" id="promotion">
-            <h3>Promotion Plan</h3> <i
+            <h3>Promotion Plan</h3> <i></i>
 
             <form method="post" action="/promotionPlan" enctype="multipart/form-data">
 
                 {{csrf_field()}}
                 <div class="form-group">
                     <label for="exampleFormControlFile1">Date</label>
-                    <input type="date" class="form-control <?php if ($errors->has('date')){echo 'is-invalid';} ?>" name="date" id="exampleFormControlFile1">
+                    <input type="date" class="form-control <?php if ($errors->has('date')){echo 'is-invalid';} ?>" name="date" value="{{old('date')}}" id="exampleFormControlFile1">
                     <div class="invalid-feedback">
                         @foreach ($errors->get('date') as $message)
                             {{$message}}
