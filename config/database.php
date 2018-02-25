@@ -52,6 +52,13 @@ return [
             'prefix' => '',
             'strict' => true,
             'engine' => null,
+            'dump' => [
+
+                'use_single_transaction',
+                'timeout' => 60 * 5, // 5 minute timeout
+
+            ],
+
         ],
 
         'pgsql' => [

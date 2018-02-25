@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Comparison;
 use App\DailyReportEvening;
 use App\DailyReportHeader;
@@ -100,8 +101,11 @@ class AdminController extends Controller
     public function getuser()
     {
         $users=User::all();
+
+        /*in master page*/
         $emails=EmailNotify::where('reading','1')->orderBy('created_at','desc')->get();
         $notifies=Notify::where('reading','1')->orderBy('created_at','desc')->get();
+        /*end*/
 
 
         $dailyReport_count=DailyReportHeader::all()->count();
@@ -117,6 +121,7 @@ class AdminController extends Controller
         return view('admin',compact('emails','users','notifies','dailyReport_count','monthlyPlan_count','monthlyReport_count','weeklyPlan_count','price_count','promotion_count','comp_count','vac_count'));
 
     }
+
     public function removeNotifay()
     {
         DB::table('notifies')->delete();

@@ -17,7 +17,7 @@ class CheckRole
     {
         if($request->user()===null)
         {
-            return redirect('/');
+            return redirect('/permission');
         }
         $actions=$request->route()->getAction();
         $roles=isset($actions['roles'])?$actions['roles']:null;

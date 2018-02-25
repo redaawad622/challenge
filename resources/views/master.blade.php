@@ -9,23 +9,23 @@
       <meta name="robots" content="all,follow">
       <meta name="csrf-token" content="{{ csrf_token() }}">
       <!-- Bootstrap CSS-->
-      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
       <!-- Google fonts - Roboto -->
       <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,700">
       <!-- theme stylesheet-->
-      <link rel="stylesheet" href="css/style.default.css" id="theme-stylesheet">
+      <link rel="stylesheet" href="{{asset('css/style.default.css')}}" id="theme-stylesheet">
       <!-- Custom stylesheet - for your changes-->
-      <link rel="stylesheet" href="css/custom.css">
+      <link rel="stylesheet" href="{{asset('css/custom.css')}}">
       <!-- Favicon-->
-      <link rel="shortcut icon" href="image/favicon.ico">
+      <link rel="shortcut icon" href="{{asset('image/favicon.ico')}}">
       <!-- Font Awesome CDN-->
       <!-- you can replace it by local Font Awesome-->
-      <script src="js/front.js"></script>
+      <script src="{{asset('js/front.js')}}"></script>
       <!-- Font Icons CSS-->
       <link rel="stylesheet" href="{{asset('css/icons.css')}}">
-      <link rel="stylesheet" href="css/animate.css">
+      <link rel="stylesheet" href="{{asset('css/animate.css')}}">
 
-      <link rel="stylesheet" href="css/font-awesome.min.css">
+      <link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}">
       <!-- Tweaks for older IEs-->
       <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -146,7 +146,7 @@
                               @foreach($emails as $email)
                               <li>
                                  <a rel="nofollow" href="#" class="dropdown-item d-flex">
-                                    <div class="msg-profile"> <img src="image/{{$email->url}}" alt="..." width="45px" height="45px" class="image-fluid rounded-circle"></div>
+                                    <div class="msg-profile"> <img src="{{asset('image/'.$email->url)}}" alt="..." width="45px" height="45px" class="image-fluid rounded-circle"></div>
                                     <div class="msg-body">
                                        <h3 class="h5">{{$email->name}}    <span style="font-size: 10px;padding-left: 88px;">{{$email->created_at}}</span></h3>
 
@@ -171,11 +171,108 @@
             </nav>
          </header>
          <a id="pop_notify" href="#"  data-toggle="popover" title="Notification" data-content=""><i class="fa fa-bell-o hide_notify"></i></a>
+         <div class="page-content d-flex align-items-stretch">
+            <!-- Side Navbar -->
+            <nav class="side-navbar">
+               <!-- Sidebar Header-->
+               <div class="sidebar-header d-flex align-items-center">
+
+                  <div class="avatar"><img src="{{asset('image/'.Auth::user()->url)}}" width="55px" height="55px" alt="..." class="image-fluid rounded-circle"></div>
+                  <div class="title">
+                     <h1 class="h4">Dr/{{Auth::user()->name}}</h1>
+                     <p>The Admin</p>
+                  </div>
+               </div>
+               <!-- Sidebar Navidation Menus-->
+               <span class="heading">Main</span>
+               <ul class="list-unstyled">
+                  <li > <a href="/"><i class="icon-home"></i>Home</a></li>
+                  <li class="active"> <a href="/admin"><i class="fa fa-wpforms" aria-hidden="true"></i> Forms</a></li>
 
 
-         @yield('content')
+               </ul>
 
 
+               <!--forms list-->
+
+               <ul class="list-unstyled">
+                  <span class="heading">Home page control</span>
+                  <li> <a  href="/admin/AddEvent"><i class="fa fa-calendar" aria-hidden="true"></i> Add A New Event</a></li>
+                  <li> <a  href="/admin/AddMedications"><i class="fa fa-medkit" aria-hidden="true"></i> Add A New Medications</a></li>
+                  <li> <a  href="/admin/AddGalleryPic"><i class="fa fa-file-image-o" aria-hidden="true"></i> Add Gallery Picture</a></li>
+                  <span class="heading">Files control</span>
+
+                  <li> <a  href="/admin/AddComparison"><i class="fa fa-compress" aria-hidden="true"></i> Add Comparison of the sale by sector file</a></li>
+                  <li> <a  href="/admin/AddPerformanceFile"><i class="fa fa-star-o" aria-hidden="true"></i> Add Performance file</a></li>
+                  <li> <a  href="/admin/AddPromotionPlanFile"><i class="fa fa-globe" aria-hidden="true"></i> Add Promotion Plan file</a></li>
+                  <li>
+                     <a href="#dashvariants" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Managment Tamplet </a>
+                     <ul id="dashvariants" class="collapse list-unstyled">
+                        <li><a href="/checkShow" target="_blank">Delegate receipt of checks</a></li>
+
+
+                        <li class="nav-item dropdown  hvr-shrink" style="list-style-type: none;" >
+                           <a  class="nav-link " data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Show Prices </a>
+                           <div  class="dropdown-menu">
+                              <a style="color: black !important;"  class="dropdown-item" href="/priceShow">Store</a>
+                              <a style="color: black !important;" class="dropdown-item" href="/priceShowShow">Show <small>{{$price_count}}</small></a>
+
+                           </div>
+                        </li>
+                        <li><a href="/Anthor" target="_blank">Anther file</a></li>
+
+                     </ul>
+                  </li>
+                  <span class="heading">Users control</span>
+
+
+                  <li> <a  href="/admin/SendPrivateInstruction"><i class="fa fa-commenting" aria-hidden="true"></i> Send private instruction</a></li>
+                  <li>
+                     <a href="/admin/UsersManager"> <i class="fa fa-users"></i>Users </a>
+
+                  </li>
+
+                  <span class="heading">Developer Control</span>
+
+                  <li>
+                     <a href="#developer" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Developer Option </a>
+                     <ul id="developer" class="collapse list-unstyled">
+                        <li><a href="/admin/BackUp" >Back Up</a></li>
+
+
+
+                        <li><a href="/admin/Truncate">Truncate Tables</a></li>
+
+                     </ul>
+                  </li>
+
+
+
+               </ul>
+
+            </nav>
+
+
+            <div class="content-inner">
+               <!-- Page Header-->
+               <header class="page-header">
+
+                  <div class="container-fluid" >
+
+                     <ul class="nav nav-fill justify-content-center " style="font-weight: bold;">
+
+
+
+                     </ul>
+
+
+                  </div>
+               </header>
+
+
+               @yield('content')
+            </div>
+         </div>
          
       </div>
       <!--section loading
@@ -196,15 +293,15 @@
       
       <script language="JavaScript" type="text/javascript" src="{{asset('js/jquery.min.js')}}"></script>
        <script language="JavaScript" type="text/javascript" src="{{asset('js/popper.min.js')}}" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-      <script language="JavaScript" type="text/javascript" src="js/jquery.cookie.js"></script>
-      <script language="JavaScript" type="text/javascript" src="js/jquery.validate.min.js"></script>
-      <script src="js/tether.min.js"></script>
-      <script src="js/bootstrap.js"></script>
-      <script src="js/wow.min.js"></script>
+      <script language="JavaScript" type="text/javascript" src="{{asset('js/jquery.cookie.js')}}"></script>
+      <script language="JavaScript" type="text/javascript" src="{{asset('js/jquery.validate.min.js')}}"></script>
+      <script src="{{asset('js/tether.min.js')}}"></script>
+      <script src="{{asset('js/bootstrap.js')}}"></script>
+      <script src="{{asset('js/wow.min.js')}}"></script>
       <script>
          new WOW().init();
       </script>
-      <script src="js/front.js"></script>
+      <script src="{{asset('js/front.js')}}"></script>
 
       
       <script>
@@ -400,12 +497,30 @@
          });
 
 
-         setInterval(getNotify, 10000);
-         setInterval(getNotifyE, 30000);
-         
-       
+         //setInterval(getNotify, 10000);
+         //setInterval(getNotifyE, 30000);
 
-    
+
+
+         $("#search").on("keyup", function() {
+             var value = $(this).val().toLowerCase();
+
+             $("table tr").each(function(index) {
+                 if (index !== 0) {
+
+                     $row = $(this);
+
+                     var id = $row.find("td:nth-child(2)").text().toLowerCase();
+
+                     if (id.indexOf(value) !== 0) {
+                         $row.hide();
+                     }
+                     else {
+                         $row.show();
+                     }
+                 }
+             });
+         });
 
 
       </script>

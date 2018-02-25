@@ -18,7 +18,10 @@ use Auth;
 use Illuminate\Support\Facades\Input;
 
 use Validator;
-
+use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Storage;
+use UxWeb\SweetAlert\SweetAlert;
 
 
 class LoginController extends Controller
@@ -238,9 +241,6 @@ class LoginController extends Controller
      $user=User::where('id',$id)->get();
      return view('showCV',compact('cvs','user'));
  }
-
-
-
 
 
 }

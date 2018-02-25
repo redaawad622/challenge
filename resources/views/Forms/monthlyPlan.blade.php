@@ -20,13 +20,26 @@
       .mar-t
       {
          margin-top: 33px;
+         
       }
 
    </style>
 
 </head>
 <body>
+@if (!$errors->any())
+   @if(Session::has('message'))
+      <div class="alert alert-success" style="text-align: center;" role="alert">
+         <strong>{{ Session::get('type') }} </strong> {{ Session::get('message') }}
+      </div>
+   @endif
+@else
+   <div class="alert alert-danger" role="alert">
+      <strong> Warning! </strong> please Check the error and  try submitting again.
+   </div>
+@endif
 <section class="option-box">
+
    <div class="color-option">
       <h4>Color option</h4>
       <ul class="list-unstyled">
@@ -107,9 +120,22 @@
                <div class="form-inline">
                   <div class="form-group">
                      <label class="bold " > شهر </label>
-                     <input type="month" name="date"  class="form-control mx-sm-3 <?php if ($errors->has('date')) {echo 'is-invalid';} ?>" required>
-                
-  
+                     <select class="custom-select" id="select_date" name="date">
+                        <option selected id="a" value="null">--Month--</option>
+                        <option value="1-1-{{date('Y',time())}}">January</option>
+                        <option value="1-2-{{date('Y',time())}}">February</option>
+                        <option value="1-3-{{date('Y',time())}}">March</option>
+                        <option value="1-4-{{date('Y',time())}}">April</option>
+                        <option value="1-5-{{date('Y',time())}}">May</option>
+                        <option value="1-6-{{date('Y',time())}}">June</option>
+                        <option value="1-7-{{date('Y',time())}}">July</option>
+                        <option value="1-8-{{date('Y',time())}}">August</option>
+                        <option value="1-9-{{date('Y',time())}}">September</option>
+                        <option value="1-10-{{date('Y',time())}}">October</option>
+                        <option value="1-11-{{date('Y',time())}}">November</option>
+                        <option value="1-12-{{date('Y',time())}}">December</option>
+                     </select>
+
                   </div>
                </div>
             </td>
@@ -137,7 +163,8 @@
          </thead>
 
          <tbody>
-         @for($i=1;$i<=cal_days_in_month(CAL_GREGORIAN,date('m',time()+24*60*60) , date('Y',time()));$i++)
+         @if($dateCome)
+         @for($i=1;$i<=cal_days_in_month(CAL_GREGORIAN,date('m',strtotime($dateCome)) , date('Y',time()));$i++)
             <tr>
                <td><div class="form-group mar-t">
                      <input type="text" name="date_num{{$i}}" class="form-control " value="{{$i}}" readonly>
@@ -145,7 +172,7 @@
                </td>
                <td>
                   <div class="form-group mar-t">
-                     <input type="text" name="day{{$i}}" value="{{ \App\Helper\AppHelper::instance()->dayInArbic(date( 'l', strtotime( date( 'n',time()+30*24*60*60 ) . '/' . $i ) ))}}" class="form-control" readonly>
+                     <input type="text" name="day{{$i}}" value="{{ \App\Helper\AppHelper::instance()->dayInArbic(date( 'l', strtotime( date( 'n',strtotime($dateCome)) . '/' . $i ) ))}}" class="form-control" readonly>
                   </div>
                </td>
                <td colspan="3">
@@ -154,20 +181,20 @@
                         <h4 class="center"> المنطقة </h4>
 
                         <div class="form-group">
-                           <input type="text" name="location{{$i}}" class="form-control " required>
+                           <input  type="text" name="location{{$i}}" class="form-control " required>
                         </div>
                      </div>
                      <div class="col-md-3">
                         <h4 class="center" style="font-size: 13px"> STARTING POINT </h4>
                         <div class="form-group">
-                           <input type="text" name="pharm{{$i}}" class="form-control " required>
+                           <input    type="text" name="pharm{{$i}}" class="form-control " required>
                         </div>
 
                      </div>
                      <div class="col-md-3">
                         <h4 style="font-size:13px" class="center"> STARTING TIME </h4>
                         <div class="form-group">
-                           <input type="text" name="time{{$i}}" class="form-control " required>
+                           <input   type="text" name="time{{$i}}" class="form-control " required>
                         </div>
 
                      </div>
@@ -178,14 +205,14 @@
                      <div class="col-md-6">
                         <h4 class="center"> المنطقة </h4>
                         <div class="form-group">
-                           <input type="text" name="locationPm{{$i}}" class="form-control " required>
+                           <input   type="text" name="locationPm{{$i}}" class="form-control " required>
                         </div>
 
                      </div>
                      <div class="col-md-3">
                         <h4 class="center" style="font-size:13px"> STARTING POINT </h4>
                         <div class="form-group">
-                           <input type="text" name="pharmPm{{$i}}" class="form-control " required>
+                           <input   type="text" name="pharmPm{{$i}}" class="form-control " required>
                         </div>
 
                      </div>
@@ -193,7 +220,7 @@
                         <h4 style="font-size:13px" class="center"> STARTING TIME </h4>
 
                         <div class="form-group">
-                           <input type="text" name="timePm{{$i}}" class="form-control " required>
+                           <input   type="text" name="timePm{{$i}}" class="form-control " required>
                         </div>
 
                      </div>
@@ -201,11 +228,17 @@
                </td>
                <td>
                   <div class="form-group mar-t">
-                     <input type="text" name="note{{$i}}" class="form-control ">
+                     <input    type="text" name="note{{$i}}" class="form-control ">
                   </div>
                </td>
             </tr>
          @endfor
+         @else
+         <div class="alert alert-success"  style="text-align: center;"  role="alert">
+         <strong> من فضلك اختر الشهر اولا ثم مليء باقي الخانات</strong>
+         </div>
+         @endif
+
 
          <tr>
             <td colspan="4">
@@ -238,5 +271,26 @@
 <script src="{{asset('js/bootstrap.min.js')}}" integrity="" crossorigin="anonymous"></script>
 <script src="../js/jquery.nicescroll.min.js"></script>
 <script  src="../js/myjs.js" type="text/javascript">  </script>
+<script>
+   $(document).ready(function () {
+       $('#select_date #a').removeProp('selected');
+
+       var a={!!  json_encode($dateCome) !!}
+
+       $('#select_date > option').each(function() {
+           if($(this).val()==a)
+           {
+               $(this).prop('selected', true);
+           }
+       });
+   });
+   $('#select_date').change(function() {
+       var dateCome=$('#select_date').val();
+
+       location.href='/monthPlan/'+dateCome;
+
+
+   });
+</script>
 </body>
 </html>

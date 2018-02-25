@@ -39,9 +39,9 @@ class custom extends Command
     public function handle()
     {
 
-       /* DB::table('daily_report_mornings')->truncate();
+        DB::table('daily_report_mornings')->truncate();
         $this->info('all table are deleted successfully!');
-        */
+
 
     }
 }

@@ -13,6 +13,7 @@
 
 Route::get('/', 'LoginController@getall');
 Route::get('/access', 'LoginController@acd');
+Route::view('/permission', 'permission');
 
 
 Route::post('/', 'LoginController@store_register');
@@ -27,24 +28,74 @@ Route::post('/login', 'SessionController@check');
 Route::group(['middleware'=>'roles','roles'=>['admin']],function()
 {
 
-    Route::get('/admin','AdminController@getuser');
-    Route::get('/removeNotifay','AdminController@removeNotifay');
-    Route::get('/showCV/{id}','LoginController@ShowCV');
-    Route::get('/changeReading','AdminController@changeReading');
-    Route::get('/changeReadingEmail','AdminController@changeReadingEmail');
-    Route::get('/getNotify','AdminController@getNotify');
-    Route::get('/getNotifyE','AdminController@getNotifyE');
+
+    Route::namespace('Admin')->group(function (){
+        Route::get('/removeNotifay','AdminController@removeNotifay');
+        Route::get('/showCV/{id}','LoginController@ShowCV');
+        Route::get('/changeReading','AdminController@changeReading');
+        Route::get('/changeReadingEmail','AdminController@changeReadingEmail');
+        Route::get('/getNotify','AdminController@getNotify');
+        Route::get('/getNotifyE','AdminController@getNotifyE');
+
+
+
+        Route::post('/editObjective', 'AdminController@EditObjective');
+        Route::post('/inst', 'AdminController@Storeinst');
+        Route::post('/performance', 'AdminController@Storeperformance');
+        Route::get('/deletuser/{id}','AdminController@deletuser');
+        Route::get('/removeEvent/{id}','AdminController@deleteEvent');
+        Route::get('/removeMedication/{id}','AdminController@deleteMedication');
+        Route::get('/removegallery/{id}','AdminController@deleteGallery');
+        Route::get('/removeobject/{id}','AdminController@deleteObject');
+        Route::post('/post', 'LoginController@StorePost');
+        Route::get('/removepost/{id}','AdminController@deletepost');
+        Route::get('/removeRow/{id}','AdminController@removeRow');
+        Route::get('/removeRowM/{id}','AdminController@removeRowM');
+        Route::get('/removeRowP/{id}','AdminController@removeRowP');
+        Route::post('/editAdmin','AdminController@editAdmin');
+        Route::post('/editCompany','AdminController@editCompany');
+        Route::post('/editPublic','AdminController@editPublic');
+
+
+
+
+        Route::post('/event', 'AdminController@StoreEvent');
+
+        Route::post('/medecin', 'AdminController@StoreMedecin');
+
+        Route::post('/img', 'AdminController@StoreImg');
+
+        Route::prefix('/admin')->group(function (){
+            Route::get('','AdminController@getuser');
+
+            Route::get('/AddEvent','AdminForms@getEvent');
+            Route::get('/AddGalleryPic','AdminForms@getGalleryPic');
+            Route::get('/AddMedications','AdminForms@getMedications');
+            Route::get('/AddComparison','AdminForms@getComparison');
+            Route::get('/AddPerformanceFile','AdminForms@getPerformance');
+            Route::get('/AddPromotionPlanFile','AdminForms@getPromotionPlan');
+            Route::get('/SendPrivateInstruction','AdminForms@getInstruction');
+            Route::get('/UsersManager','AdminForms@getUsers');
+            Route::get('/Truncate','AdminForms@Truncate');
+            Route::post('/Truncate','AdminForms@TruncateTable');
+            Route::get('/BackUp', 'BackupController@index');
+            Route::get('/BackUp/create', 'BackupController@create');
+            Route::get('/BackUp/download/{file_name}', 'BackupController@download');
+            Route::get('/BackUp/delete/{file_name}', 'BackupController@delete');
+        });
+
+
+    });
+
+
+
+
+
     Route::get('/promotionPlanShow',function (){
         return view('Forms.promotionPlanShow');
     });
 
 
-
-    Route::post('/event', 'AdminController@StoreEvent');
-
-    Route::post('/medecin', 'AdminController@StoreMedecin');
-
-    Route::post('/img', 'AdminController@StoreImg');
 
     Route::post('/search', 'ShowFormController@dailyReportMorningShow');
     Route::post('/Adsearch', 'ShowFormController@dailyReportMorningShow');
@@ -66,24 +117,6 @@ Route::group(['middleware'=>'roles','roles'=>['admin']],function()
     Route::post('/searchAn', 'ShowFormController@searchAn');
     Route::post('/searchPromotion', 'ShowFormController@searchPromotion');
     Route::post('/searchVacation', 'ShowFormController@searchVacation');
-
-
-    Route::post('/editObjective', 'AdminController@EditObjective');
-    Route::post('/inst', 'AdminController@Storeinst');
-    Route::post('/performance', 'AdminController@Storeperformance');
-    Route::get('/deletuser/{id}','AdminController@deletuser');
-    Route::get('/removeEvent/{id}','AdminController@deleteEvent');
-    Route::get('/removeMedication/{id}','AdminController@deleteMedication');
-    Route::get('/removegallery/{id}','AdminController@deleteGallery');
-    Route::get('/removeobject/{id}','AdminController@deleteObject');
-    Route::post('/post', 'LoginController@StorePost');
-    Route::get('/removepost/{id}','AdminController@deletepost');
-    Route::get('/removeRow/{id}','AdminController@removeRow');
-    Route::get('/removeRowM/{id}','AdminController@removeRowM');
-    Route::get('/removeRowP/{id}','AdminController@removeRowP');
-    Route::post('/editAdmin','AdminController@editAdmin');
-    Route::post('/editCompany','AdminController@editCompany');
-    Route::post('/editPublic','AdminController@editPublic');
 
 
 
@@ -179,9 +212,7 @@ Route::group(['middleware'=>'roles','roles'=>['user','admin']],function()
     ///////////////
     ///
     //////////////////////
-    Route::get('/monthPlan',function(){
-        return view('Forms.monthlyPlan');
-    });
+    Route::get('/monthPlan/{dateCome?}','formcontroller@MonthlyPlan');
 
     Route::post('/monthlyPlan','formcontroller@storeMonthlyPlan');
 
@@ -235,7 +266,8 @@ Route::get('/cv',function (){
 
 
 
- 
+
+
 
 
 

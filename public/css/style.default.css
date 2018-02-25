@@ -923,7 +923,7 @@ section.dashboard-counts div[class*='col-']:last-of-type .item {
 */
 .statistic {
   padding: 20px 15px;
-  margin-bottom: 15px;
+  margin-top: 100px;
 }
 
 .statistic:last-of-type {
@@ -2581,3 +2581,10 @@ a.text-primary:focus, a.text-primary:hover {
   border-bottom-right-radius: 0.2rem;
   border-top-right-radius: 0.2rem;
 }
+
+table,td,th
+
+{
+  text-align: center;
+}
+

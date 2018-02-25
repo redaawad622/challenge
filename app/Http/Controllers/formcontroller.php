@@ -33,6 +33,14 @@ use Mail;
 
 class formcontroller extends Controller
 {
+
+    public function MonthlyPlan($dateCome=null)
+    {
+
+            return view('Forms.monthlyPlan',compact('dateCome'));
+
+
+    }
     public function storeMonthlyPlan()
     {
     	request()->validate([
@@ -53,7 +61,7 @@ class formcontroller extends Controller
         $info->save();
 
         $reports = array();
-        for($i=1;$i<=cal_days_in_month(CAL_GREGORIAN,date('m',time()+24*60*60) , date('Y',time()));$i++)
+        for($i=1;$i<=cal_days_in_month(CAL_GREGORIAN,date('m',strtotime(request('date'))) , date('Y',time()));$i++)
 
         {
             $reports[] =
@@ -73,15 +81,18 @@ class formcontroller extends Controller
 
 
         /*send notifay*/
+
         $notify=new Notify();
         $notify->content= Auth::user()->name.' sand a Monthly Plan';
         $notify->reading='0';
         $notify->save();
         /*send mail*/
+        /*
         Mail::raw(Auth::user()->name.' sand a Monthly Plan  Please check it ',function ($message){
             $message->to('islamsalah1971@gmail.com')->subject('Monthly Plan Report');
             $message->from('islamsalah1971@gmail.com');
         });
+        */
 
         return back() ->with('message', 'You successfully Sand the Monthly Report')->with('type','Well done!');
     }
@@ -103,6 +114,7 @@ class formcontroller extends Controller
                 'pro_r'=>'nullable|string',
 
             ]);
+
 
             if( $validation->fails() )
             {
