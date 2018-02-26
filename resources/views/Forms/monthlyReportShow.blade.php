@@ -23,7 +23,7 @@
                 display:none
             }
 
-          
+
 
         }
         .sp_input
@@ -31,10 +31,7 @@
             border: none;
             border-bottom: 2px dotted;
         }
-        body
-        {
-            padding-top: 90px;
-        }
+
 
         p{
             text-align: center;
@@ -51,122 +48,201 @@
 
 <section class="option-box" style="top: 0">
     <div class="color-option">
-        <h4>Color option</h4>
-        <ul class="list-unstyled">
-            <li style="background:#000" data-value="../css/form/blackStyle-them.css"></li>
-            <li data-value="../css/form/pinkStyle-them.css"></li>
-            <li data-value="../css/form/blueStyle-them.css"></li>
-            <li data-value="../css/form/seaStyle-them.css"></li>
-            <li data-value="../css/form/greenStyle-them.css"></li>
-            <li data-value="../css/form/violetStyle-them.css"></li>
-        </ul>
-         <hr>
-        <div class="tool-box" style="text-align: left;">
-            <h5>text option</h5>
 
-                <h6>Font size</h6>
-            <input type="text" class="form-control" id="font">
-            <hr>
+        <div class="row">
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="single-option">
 
+                    <h4>Color option</h4>
 
-
+                    <ul class="list-unstyled">
+                        <li style="background:#000" data-value="../css/form/blackStyle-them.css"></li>
+                        <li data-value="../css/form/pinkStyle-them.css"></li>
+                        <li data-value="../css/form/blueStyle-them.css"></li>
+                        <li data-value="../css/form/seaStyle-them.css"></li>
+                        <li data-value="../css/form/greenStyle-them.css"></li>
+                        <li data-value="../css/form/violetStyle-them.css"></li>
+                    </ul>
+                </div>
+            </div>
 
 
-            <h6>Font family</h6>
-            <select class="custom-select" id="change-family">
-                <option value="sans-serif">sans-serif</option>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="single-option">
+                    <label>heading & footer font size</label>
+                    <input type="text" class="form-control" id="font-head">
 
-                <option value="serif">serif</option>
-                <option value="cursive">cursive</option>
-                <option value="fantasy">fantasy</option>
-                <option value="initial">initial</option>
-                <option value="monospace">monospace</option>
-                <option value="-webkit-pictograph">-webkit-pictograph</option>
+                    <label>table head Font size</label>
+                    <input type="text" class="form-control" id="font-table-head">
 
-            </select>
-            <hr>
-
-            <h6 style="padding-top: 5px;">bold option</h6>
-            <select class="custom-select" id="change-bold">
-                <option value="100">100</option>
-                <option value="200">200</option>
-                <option value="300">300</option>
-                <option value="400">400</option>
-                <option value="500">500</option>
-                <option value="600">600</option>
-                <option value="700">700</option>
-                <option value="800">800</option>
-                <option value="900">900</option>
+                    <label>table body Font size</label>
+                    <input type="text" class="form-control" id="font">
 
 
-            </select>
+
+                </div>
+
+
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="single-option">
+
+
+                    <label>heading & footer bold option</label>
+                    <select class="custom-select" id="change-bold">
+                        <option value="100">100</option>
+                        <option value="200">200</option>
+                        <option value="300">300</option>
+                        <option value="400">400</option>
+                        <option value="500">500</option>
+                        <option value="600">600</option>
+                        <option value="700">700</option>
+                        <option value="800">800</option>
+                        <option value="900">900</option>
+
+
+                    </select>
+
+
+                    <label>table head bold option</label>
+                    <select class="custom-select" id="change-bold-th">
+                        <option value="100">100</option>
+                        <option value="200">200</option>
+                        <option value="300">300</option>
+                        <option value="400">400</option>
+                        <option value="500">500</option>
+                        <option value="600">600</option>
+                        <option value="700">700</option>
+                        <option value="800">800</option>
+                        <option value="900">900</option>
+
+
+                    </select>
+
+                    <label>table body bold option</label>
+                    <select class="custom-select" id="change-bold-tb">
+                        <option value="100">100</option>
+                        <option value="200">200</option>
+                        <option value="300">300</option>
+                        <option value="400">400</option>
+                        <option value="500">500</option>
+                        <option value="600">600</option>
+                        <option value="700">700</option>
+                        <option value="800">800</option>
+                        <option value="900">900</option>
+
+
+                    </select>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="single-option">
+
+                    <label>heading & footer Font family</label>
+                    <select class="custom-select" id="change-family">
+                        <option value="sans-serif">sans-serif</option>
+
+                        <option value="serif">serif</option>
+                        <option value="cursive">cursive</option>
+                        <option value="fantasy">fantasy</option>
+                        <option value="initial">initial</option>
+                        <option value="monospace">monospace</option>
+                        <option value="-webkit-pictograph">-webkit-pictograph</option>
+
+                    </select>
+                    <label>table head Font family</label>
+                    <select class="custom-select" id="change-family-th">
+                        <option value="sans-serif">sans-serif</option>
+
+                        <option value="serif">serif</option>
+                        <option value="cursive">cursive</option>
+                        <option value="fantasy">fantasy</option>
+                        <option value="initial">initial</option>
+                        <option value="monospace">monospace</option>
+                        <option value="-webkit-pictograph">-webkit-pictograph</option>
+
+                    </select>
+                    <label>table body Font family</label>
+                    <select class="custom-select" id="change-family-td">
+                        <option value="sans-serif">sans-serif</option>
+
+                        <option value="serif">serif</option>
+                        <option value="cursive">cursive</option>
+                        <option value="fantasy">fantasy</option>
+                        <option value="initial">initial</option>
+                        <option value="monospace">monospace</option>
+                        <option value="-webkit-pictograph">-webkit-pictograph</option>
+
+                    </select>
+                </div>
+            </div>
+
+
+
+
+
+
         </div>
     </div>
-    <i class="fa fa-gear fa-3x gear-ch" style="padding: 6px"></i>
+    <i class="fa fa-pencil-square-o fa-3x gear-ch"></i>
 </section>
+
+
 <section class="pri">
-
-
-
-
-
-    <form id="h" style="margin-bottom: 30px;" class="container" action="/searchMonth" method="post">
-        {{csrf_field()}}
-        <div class="row">
-            <div class="col-sm-3">
-                <h5 id="sear"><i class="fa fa-caret-down "></i> More Search </h5>
-            </div>
-            <div class="col-sm-2">
-
-                <button style="float: left;position: relative;" type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
-            </div>
-
-
-            <div class="col-sm-3">
-                <select name='select_name' class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelectPref">
-                    @foreach($users as $user)
-                        <option value="{{$user->id}}">{{$user->name}}</option>
-                    @endforeach
-
-                </select>
-                <label class="mr-sm-2" for="inlineFormCustomSelectPref">Member</label>
-            </div>
-
+    <div class="icon-search">
+        <div class="search-f-div active-search">
+            <i  class="fa fa-search"></i> Basic
 
         </div>
+        <div class="search-s-div">
+            <i  class="fa fa-search"></i> More Search
 
+        </div>
+    </div>
 
+    <form class="f-form-search"  action="/searchMonth" method="post">
+        {{csrf_field()}}
         <input type="hidden" value="{{date('Y-m'),time()}}" name="date" class="form-control">
 
-    </form>
-    <form id="form-sear" style="display: none;margin-bottom: 30px;" class="container" action="/AdsearchMonth" method="post">
-        {{csrf_field()}}
-        <div class="row">
-            <div class="col-sm-2">
-                <h5 id="sear-up"><i class="fa fa-caret-up "></i> Less Search </h5>
-            </div>
-            <div class="col-sm-2">
-                <button style="float: left;position: relative;" type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
-            </div>
-            <div class="col-sm-2">
-                <input type="month"   name="date" class="form-control">
-            </div>
 
-            <div class="col-sm-3">
-                <select name='select_name' class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelectPref">
-                    @foreach($users as $user)
-                        <option value="{{$user->id}}">{{$user->name}}</option>
-                    @endforeach
 
-                </select>
-                <label class="mr-sm-2" for="inlineFormCustomSelectPref">Member</label>
-            </div>
+        <select name='select_name'>
+            @foreach($users as $user)
+                <option value="{{$user->id}}">{{$user->name}}</option>
+            @endforeach
 
+        </select>
+
+        <div>
+            <button  type="submit" class=""><i class="fa fa-search"></i></button>
 
         </div>
 
+
+    </form>
+    <form class="s-form-search"  action="/AdsearchMonth"  method="post">
+        {{csrf_field()}}
+
+
+
+
+        <select name='select_name'>
+            @foreach($users as $user)
+                <option value="{{$user->id}}">{{$user->name}}</option>
+            @endforeach
+
+        </select>
+        <input type="month"   name="date" class="form-control">
+        <div>
+            <button type="submit"><i class="fa fa-search"></i></button>
+        </div>
+
+
+
+
     </form>
 </section>
+
 
 
 
@@ -178,22 +254,22 @@
 
         <tbody>
         <tr class="remove-b">
-            <td style="width: 37%;">
+            <th style="width: 37%;">
                 <h3><img style="width: 111px;" src="../image/LogoImageMasterPage.jpg">  الشركة المصرية الدولية للصناعات الدوائية - ايبيكو </h3>
                 <h3 class="center">القطاع التجاري<br> المكتب العلمي</h3>
-            </td>
-            <td>
+            </th>
+            <th>
                 <div class="form-inline left">
                     <div class="form-group">
                         <label class="bold p" for="inputPassword6">تقرير  شهر  </label>
                         <input type="text" id="" class="form-control mx-sm-3 " value="{{date('F',strtotime($infos[0]->created_at))}}">
                     </div>
                 </div>
-            </td>
+            </th>
         </tr>
 
             <tr>
-                <td style="padding-left: 100px;">
+                <th style="padding-left: 100px;">
                     <div class="form-inline">
                         <div class="form-group">
                             <label style="width: 86px;"   class="bold p" for="inputPassword6">  فرع:  </label>
@@ -201,8 +277,8 @@
                         </div>
                     </div>
 
-                </td>
-                <td  rowspan="3">
+                </th>
+                <th  rowspan="3">
                     <table class="table table-bordered ac">
                         <thead>
                         <tr>
@@ -221,7 +297,7 @@
                         </thead>
                         <tbody>
                         <tr>
-                            <td style="padding-top: 46px;font-weight: bold;"><span >المستهدف</span></td>
+                            <th style="padding-top: 46px;font-weight: bold;"><span >المستهدف</span></th>
                             <td><p style="margin-top: 33px;" >{{$statments[0]->work_days_pa}}</p></td>
                             <td><p style="margin-top: 33px;" >{{$statments[0]->doctors_clinic_pa}}</p></td>
                             <td><p style="margin-top: 33px;" >{{$statments[0]->pharmacy_pa}}</p></td>
@@ -295,7 +371,7 @@
                         </tr>
 
                         <tr>
-                            <td style="padding-top: 46px;font-weight: bold;"><span >الفعلي</span></td>
+                            <th style="padding-top: 46px;font-weight: bold;"><span >الفعلي</span></th>
                             <td><p style="margin-top: 33px;" >{{$statments[0]->work_days_ac}}</p></td>
                             <td><p style="margin-top: 33px;" >{{$statments[0]->doctors_clinic_ac}}</p></td>
                             <td><p style="margin-top: 33px;" >{{$statments[0]->pharmacy_ac}}</p></td>
@@ -371,7 +447,7 @@
 
                         </tbody>
                     </table>
-                </td>
+                </th>
 
             </tr>
             <tr>
@@ -778,19 +854,8 @@
 
 
 
-    $('#sear').click(function () {
-        $('#h').slideToggle();
-        $('#form-sear').slideToggle();
 
-    });
-    $('#sear-up').click(function () {
-        $('#form-sear').slideToggle();
-        $('#h').slideToggle();
 
-    });
-    $(document).ready(function () {
-        $('.table-nh,.table-nb').fadeOut();
-    });
     $('.tab').click(function () {
         $('.table-nh,.table-nb').fadeToggle();
     });
@@ -798,19 +863,65 @@
     $("#printPage").click(function () {
         print()
     });
-    
+
+    $('.search-f-div').click(function () {
+        $('.search-s-div').removeClass('active-search');
+        $('.search-f-div').addClass('active-search');
+        $('.f-form-search').show();
+        $('.s-form-search').hide();
+
+
+    });
+
+    $('.search-s-div').click(function () {
+        $('.search-f-div').removeClass("active-search");
+        $('.search-s-div').addClass("active-search");
+        $('.s-form-search').show();
+        $('.f-form-search').hide();
+
+    });
+
+
     /*option box*/
 
     $('#font').change(function () {
-        $('td,input').css('font-size',$('#font').val()+'px');
+        $('td,input,td p').css('font-size',$('#font').val()+'px');
     });
+    $('#font-head').change(function () {
+        $('h3,h3 span').css('font-size',$('#font-head').val()+'px');
+    });
+    $('#font-table-head').change(function () {
+        $('th,h4,th h4 ,td h6,th label,td label ').css('font-size',$('#font-table-head').val()+'px');
+    });
+
+
     $('#change-family').change(function () {
-        $('td,input').css('font-family',$('#change-family').val());
+        $('h3,h3 span').css('font-family',$('#change-family').val());
+
+    });
+    $('#change-family-th').change(function () {
+        $('th,h4,th h4,td h6,th label,td label  ').css('font-family',$('#change-family-th').val());
+
+    });
+    $('#change-family-td').change(function () {
+        $('td,input,td ').css('font-family',$('#change-family-td').val());
 
     });
 
-$('#change-bold').change(function () {
-        $('td,input').css('font-weight',$('#change-bold').val());
+    $('#change-bold').change(function () {
+        $('h3,h3 span').css('font-weight',$('#change-bold').val());
+
+    });
+
+
+    $('#change-bold-th').change(function () {
+        $('th,h4,th h4,td h6,th label,td label').css('font-weight',$('#change-bold-th').val());
+
+    });
+
+
+    $('#change-bold-td').change(function () {
+        $('td,input,td ').css('font-weight',$('#change-bold-td').val());
 
     });
 

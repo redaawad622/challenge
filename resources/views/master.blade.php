@@ -275,20 +275,7 @@
          </div>
          
       </div>
-      <!--section loading
-      <section class="overlay">
-         <div class="sk-cube-grid">
-            <div class="sk-cube sk-cube1"></div>
-            <div class="sk-cube sk-cube2"></div>
-            <div class="sk-cube sk-cube3"></div>
-            <div class="sk-cube sk-cube4"></div>
-            <div class="sk-cube sk-cube5"></div>
-            <div class="sk-cube sk-cube6"></div>
-            <div class="sk-cube sk-cube7"></div>
-            <div class="sk-cube sk-cube8"></div>
-            <div class="sk-cube sk-cube9"></div>
-         </div>
-      </section>-->
+
       <!-- Javascript files-->
       
       <script language="JavaScript" type="text/javascript" src="{{asset('js/jquery.min.js')}}"></script>
@@ -298,13 +285,12 @@
       <script src="{{asset('js/tether.min.js')}}"></script>
       <script src="{{asset('js/bootstrap.js')}}"></script>
       <script src="{{asset('js/wow.min.js')}}"></script>
-      <script>
-         new WOW().init();
-      </script>
+
       <script src="{{asset('js/front.js')}}"></script>
 
       
       <script>
+          new WOW().init();
 
          $(function() {
              $("#d").click(function() {
