@@ -34,43 +34,55 @@ class AdminController extends Controller
 
     //
    public function StoreEvent(){
-       request()->validate([
+     $valid=  request()->validate([
            'title' => 'required|string',
            'edate'  => 'date|required',
            'time'  => 'required',
            'desc'  => 'required|string',
            'url'   => 'required|image'
        ]);
-       $img_name=time().'.'.request('url')->getClientOriginalExtension();
+       if($valid->fails()){
+           return redirect()->back()->withInput();
+       }
+       else {
 
 
-       $event=new Event();
-       $event->title = \request('title');
-       $event->date  = \request('edate');
-       $event->time  = \request('time');
-       $event->description  = \request('desc');
-       $event->url  = $img_name;
-       $event->save();
+           $img_name = time() . '.' . request('url')->getClientOriginalExtension();
 
-       \request('url')->move('image',$img_name);
-       return back();
+
+           $event = new Event();
+           $event->title = \request('title');
+           $event->date = \request('edate');
+           $event->time = \request('time');
+           $event->description = \request('desc');
+           $event->url = $img_name;
+           $event->save();
+
+           \request('url')->move('image', $img_name);
+           return back();
+       }
    }
     public function StoreMedecin()
     {
-        request()->validate([
+        $valid=request()->validate([
             'MTitle' => 'required|string',
             'MDesc' => 'required|string',
             'MUrl' => 'required|image'
         ]);
-        $img_name=time().'.'.request('MUrl')->getClientOriginalExtension();
-        $medecine=new Medication();
-        $medecine->title = \request('MTitle');
-        $medecine->description = \request('MDesc');
-        $medecine->url  = $img_name;
-        $medecine->save();
+        if($valid->fails()){
+            return redirect()->back()->withInput();
+        }
+        else {
+            $img_name = time() . '.' . request('MUrl')->getClientOriginalExtension();
+            $medecine = new Medication();
+            $medecine->title = \request('MTitle');
+            $medecine->description = \request('MDesc');
+            $medecine->url = $img_name;
+            $medecine->save();
 
-        \request('MUrl')->move('image',$img_name);
-        return back();
+            \request('MUrl')->move('image', $img_name);
+            return back();
+        }
     }
 
     public function StoreImg(){
@@ -154,39 +166,41 @@ class AdminController extends Controller
         {
             \request('url')->move('image',$img_name);
         }
-        return back();
+        return back()->withInput();
     }
 
 
     public function Storeperformance(){
 
-        request()->validate([
+       $valid = request()->validate([
             'pdate' => 'required',
             'url' => 'required',
             'select_name' => 'required',
         ]);
 
-        if (request('url')) {
-            $file_name = time() . '.' . request('url')->getClientOriginalExtension();
-
+        if($valid->fails()){
+            return redirect()->back()->withInput();
         }
+        else {
+            if (request('url')) {
+                $file_name = time() . '.' . request('url')->getClientOriginalExtension();
+
+            }
 
 
+            $perf = new Preformance();
+            $perf->date = request('pdate');
+            if (request('url')) {
+                $perf->url = $file_name;
+            }
+            $perf->user_id = \request('select_name');
+            $perf->save();
 
-        $perf=new Preformance();
-        $perf->date = request('pdate');
-        if(request('url'))
-        {
-            $perf->url=$file_name;
+            if (request('url')) {
+                \request('url')->move('image', $file_name);
+            }
+            return back();
         }
-        $perf->user_id=\request('select_name');
-        $perf->save();
-
-        if(request('url'))
-        {
-            \request('url')->move('image',$file_name);
-        }
-        return back();
     }
 
 

@@ -7,7 +7,7 @@
                     {{csrf_field()}}
                     <div class="form-group">
                         <label for="formGroupExampleInput">Title</label>
-                        <input class="form-control <?php if ($errors->has('title')){echo 'is-invalid';} ?>" type="text" name="title" placeholder="title input">
+                        <input class="form-control <?php if ($errors->has('title')){echo 'is-invalid';} ?>" type="text" name="title" value="{{old('title')}}" placeholder="title input">
                         <div class="invalid-feedback">
                             @foreach ($errors->get('title') as $message)
                                 {{$message}}
@@ -17,7 +17,7 @@
                     </div>
                     <div class="form-group">
                         <label for="formGroupExampleInput">Date</label>
-                        <input class="form-control <?php if ($errors->has('edate')){echo 'is-invalid';} ?>" name="edate" type="date">
+                        <input class="form-control <?php if ($errors->has('edate')){echo 'is-invalid';} ?>" name="edate" value="{{old('edate')}}" type="date">
                         <div class="invalid-feedback">
                             @foreach ($errors->get('edate') as $message)
                                 {{$message}}
@@ -27,7 +27,7 @@
                     </div>
                     <div class="form-group">
                         <label for="formGroupExampleInput">Time</label>
-                        <input class="form-control <?php if ($errors->has('time')){echo 'is-invalid';} ?>" type="time" name="time" placeholder="title input">
+                        <input class="form-control <?php if ($errors->has('time')){echo 'is-invalid';} ?>" type="time" name="time"value="{{old('time')}}" placeholder="title input">
                         <div class="invalid-feedback">
                             @foreach ($errors->get('time') as $message)
                                 {{$message}}
@@ -37,7 +37,7 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlTextarea1">description</label>
-                        <textarea class="form-control <?php if ($errors->has('desc')){echo 'is-invalid';} ?>" name="desc" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        <textarea class="form-control <?php if ($errors->has('desc')){echo 'is-invalid';} ?>" name="desc" value="{{old('desc')}}" id="exampleFormControlTextarea1" rows="3"></textarea>
                         <div class="invalid-feedback">
                             @foreach ($errors->get('desc') as $message)
                                 {{$message}}

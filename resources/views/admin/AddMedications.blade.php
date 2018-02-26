@@ -10,7 +10,7 @@
                 {{csrf_field()}}
                 <div class="form-group">
                     <label for="formGroupExampleInput">Title</label>
-                    <input class="form-control <?php if ($errors->has('MTitle')){echo 'is-invalid';} ?>" type="text" name="MTitle" placeholder="title input">
+                    <input class="form-control <?php if ($errors->has('MTitle')){echo 'is-invalid';} ?>" type="text" name="MTitle" value="{{old('MTitle')}}" placeholder="title input">
                     <div class="invalid-feedback">
                         @foreach ($errors->get('MTitle') as $message)
                             {{$message}}
@@ -19,7 +19,7 @@
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlTextarea1">description</label>
-                    <textarea class="form-control <?php if ($errors->has('MDesc')){echo 'is-invalid';} ?>" name="MDesc" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    <textarea class="form-control <?php if ($errors->has('MDesc')){echo 'is-invalid';} ?>" name="MDesc" value="{{old('MDesc')}}" id="exampleFormControlTextarea1" rows="3"></textarea>
                     <div class="invalid-feedback">
                         @foreach ($errors->get('MDesc') as $message)
                             {{$message}}

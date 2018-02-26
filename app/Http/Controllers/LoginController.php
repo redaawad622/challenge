@@ -50,7 +50,7 @@ class LoginController extends Controller
    public function store_register()
    {
 
-   	request()->validate([
+   	$valid=request()->validate([
             'name' => 'required',
             'email' => 'required|email|unique:users',
             'file_num'=>'required|unique:users|numeric',
@@ -58,6 +58,11 @@ class LoginController extends Controller
             'password_confirmation'=>'required',
             'url'=>'nullable',
         ]);
+   	if($valid->fails()){
+   	    return redirect()->back()->withInput();
+    }
+    else{
+
 
    	$user=new User();
 
@@ -92,62 +97,62 @@ class LoginController extends Controller
         auth()->login($user);
 
 
-        return redirect('/');    
-   	
+        return redirect('/');
+    }
    }
    public  function StorePost()
    {
-       \request()->validate([
+       $valid=\request()->validate([
            'instruction' => 'string|nullable',
 
            'url' => 'image',
 
        ]);
 
-
-       if (request('url')) {
-           $img_name = time() . '.' . request('url')->getClientOriginalExtension();
-
+       if($valid->fails()){
+           return redirect()->back()->withInput();
        }
+       else {
+
+           if (request('url')) {
+               $img_name = time() . '.' . request('url')->getClientOriginalExtension();
+
+           }
 
 
-       if (request('file')) {
-           $file_name = time() . 's' . '.' . request('file')->getClientOriginalExtension();
-       }
+           if (request('file')) {
+               $file_name = time() . 's' . '.' . request('file')->getClientOriginalExtension();
+           }
 
-       $post = new Post();
-       if (request('instruction'))
-       {
-           $post->instruction = \request('instruction');
-        }
+           $post = new Post();
+           if (request('instruction')) {
+               $post->instruction = \request('instruction');
+           }
 
-       if(request('url'))
-       {
-           $post->url=$img_name;
-       }
-       if(request('file'))
-       {
-           $post->file=$file_name;
-       }
-       if (request('file_name')) {
-           $fi = explode("\\", request('file_name'));
-           $c = count($fi);
-           $post->real_name = $fi[$c - 1];
-       }
-       if (request('url')||\request('instruction')||\request('url')||\request('file')) {
-           $post->save();
-       }
+           if (request('url')) {
+               $post->url = $img_name;
+           }
+           if (request('file')) {
+               $post->file = $file_name;
+           }
+           if (request('file_name')) {
+               $fi = explode("\\", request('file_name'));
+               $c = count($fi);
+               $post->real_name = $fi[$c - 1];
+           }
+           if (request('url') || \request('instruction') || \request('url') || \request('file')) {
+               $post->save();
+           }
 
-       if(request('url'))
-       {
-           \request('url')->move('image',$img_name);
-       }
-       if(request('file'))
-       {
-           \request('file')->move('image',$file_name);
-       }
+           if (request('url')) {
+               \request('url')->move('image', $img_name);
+           }
+           if (request('file')) {
+               \request('file')->move('image', $file_name);
+           }
 
-       return redirect()->back();
+           return redirect()->back();
+       }
 
    }
 

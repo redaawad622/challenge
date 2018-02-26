@@ -212,6 +212,21 @@
     </form>
     <form class="s-form-search"    action="/AdsearchWeek" method="post">
         {{csrf_field()}}
+<<<<<<< HEAD
+=======
+        <div class="row">
+            <div class="col-sm-2">
+                <h5 id="sear-up"><i class="fa fa-caret-up "></i> Less Search </h5>
+            </div>
+            <div class="col-sm-2">
+                <button style="float: left;position: relative;" type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
+            </div>
+            <div class="col-sm-2">
+                <input type="month"   name="date" value="{{old('date')}}" class="form-control">
+            </div>
+            <div class="col-sm-3">
+                <select name='week_number' class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelectPref">
+>>>>>>> 37a290a816d60d62738e20c2c83295d2c4585c93
 
         <select name='week_number'>
 

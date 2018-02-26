@@ -82,9 +82,13 @@
     
     
 <!--first nav-->
-   
-    
-    
+
+
+ <ul style="text-align: center">
+     @foreach($errors->all() as $e)
+         <li><h2 style="color: #710909">{{$e}}</h2></li>
+     @endforeach
+ </ul>
     
 <!-- start nav section -->
     <nav class="navbar navbar-inverse">
@@ -479,7 +483,7 @@
                     <div class="row">
                         
                       <div class="co1 col-lg-6 col-md-6 col-sm-6"> 
-			 		<input type="text" class="<?php if ($errors->has('name')) {echo 'is-invalid';} ?>"  name="name"  placeholder='Your Name that will appear in reports' required>
+			 		<input type="text" class="<?php if ($errors->has('name')) {echo 'is-invalid';} ?>"  name="name" value="{{old('name')}}" placeholder='Your Name that will appear in reports' required>
                           <div class="invalid-feedback">
                               @foreach ($errors->get('name') as $message)
                                   {{$message}}
@@ -500,13 +504,13 @@
                     </div> 
                         
                      <div class="co1 col-lg-6 col-md-6 col-sm-6">   
-			 		<input type="text" name="email"  class="<?php if ($errors->has('email')){echo'is-invalid';} ?>"  placeholder='Your E-mail' required>
+			 		<input type="text" name="email" value="{{old('email')}}" class="<?php if ($errors->has('email')){echo'is-invalid';} ?>"  placeholder='Your E-mail' required>
                          <div class="invalid-feedback">
                              @foreach ($errors->get('email') as $message)
                                  {{$message}}
                              @endforeach
                          </div>
-			 		<input type="text" class="no-mar <?php if ($errors->has('file_num')) {echo'is-invalid';} ?>" name="file_num"  placeholder='file num' required>
+			 		<input type="text" class="no-mar <?php if ($errors->has('file_num')) {echo'is-invalid';} ?>" name="file_num" value="{{old('file_num')}}" placeholder='file num' required>
                          <div class="invalid-feedback">
                              @foreach ($errors->get('file_num') as $message)
                                  {{$message}}
@@ -823,7 +827,7 @@ class="close" title="Close Modal">&times;</span>
     </div>
 
       <label style="font-size:16px;margin-top:5px;"><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" class="<?php  if($errors->any()) {echo 'is-invalid';}?>" name="email" required>
+      <input type="text" name="email" value="{{old('email')}}" placeholder="Enter Username" class="<?php  if($errors->any()) {echo 'is-invalid';}?>"  required>
 
       <label style="font-size:16px;margin-top:5px;"><b>Password</b></label>
       <input type="password" placeholder="Enter Password" name="password" class="<?php if($errors->any()) {echo 'is-invalid';}?>" required>

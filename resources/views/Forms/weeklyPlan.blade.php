@@ -103,7 +103,7 @@
                     <div class="form-inline">
                         <div class="form-group">
                             <label class="bold" for="inputPassword6">المشرف د/ </label>
-                            <input type="text" name="leader" id="inputPassword6" class="form-control mx-sm-3 " required>
+                            <input type="text" name="leader" value="{{old('leader')}}" id="inputPassword6" class="form-control mx-sm-3 " required>
 
                         </div>
                     </div>
@@ -150,13 +150,13 @@
                                 <h4 class="center"> AM </h4>
 
                                 <div class="form-group">
-                                    <input type="text" name="name_am{{$i}}" class="form-control " >
+                                    <input type="text" name="name_am{{$i}}" value="{{old('name_am'.$i)}}" class="form-control " >
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <h4 class="center"> PM </h4>
                                 <div class="form-group">
-                                    <input type="text" name="name_pm{{$i}}" class="form-control " >
+                                    <input type="text" name="name_pm{{$i}}" value="{{old('name_pm'.$i)}}" class="form-control " >
                                 </div>
 
                             </div>
@@ -169,13 +169,13 @@
                                 <h4 class="center"> AM </h4>
 
                                 <div class="form-group">
-                                    <input type="text" name="starting_point_am{{$i}}" class="form-control " >
+                                    <input type="text" name="starting_point_am{{$i}}" value="{{old('starting_point_am'.$i)}}" class="form-control " >
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <h4 class="center"> PM </h4>
                                 <div class="form-group">
-                                    <input type="text" name="starting_point_pm{{$i}}" class="form-control " >
+                                    <input type="text" name="starting_point_pm{{$i}}" value="{{old('starting_point_pm'.$i)}}" class="form-control " >
                                 </div>
 
                             </div>
@@ -188,13 +188,13 @@
                                 <h4 class="center"> AM </h4>
 
                                 <div class="form-group">
-                                    <input type="text" name="time_am{{$i}}" class="form-control " >
+                                    <input type="text" name="time_am{{$i}}" value="{{old('time_am'.$i)}}" class="form-control " >
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <h4 class="center"> PM </h4>
                                 <div class="form-group">
-                                    <input type="text" name="time_pm{{$i}}" class="form-control " >
+                                    <input type="text" name="time_pm{{$i}}" value="{{old('time_pm'.$i)}}" class="form-control " >
                                 </div>
 
                             </div>

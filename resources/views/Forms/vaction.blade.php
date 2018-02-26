@@ -45,7 +45,7 @@
                      <div class="col-md-2">
                         <h5 class="center padding-t-lg"> الوظيفة </h5>
                         <div class="form-group">
-                           <input type="text" name="job" class="form-control ">
+                           <input type="text" name="job" value="{{old('job')}}" class="form-control ">
                         </div>
 
                      </div>
@@ -74,7 +74,7 @@
                      <div class="col-md-1">
                         <h4 class="center padding-t-lg"> السنوية </h4>
                         <div class="form-group">
-                           <input type="text" name="annual" id="annual" class="form-control ">
+                           <input type="text" name="annual" value="{{old('annual')}}" id="annual" class="form-control ">
                         </div>
                      </div>
 
@@ -82,14 +82,14 @@
                      <div class="col-md-1">
                         <h4 class="center padding-t-lg"> المتصلة </h4>
                         <div class="form-group">
-                           <input type="text" name="connected" id="connected" class="form-control ">
+                           <input type="text" name="connected" value="{{old('connected')}}" id="connected" class="form-control ">
                         </div>
                      </div>
 
                      <div class="col-md-1">
                         <h4 class="center padding-t-lg"> العارضة </h4>
                         <div class="form-group">
-                           <input type="text" name="objection" id="objection" class="form-control ">
+                           <input type="text" name="objection" value="{{old('objection')}}" id="objection" class="form-control ">
                         </div>
                      </div>
 

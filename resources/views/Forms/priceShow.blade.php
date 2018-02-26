@@ -64,7 +64,7 @@
                 <div class="form-inline">
                     <div class="form-group">
                         <label class="bold p">التاريخ</label>
-                        <input type="date" name="date" class="form-control mx-sm-3   <?php if ($errors->has('date')) {echo 'is-invalid';} ?>">
+                        <input type="date" name="date" value="{{old('date')}}" class="form-control mx-sm-3   <?php if ($errors->has('date')) {echo 'is-invalid';} ?>">
                         <div style="padding-right: 40px;" class="invalid-feedback">
                             @foreach ($errors->get('date') as $message)
                                 {{$message}}
@@ -85,7 +85,7 @@
                         <h4 class="center padding-lg">اسم الصنف</h4>
 
                         <div class="form-group">
-                            <input type="text" name="categoryName" class="form-control  <?php if ($errors->has('categoryName')) {echo 'is-invalid';} ?>" required>
+                            <input type="text" name="categoryName" value="{{old('categoryName')}}" class="form-control  <?php if ($errors->has('categoryName')) {echo 'is-invalid';} ?>" required>
                             <div class="invalid-feedback">
                                 @foreach ($errors->get('categoryName') as $message)
                                     {{$message}}
@@ -98,7 +98,7 @@
                     <div class="col-md-2">
                         <h4 class="center padding-lg"> مستحضر الشركة</h4>
                         <div class="form-group">
-                            <input type="text" name="companyMedecin" class="form-control <?php if ($errors->has('companyMedecin')) {echo 'is-invalid';} ?>" required>
+                            <input type="text" name="companyMedecin"value="{{old('companyMedecin')}}" class="form-control <?php if ($errors->has('companyMedecin')) {echo 'is-invalid';} ?>" required>
                             <div class="invalid-feedback">
                                 @foreach ($errors->get('companyMedecin') as $message)
                                     {{$message}}
@@ -111,7 +111,7 @@
                     <div class="col-md-1">
                         <h4 class="center padding-lg">العبوة</h4>
                         <div class="form-group">
-                            <input type="text" name="refill" class="form-control  <?php if ($errors->has('refill')) {echo 'is-invalid';} ?>" required>
+                            <input type="text" name="refill" value="{{old('refill')}}" class="form-control  <?php if ($errors->has('refill')) {echo 'is-invalid';} ?>" required>
                             <div class="invalid-feedback">
                                 @foreach ($errors->get('refill') as $message)
                                     {{$message}}
@@ -124,7 +124,7 @@
                     <div class="col-md-1">
                         <h4 class="center padding-lg one">سعر الوحدة</h4>
                         <div class="form-group">
-                            <input type="text" name="unitPrice" class="form-control  <?php if ($errors->has('unitPrice')) {echo 'is-invalid';} ?>">
+                            <input type="text" name="unitPrice" value="{{old('unitPrice')}}" class="form-control  <?php if ($errors->has('unitPrice')) {echo 'is-invalid';} ?>">
                             <div class="invalid-feedback">
                                 @foreach ($errors->get('unitPrice') as $message)
                                     {{$message}}
@@ -148,7 +148,7 @@
                     <div class="col-md-1">
                         <h4 class="center padding-lg total">اجمالي السعر</h4>
                         <div class="form-group">
-                            <input type="text" name="total" class="form-control  <?php if ($errors->has('total')) {echo 'is-invalid';} ?>" required>
+                            <input type="text" name="total" value="{{old('total')}}" class="form-control  <?php if ($errors->has('total')) {echo 'is-invalid';} ?>" required>
                             <div class="invalid-feedback">
                                 @foreach ($errors->get('total') as $message)
                                     {{$message}}
@@ -160,7 +160,7 @@
                     <div class="col-md-2">
                         <h4 class="center padding-lg">ملاحظات</h4>
                         <div class="form-group">
-                            <input type="text" name="note" class="form-control  <?php if ($errors->has('note')) {echo 'is-invalid';} ?>">
+                            <input type="text" name="" value="{{old('note')}}" class="form-control  <?php if ($errors->has('note')) {echo 'is-invalid';} ?>">
                             <div class="invalid-feedback">
                                 @foreach ($errors->get('note') as $message)
                                     {{$message}}

@@ -82,7 +82,7 @@
                   <div class="form-group">
                      <label class="bold padding-r" for="inputPassword6"> Area </label>
 
-                     <input type="text" name="area" id="area" class="form-control mx-sm-3" required>
+                     <input type="text" name="area" value="{{old('area')}}" id="area" class="form-control mx-sm-3" required>
                   </div>
                </div>
 
@@ -90,7 +90,7 @@
                   <div class="form-group">
                      <label class="bold padding-r " for="inputPassword6"> Line </label>
 
-                     <input type="text" name="line" id="line" class="form-control mx-sm-3 line" required>
+                     <input type="text" name="line" value="{{old('line')}}"id="line" class="form-control mx-sm-3 line" required>
                   </div>
                </div>
             </td>
@@ -148,21 +148,21 @@
          <tr>
 
             <td> <input type="text" name="code_no" id="code_no" class="form-control"></td>
-            <td colspan="3"> <input type="text" id="hosp_name" name="hosp_name" class="form-control" required></td>
-            <td colspan="3"> <input type="text" id="doctor_name" name="doctor_name" class="form-control" required></td>
-            <td colspan="3"><input type="text" name="specialty" id="specialty" class="form-control spe" required></td>
+            <td colspan="3"> <input type="text" id="hosp_name" name="hosp_name"value="{{old('hosp_name')}}" class="form-control" required></td>
+            <td colspan="3"> <input type="text" id="doctor_name" name="doctor_name"value="{{old('doctor_name')}}" class="form-control" required></td>
+            <td colspan="3"><input type="text" name="specialty" value="{{old('specialty')}}"id="specialty" class="form-control spe" required></td>
             <td colspan="3">
 
                <div class="row">
                   <div class="col-md-4">
-                     <input type="text" name="pro_f1" id="pro_f1" class="form-control">
+                     <input type="text" name="pro_f1"value="{{old('pro_f1')}}" id="pro_f1" class="form-control">
                   </div>
 
                   <div class="col-md-4">
-                     <input type="text" name="pro_f2" id="pro_f2" class="form-control">
+                     <input type="text" name="pro_f2"value="{{old('pro_f2')}}" id="pro_f2" class="form-control">
                   </div>
                   <div class="col-md-4">
-                     <input type="text"  name="pro_r" id="pro_r" class="form-control">
+                     <input type="text"  name="pro_r" value="{{old('pro_r')}}"id="pro_r" class="form-control">
                   </div>
                </div>
             </td>
@@ -224,9 +224,9 @@
 
          <tr>
 
-            <td colspan="2"> <input type="text" name="code_m" id="code_m"  class="form-control"></td>
-            <td colspan="4"> <input type="text"  name="doctors_name" id="doctors_name" class="form-control" required></td>
-            <td colspan="2"><input type="text"  name="specialty_m" id="specialty_m" class="form-control" required></td>
+            <td colspan="2"> <input type="text" name="code_m" value="{{old('code_m')}}"id="code_m"  class="form-control"></td>
+            <td colspan="4"> <input type="text"  name="doctors_name" value="{{old('doctors_name')}}"id="doctors_name" class="form-control" required></td>
+            <td colspan="2"><input type="text"  name="specialty_m" value="{{old('specialty_m')}}"id="specialty_m" class="form-control" required></td>
             <td colspan="1">
                <select  name="class_m" class="custom-select"  id="class_m">
                   <option value="Aa">Aa</option>
@@ -240,22 +240,22 @@
                   <option value="Cc">Cc</option>
                </select>
             </td>
-            <td colspan="3"><input type="text" name="clinic_address" id="clinic_address" class="form-control nit" required></td>
+            <td colspan="3"><input type="text" name="clinic_address"value="{{old('clinic_address')}}" id="clinic_address" class="form-control nit" required></td>
             <td colspan="4">
 
                <div class="row">
                   <div class="col-md-3">
-                     <input type="text" name="prd_f1" id="prd_f1" class="form-control">
+                     <input type="text" name="prd_f1"value="{{old('prd_f1')}}" id="prd_f1" class="form-control">
                   </div>
 
                   <div class="col-md-3">
-                     <input type="text" name="prd_f2" id="prd_f2" class="form-control">
+                     <input type="text" name="prd_f2" value="{{old('prd_f2')}}"id="prd_f2" class="form-control">
                   </div>
                   <div class="col-md-3">
-                     <input type="text" name="prd_r"  id="prd_r" class="form-control">
+                     <input type="text" name="prd_r" value="{{old('prd_r')}}" id="prd_r" class="form-control">
                   </div>
                   <div class="col-md-3">
-                     <input type="text" name="prd_d" id="prd_d" class="form-control">
+                     <input type="text" name="prd_d" value="{{old('prd_d')}}"id="prd_d" class="form-control">
                   </div>
                </div>
             </td>
@@ -299,9 +299,9 @@
 
          <tr>
 
-            <td> <input type="text" name="code_p" id="code_p" class="form-control"></td>
-            <td colspan="4"> <input type="text"  name="pharmacy"  id="pharmacy" class="form-control" required></td>
-            <td><input type="text" name="address" id="address" class="form-control si" required></td>
+            <td> <input type="text" name="code_p" value="{{old('code_p')}}"id="code_p" class="form-control"></td>
+            <td colspan="4"> <input type="text" value="{{old('pharmacy')}}" name="pharmacy"  id="pharmacy" class="form-control" required></td>
+            <td><input type="text" name="address"value="{{old('address')}}" id="address" class="form-control si" required></td>
 
 
          </tr>
@@ -375,21 +375,21 @@
                   <tbody>
                   <tr>
                      <td>Hospital</td>
-                     <td><input type="text" name="hospital" id="hospital" class="form-control"></td>
+                     <td><input type="text" name="hospital"value="{{old('hospital')}}" id="hospital" class="form-control"></td>
                      <td>Hospital Doctors</td>
-                     <td><input type="text" name="hospital_doctor" id="hospital_doctor" class="form-control"></td>
+                     <td><input type="text" name="hospital_doctor"value="{{old('hospital_doctor')}}" id="hospital_doctor" class="form-control"></td>
                   </tr>
                   <tr>
                      <td>Medical Centers</td>
-                     <td><input type="text" name="medical_center" id="medical_center" class="form-control"></td>
+                     <td><input type="text" name="medical_center" value="{{old('medical_center')}}"id="medical_center" class="form-control"></td>
                      <td>Medical Centers Doctors</td>
-                     <td><input type="text" name="medical_center_doctor" id="medical_center_doctor" class="form-control"></td>
+                     <td><input type="text" name="medical_center_doctor" value="{{old('medical_center_doctor')}}"id="medical_center_doctor" class="form-control"></td>
                   </tr>
                   <tr>
                      <td>Clinic Doctors</td>
-                     <td><input type="text" name="clinic_doctor" id="clinic_doctor" class="form-control"></td>
+                     <td><input type="text" name="clinic_doctor"value="{{old('clinic_doctor')}}" id="clinic_doctor" class="form-control"></td>
                      <td>Pharmacies</td>
-                     <td><input type="text" name="pharmacies" id="pharmacies" class="form-control"></td>
+                     <td><input type="text" name="pharmacies"value="{{old('pharmacies')}}" id="pharmacies" class="form-control"></td>
                   </tr>
                   </tbody>
                </table>
@@ -416,15 +416,15 @@
 
                   </tr>
                   <tr>
-                     <td><input type="text" name="aa" id="aa" class="form-control"></td>
-                     <td><input type="text" name="ab" id="ab" class="form-control"></td>
-                     <td><input type="text" name="ac" id="ac" class="form-control"></td>
-                     <td><input type="text"  name="ba" id="ba" class="form-control"></td>
-                     <td><input type="text" name="bb" id="bb" class="form-control"></td>
-                     <td><input type="text" name="bc" id="bc" class="form-control"></td>
-                     <td><input type="text" name="ca" id="ca"  class="form-control"></td>
-                     <td><input type="text" name="cb" id="cb"  class="form-control"></td>
-                     <td><input type="text" name="cc" id="cc"  class="form-control"></td>
+                     <td><input type="text" name="aa" value="{{old('aa')}}"id="aa" class="form-control"></td>
+                     <td><input type="text" name="ab"value="{{old('ab')}}" id="ab" class="form-control"></td>
+                     <td><input type="text" name="ac" value="{{old('ac')}}"id="ac" class="form-control"></td>
+                     <td><input type="text"  name="ba"value="{{old('ba')}}" id="ba" class="form-control"></td>
+                     <td><input type="text" name="bb" value="{{old('bb')}}"id="bb" class="form-control"></td>
+                     <td><input type="text" name="bc" value="{{old('bc')}}"id="bc" class="form-control"></td>
+                     <td><input type="text" name="ca" value="{{old('ca')}}"id="ca"  class="form-control"></td>
+                     <td><input type="text" name="cb" value="{{old('cb')}}"id="cb"  class="form-control"></td>
+                     <td><input type="text" name="cc" value="{{old('cc')}}"id="cc"  class="form-control"></td>
 
                   </tr>
                   </tbody>
@@ -433,7 +433,7 @@
             </td>
          </tr>
       </table>
-            <input type="text" name="cm_all" class="form-control" id="cm_all" style="margin:10px;width:200px;" placeholder="كم">
+            <input type="text" name="cm_all"value="{{old('cm_all')}}" class="form-control" id="cm_all" style="margin:10px;width:200px;" placeholder="كم">
       
               <input type="submit"  class="btn btn-primary" value="Add" style="margin-left: 11px;">
       

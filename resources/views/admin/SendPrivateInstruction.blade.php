@@ -11,7 +11,7 @@
                 {{csrf_field()}}
                 <div class="form-group">
                     <label for="exampleFormControlTextarea1">Message content</label>
-                    <textarea class="form-control <?php if ($errors->has('body')){echo 'is-invalid';} ?>" name="body" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    <textarea class="form-control <?php if ($errors->has('body')){echo 'is-invalid';} ?>" name="body" value="{{old('body')}}" id="exampleFormControlTextarea1" rows="3"></textarea>
                     <div class="invalid-feedback">
                         @foreach ($errors->get('body') as $message)
                             {{$message}}

@@ -183,7 +183,7 @@
                <div class="form-group col-md-12">
                    <label class="col-form-label"> Job Title</label>
 
-                   <input type="text" name="job_title" id="job_title" class="form-control"  placeholder="your job title" required>
+                   <input type="text" name="job_title" value="{{old('job_title')}}" id="job_title" class="form-control"  placeholder="your job title" required>
                </div>
 
            </div>
@@ -193,35 +193,35 @@
                <div class="form-group col-md-6">
                    <label class="col-form-label">Email </label>
 
-                   <input type="email" name="pr_email" id="pr_email" class="form-control"  placeholder="like example@gmail.com">
+                   <input type="email" name="" value="{{old('pr_email')}}" id="pr_email" class="form-control"  placeholder="like example@gmail.com">
                </div>
                <div class="form-group col-md-6">
                    <label class="col-form-label"> Address </label>
 
-                   <input type="text" name="pr_adress" id="pr_adress" class="form-control"  placeholder="">
+                   <input type="text" name="pr_adress" value="{{old('pr_adress')}}" id="pr_adress" class="form-control"  placeholder="">
                </div>
 
                <div class="form-group col-md-6">
                    <label class="col-form-label">Contact number </label>
 
-                   <input type="text" name="pr_contact" id="pr_contact" class="form-control"  placeholder="">
+                   <input type="text" name="pr_contact" value="{{old('pr_contact')}}" id="pr_contact" class="form-control"  placeholder="">
                </div>
                <div class="form-group col-md-6">
                    <label class="col-form-label">Date of birth </label>
 
-                   <input type="date" name="pr_date_birth" id="pr_date_birth" class="form-control"  placeholder="other">
+                   <input type="date" name="pr_date_birth" value="{{old('pr_date_birth')}}" id="pr_date_birth" class="form-control"  placeholder="other">
                </div>
 
                <div class="form-group col-md-6">
                    <label class="col-form-label">Marital Status </label>
 
-                   <input type="text" name="pr_marital_status" id="pr_marital_status" class="form-control"  placeholder="">
+                   <input type="text" name="pr_marital_status" value="{{old('pr_marital_status')}}" id="pr_marital_status" class="form-control"  placeholder="">
                </div>
 
                <div class="form-group col-md-6">
                    <label class="col-form-label">File Number </label>
 
-                   <input type="text" name="pr_file_number" id="pr_file_number" class="form-control"  placeholder="">
+                   <input type="text" name="pr_file_number" value="{{old('pr_file_number')}}" id="pr_file_number" class="form-control"  placeholder="">
                </div>
 
 
@@ -258,7 +258,7 @@
                    <div class="form-group col-md-6">
                        <label class="col-form-label">name of skill </label>
 
-                       <input id="sk_name" type="text" name="sk_name" class="form-control"  placeholder="like course" required>
+                       <input id="sk_name" type="text" name="sk_name" value="{{old('sk_name')}}" class="form-control"  placeholder="like course" required>
                    </div>
 
                </div>
@@ -288,22 +288,22 @@
                    <div class="form-group col-md-6">
                        <label class="col-form-label">name of Experience </label>
 
-                       <input type="text" name="ex_name" id="ex_name" class="form-control" required>
+                       <input type="text" name="ex_name" value="{{old('ex_name')}}" id="ex_name" class="form-control" required>
                    </div>
                    <div class="form-group col-md-6">
                        <label class="col-form-label">From </label>
 
-                       <input type="text" name="ex_place" id="ex_place" class="form-control" placeholder="place" required>
+                       <input type="text" name="ex_place" value="{{old('ex_place')}}" id="ex_place" class="form-control" placeholder="place" required>
                    </div>
                    <div class="form-group col-md-6">
                        <label class="col-form-label">start date </label>
 
-                       <input type="date" name="ex_date" id="ex_date" class="form-control" required>
+                       <input type="date" name="ex_date" value="{{old('date')}}" id="ex_date" class="form-control" required>
                    </div>
                    <div class="form-group col-md-6">
                        <label class="col-form-label">end date </label>
 
-                       <input type="date" name="ex_end" id="ex_end" class="form-control" required>
+                       <input type="date" name="ex_end" value="{{old('ex_end')}}"id="ex_end" class="form-control" required>
                    </div>
 
                </div>
@@ -333,7 +333,7 @@
                    <div class="form-group col-md-12">
                        <label class="col-form-label">Responsibilities </label>
 
-                       <input type="text" name="respons" id="respons" class="form-control"  placeholder="Example:Trained 3 interns on customer service and office procedures" required>
+                       <input type="text" name="respons" value="{{old('respons')}}"id="respons" class="form-control"  placeholder="Example:Trained 3 interns on customer service and office procedures" required>
                    </div>
 
                </div>
@@ -365,23 +365,23 @@
                    <div class="form-group col-md-6">
                        <label class="col-form-label">Course name of certificate name  </label>
 
-                       <input type="text" class="form-control" name="ed_name" id="ed_name"  placeholder="Example:start  University of Mansoura at Computer & Information (IT)" required>
+                       <input type="text" class="form-control" name="ed_name" value="{{old('ed_name')}}"id="ed_name"  placeholder="Example:start  University of Mansoura at Computer & Information (IT)" required>
 
                    </div>
                    <div class="form-group col-md-6">
                        <label class="col-form-label">The center name  </label>
 
-                       <input type="text" name="ed_place" id="ed_place" class="form-control" required>
+                       <input type="text" name="ed_place"value="{{old('ed_place')}}" id="ed_place" class="form-control" required>
                    </div>
                    <div class="form-group col-md-6">
                        <label class="col-form-label">start date </label>
 
-                       <input type="date" name="ed_date" id="ed_date" class="form-control" required>
+                       <input type="date" name="ed_date" value="{{old('ed_date')}}"id="ed_date" class="form-control" required>
                    </div>
                    <div class="form-group col-md-6">
                        <label class="col-form-label">end date </label>
 
-                       <input type="date" name="ed_end" id="ed_end" class="form-control" required>
+                       <input type="date" name="ed_end"value="{{old('ed_end')}}" id="ed_end" class="form-control" required>
                    </div>
 
                </div>
