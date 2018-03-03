@@ -177,7 +177,6 @@ Route::group(['middleware'=>'roles','roles'=>['user','admin']],function()
     Route::get('/logout', 'SessionController@destroy');
 
     Route::get('/home','LoginController@getPost' );
-    Route::post('/profile/storeCv','LoginController@storeCv');
 
 
 
@@ -252,7 +251,15 @@ Route::group(['middleware'=>'roles','roles'=>['user','admin']],function()
 
 });
 Route::group(['middleware'=>'roles','roles'=>['user']],function() {
-    Route::get('/profile', 'LoginController@getInst');
+    Route::prefix('/profile')->group(function (){
+        Route::get('', 'LoginController@getInst');
+        Route::get('/cv', 'LoginController@getCV');
+        Route::get('/updateCv', 'LoginController@updateCv');
+        Route::get('/changeInfo', 'LoginController@changeInfo');
+        Route::post('/storeCv','LoginController@storeCv');
+
+
+    });
 });
 
 

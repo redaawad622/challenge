@@ -40,6 +40,7 @@
             border: 1px solid rgba(0,0,0,.15);
             border-radius: .25rem;
          }
+
       </style>
    </head>
    <body>
@@ -81,10 +82,9 @@
 
    <!-- model feedback-->
 
-<div class="outer-mod">
 
 
-<div class="mod-feed wow fadeInLeftBig" data-wow-duration="2s"  style="display: none">
+<div class="mod-feed wow fadeInDown" style="display: none">
    <div>
       <button type="button" class="close" >
          <span aria-hidden="true">&times;</span>
@@ -147,7 +147,7 @@
                </div>
             </div>
             <div class="bt">
-               <button type="submit" class="btn primary">Send message</button>
+               <button type="submit" class="fill">Send message</button>
 
             </div>
 
@@ -156,7 +156,6 @@
 
 
    </div>
-</div>
 </div>
 
    <!-- model feedback-->
@@ -167,7 +166,7 @@
 
          @if(!Auth::user()->hasRole('admin'))
          <div class="feed">
-            <span>feedback </span>
+            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
          </div>
 
          @endif
@@ -176,7 +175,7 @@
             <div class="row">
                <div class="col-sm-4 col-md-3 col-lg-2">
                   <div class="he-img">
-                     <img src="image/{{Auth::user()->url}}" alt="personal">
+                     <img src="image/@if(Auth::user()->url){{Auth::user()->url}} @else{{'user-placeholder.png'}} @endif" alt="personal">
                   </div>
                </div>
                <div class="col-sm-4 col-md-3 col-lg-2">
@@ -214,17 +213,16 @@
       <section class="bod">
          <div class="container">
             <div class="row">
-               <div class="col-sm-0 col-lg-1">
-               </div>
-               <div class="col-sm-12 col-lg-10">
+
+               <div class="col-sm-12">
                   <div class="posts">
                      @if(Auth::check()&&Auth::user()->hasRole('admin'))
                      <form action="/post" method="post" enctype="multipart/form-data">
                         {{csrf_field()}}
                      <div class="inst">
-                        <img src="image/{{Auth::user()->url}}" alt="personal">
+                        <img src="image/@if(Auth::user()->url){{Auth::user()->url}} @else{{'user-placeholder.png'}} @endif" alt="personal">
 
-                        <input type="text" name="instruction" style="color:black" class="form-control hvr-rectangle-out" placeholder="What Are The Instruction......?">
+                        <input type="text"  name="instruction" style="color:black" class="form-control instruction-input" placeholder="What Are The Instruction......?">
                         <input type="file" id="file" name="file" class="up-file" style="display: none">
 
                         <input type="file" name="url"  accept="image/*" class="up2" style="display: none">
@@ -259,7 +257,7 @@
                                  <a  href="/removepost/{{$post->id}}"><i id="icon-hover" class="fa fa-trash" aria-hidden="true"></i> </a>
                               @endif
 
-                        <img src="image/{{Auth::user()->url}}" class="img" alt="personal">
+                        <img src="image/@if(Auth::user()->url){{Auth::user()->url}} @else{{'user-placeholder.png'}} @endif" class="img" alt="personal">
                         <h2>Dr/Eslam <small><?php echo date('d.M.Y',strtotime($post->created_at));?></small>  </h2>
                         <small class="h"><?php
                             $now = time(); // or your date as well
@@ -329,8 +327,7 @@
 
                   </div>
                </div>
-               <div class="col-sm-0 col-lg-1">
-               </div>
+
             </div>
 
          </div>
@@ -338,11 +335,7 @@
 
       </section>
 
-   <!--section loading
-      <section class="overlay">
-         <img src="image/303.gif">
-      </section>
-      -->
+
       
    <script src="js/jquery-3.2.1.min.js"></script>
    <script src="js/tether.min.js"></script>
@@ -398,12 +391,12 @@
        });
 
        @endforeach
-      $('.close').click(function () {
-          $('.mod-feed') .hide();
-       });
-      $('.feed').click(function () {
-          $('.mod-feed') .show();
 
+
+      $('.bod .posts .inst .instruction-input').click(function () {
+         $('.bod .posts .inst img').show();
+         $('.bod .posts .inst .bod-icon').show();
+         $('.bod .posts .inst .instruction-input').css({"width": "70%", "height": "120px"});
       });
 
 
