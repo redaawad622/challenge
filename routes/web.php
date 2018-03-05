@@ -97,18 +97,6 @@ Route::group(['middleware'=>'roles','roles'=>['admin']],function()
 
 
 
-    Route::post('/search', 'ShowFormController@dailyReportMorningShow');
-    Route::post('/Adsearch', 'ShowFormController@dailyReportMorningShow');
-
-    Route::post('/searchWeek', 'ShowFormController@weeklyPlanShow');
-    Route::post('/AdsearchWeek', 'ShowFormController@weeklyPlanShow');
-
- Route::post('/searchMonth', 'ShowFormController@monthlyReportShow');
-    Route::post('/AdsearchMonth', 'ShowFormController@monthlyReportShow');
-
- Route::post('/searchMonthPlan', 'ShowFormController@monthlyPlanShow');
-    Route::post('/AdsearchMonthPlan', 'ShowFormController@monthlyPlanShow');
-
 
  Route::post('/searchPrice', 'ShowFormController@priceShowShow');
     Route::post('/AdsearchPrice', 'ShowFormController@priceShowShow');
@@ -128,16 +116,6 @@ Route::group(['middleware'=>'roles','roles'=>['admin']],function()
         return view('Forms.checks');
     });
 ////////////////////
-
-    Route::get('/dailyReportMorningShow','ShowFormController@dailyReportMorningShow');
-    //////////////////
-    Route::get('/weeklyPlanShow','ShowFormController@weeklyPlanShow');
-
- //////////////////
-    Route::get('/monthlyReportShow','ShowFormController@monthlyReportShow');
-
- //////////////////
-    Route::get('/monthlyPlanShow','ShowFormController@monthlyPlanShow');
 
 
 
@@ -174,10 +152,33 @@ $users=\App\User::all();
 
 Route::group(['middleware'=>'roles','roles'=>['user','admin']],function()
 {
+
+    Route::post('/search', 'ShowFormController@dailyReportMorningShow');
+    Route::post('/Adsearch', 'ShowFormController@dailyReportMorningShow');
+
+    Route::post('/searchWeek', 'ShowFormController@weeklyPlanShow');
+    Route::post('/AdsearchWeek', 'ShowFormController@weeklyPlanShow');
+
+    Route::post('/searchMonth', 'ShowFormController@monthlyReportShow');
+    Route::post('/AdsearchMonth', 'ShowFormController@monthlyReportShow');
+
+    Route::post('/searchMonthPlan', 'ShowFormController@monthlyPlanShow');
+    Route::post('/AdsearchMonthPlan', 'ShowFormController@monthlyPlanShow');
+
+
     Route::get('/logout', 'SessionController@destroy');
 
     Route::get('/home','LoginController@getPost' );
 
+
+    //////////////////
+    Route::get('/weeklyPlanShow','ShowFormController@weeklyPlanShow');
+
+    //////////////////
+    Route::get('/monthlyReportShow','ShowFormController@monthlyReportShow');
+
+    //////////////////
+    Route::get('/monthlyPlanShow','ShowFormController@monthlyPlanShow');
 
 
 
@@ -195,6 +196,8 @@ Route::group(['middleware'=>'roles','roles'=>['user','admin']],function()
     Route::get('/dailyReportMorning','formcontroller@getDaily');
 
     Route::post('/dailyReportMorning','formcontroller@storeDailyReportMorning');
+    Route::get('/dailyReportMorningShow','ShowFormController@dailyReportMorningShow');
+
     Route::post('/header','formcontroller@storeDailyReportMorningHeader');
     Route::post('/DailyReportEvening','formcontroller@storeDailyReportEvening');
     Route::post('/Pharmacy','formcontroller@StorePharmacy');

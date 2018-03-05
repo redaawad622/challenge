@@ -412,6 +412,7 @@ class formcontroller extends Controller
 
 
 
+
             $dailyReportheader->user_id=Auth::user()->id;
             $dailyReportheader->save();
 

@@ -226,13 +226,16 @@
         {{csrf_field()}}
 
 
-
+        @if(Auth::user()->hasRole('admin'))
                 <select name='select_name'>
                     @foreach($users as $user)
                         <option value="{{$user->id}}">{{$user->name}}</option>
                     @endforeach
 
                 </select>
+        @else
+    <input type="hidden" name="select_name" value="{{Auth::user()->id}}">
+        @endif
         <div>
             <button  type="submit" class=""><i class="fa fa-search"></i></button>
 
@@ -251,12 +254,16 @@
 
 
 
+        @if(Auth::user()->hasRole('admin'))
             <select name='select_name'>
                 @foreach($users as $user)
                     <option value="{{$user->id}}">{{$user->name}}</option>
                 @endforeach
 
             </select>
+        @else
+            <input type="hidden" name="select_name" value="{{Auth::user()->id}}">
+        @endif
             <input type="date"   name="date" class="form-control">
         <div>
             <button type="submit"><i class="fa fa-search"></i></button>
@@ -357,7 +364,9 @@
                         </div>
                     </div>
                 </th>
+                @if(Auth::user()->hasRole('admin'))
                 <th id="hc">Remove</th>
+                    @endif
             </tr>
 
             </thead>
@@ -387,6 +396,7 @@
                         </div>
                     </div>
                 </td>
+                @if(Auth::user()->hasRole('admin'))
                 <td id="hc">
                     <form  method="get" action="/removeRow/{{$reports_morning->id}}">
                         <span hidden>{{csrf_token()}}</span>
@@ -395,6 +405,7 @@
                     </form>
 
                 </td>
+                    @endif
             </tr>
                 @endforeach
 
@@ -431,7 +442,7 @@
 
                     </div>
                 </td>
-                <td id="hc">Remove</td>
+                @if(Auth::user()->hasRole('admin'))<td id="hc">Remove</td>@endif
 
             </tr>
             </thead>
@@ -467,6 +478,7 @@
                         </div>
                     </div>
                 </td>
+                    @if(Auth::user()->hasRole('admin'))
                     <td id="hc">
                         <form  method="get" action="/removeRowM/{{$reports_evening->id}}">
                             <span hidden>{{csrf_token()}}</span>
@@ -475,6 +487,7 @@
                         </form>
 
                     </td>
+                        @endif
             </tr>
                 @endforeach
 
@@ -488,7 +501,9 @@
                 <td colspan=""> <h4 class="center"> Code </h4></td>
                 <td colspan="4"> <h4 class="center"> Pharmacy Name </h4></td>
                 <td colspan=""> <h4 class="center"> Address</h4></td>
+                @if(Auth::user()->hasRole('admin'))
                 <td id="hc">Remove</td>
+                    @endif
 
 
             </tr>
@@ -502,6 +517,7 @@
                 <td>{{$reports_pharmacy->code_p}}</td>
                 <td colspan="4"> {{$reports_pharmacy->pharmacy}}</td>
                 <td>{{$reports_pharmacy->address}}</td>
+                    @if(Auth::user()->hasRole('admin'))
                     <td id="hc">
                         <form  method="get" action="/removeRowP/{{$reports_pharmacy->id}}">
                             <span hidden>{{csrf_token()}}</span>
@@ -510,6 +526,7 @@
                         </form>
 
                     </td>
+                        @endif
 
 
             </tr>

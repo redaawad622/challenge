@@ -205,13 +205,16 @@
         <input type="hidden" value="{{date('Y-m'),time()}}" name="date" class="form-control">
 
 
+        @if(Auth::user()->hasRole('admin'))
+            <select name='select_name'>
+                @foreach($users as $user)
+                    <option value="{{$user->id}}">{{$user->name}}</option>
+                @endforeach
 
-        <select name='select_name'>
-            @foreach($users as $user)
-                <option value="{{$user->id}}">{{$user->name}}</option>
-            @endforeach
-
-        </select>
+            </select>
+        @else
+            <input type="hidden" name="select_name" value="{{Auth::user()->id}}">
+        @endif
 
         <div>
             <button  type="submit" class=""><i class="fa fa-search"></i></button>
@@ -223,15 +226,16 @@
     <form class="s-form-search"  action="/AdsearchMonth"  method="post">
         {{csrf_field()}}
 
+        @if(Auth::user()->hasRole('admin'))
+            <select name='select_name'>
+                @foreach($users as $user)
+                    <option value="{{$user->id}}">{{$user->name}}</option>
+                @endforeach
 
-
-
-        <select name='select_name'>
-            @foreach($users as $user)
-                <option value="{{$user->id}}">{{$user->name}}</option>
-            @endforeach
-
-        </select>
+            </select>
+        @else
+            <input type="hidden" name="select_name" value="{{Auth::user()->id}}">
+        @endif
         <input type="month"   name="date" class="form-control">
         <div>
             <button type="submit"><i class="fa fa-search"></i></button>

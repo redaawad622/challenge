@@ -192,41 +192,35 @@
 
         </select>
 
-        <select name='select_name'>
-            @foreach($users as $user)
-                <option value="{{$user->id}}">{{$user->name}}</option>
-            @endforeach
+        @if(Auth::user()->hasRole('admin'))
+            <select name='select_name'>
+                @foreach($users as $user)
+                    <option value="{{$user->id}}">{{$user->name}}</option>
+                @endforeach
 
-        </select>
+            </select>
+        @else
+            <input type="hidden" name="select_name" value="{{Auth::user()->id}}">
+        @endif
         <div>
             <button  type="submit" class=""><i class="fa fa-search"></i></button>
 
         </div>
 
-
-
-
-
-        <input type="hidden" value="{{date('Y-m-d'),time()}}" name="date" class="form-control">
-
     </form>
-    <form class="s-form-search"    action="/AdsearchWeek" method="post">
+    <form class="s-form-search"  action="/AdsearchWeek"  method="post">
         {{csrf_field()}}
-<<<<<<< HEAD
-=======
-        <div class="row">
-            <div class="col-sm-2">
-                <h5 id="sear-up"><i class="fa fa-caret-up "></i> Less Search </h5>
-            </div>
-            <div class="col-sm-2">
-                <button style="float: left;position: relative;" type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
-            </div>
-            <div class="col-sm-2">
-                <input type="month"   name="date" value="{{old('date')}}" class="form-control">
-            </div>
-            <div class="col-sm-3">
-                <select name='week_number' class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelectPref">
->>>>>>> 37a290a816d60d62738e20c2c83295d2c4585c93
+
+        @if(Auth::user()->hasRole('admin'))
+            <select name='select_name'>
+                @foreach($users as $user)
+                    <option value="{{$user->id}}">{{$user->name}}</option>
+                @endforeach
+
+            </select>
+        @else
+            <input type="hidden" name="select_name" value="{{Auth::user()->id}}">
+        @endif
 
         <select name='week_number'>
 
@@ -238,15 +232,7 @@
 
         </select>
 
-
-        <select name='select_name'>
-            @foreach($users as $user)
-                <option value="{{$user->id}}">{{$user->name}}</option>
-            @endforeach
-
-        </select>
-
-        <input type="month"   name="date" class="form-control">
+        <input type="month"   name="date">
         <div>
             <button type="submit"><i class="fa fa-search"></i></button>
         </div>
@@ -425,7 +411,7 @@
         $('h3,h3 span').css('font-size',$('#font-head').val()+'px');
     });
     $('#font-table-head').change(function () {
-        $('th,h4').css('font-size',$('#font-table-head').val()+'px');
+        $('th,h4,th label').css('font-size',$('#font-table-head').val()+'px');
     });
 
 
@@ -434,7 +420,7 @@
 
     });
     $('#change-family-th').change(function () {
-        $('th,h4').css('font-family',$('#change-family-th').val());
+        $('th,h4,th label').css('font-family',$('#change-family-th').val());
 
     });
     $('#change-family-td').change(function () {
@@ -449,16 +435,15 @@
 
 
     $('#change-bold-th').change(function () {
-        $('th,h4').css('font-weight',$('#change-bold-th').val());
+        $('th,h4,th label').css('font-weight',$('#change-bold-th').val());
 
     });
 
 
-    $('#change-bold-td').change(function () {
-        $('td,input').css('font-weight',$('#change-bold-td').val());
+    $('#change-bold-tb').change(function () {
+        $('td,input').css('font-weight',$('#change-bold-tb').val());
 
     });
-
 
 
 </script>
