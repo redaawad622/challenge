@@ -31,7 +31,7 @@ class MailController extends Controller {
 
      $notify->save();
 
-      return redirect()->back();
+      return redirect()->back()->withInput();
 
   }
 }

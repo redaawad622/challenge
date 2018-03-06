@@ -50,9 +50,7 @@ class formcontroller extends Controller
     		'name'=>'required',
 
     		]);
-        if($valid->fails()){
-            return redirect()->back()->withInput();
-        }
+
 
             $info = new MonthlyPlanInfo();
             $info->name = request('name');
@@ -94,7 +92,7 @@ class formcontroller extends Controller
             });
             */
 
-            return back()->with('message', 'You successfully Sand the Monthly Report')->with('type', 'Well done!');
+            return back()->withInput()->with('message', 'You successfully Sand the Monthly Report')->with('type', 'Well done!');
 
     }
     public function storeDailyReportMorning(Request $request)
@@ -436,9 +434,7 @@ class formcontroller extends Controller
             'price'=>'required',
             'total'=>'required|string',
             ]);
-        if($valid->fails()){
-            return redirect()->back()->withInput();
-        }
+
 
             $Letter = new Letter;
 
@@ -452,7 +448,7 @@ class formcontroller extends Controller
             $Letter->save();
 
 
-            return back();
+            return back()->withInput();
 
     }
     public function storePriceShow()
@@ -466,9 +462,7 @@ class formcontroller extends Controller
 
             'date'=>'date',
             ]);
-        if($valid->fails()){
-            return redirect()->back()->withInput();
-        }
+
             $PriceShow = new PriceShow;
 
             $PriceShow->categoryName = request('categoryName');
@@ -482,7 +476,7 @@ class formcontroller extends Controller
             $PriceShow->save();
 
 
-            return back()->with('message', 'You successfully Sand the Report')->with('type', 'Well done!');
+            return back()->withInput()->with('message', 'You successfully Sand the Report')->with('type', 'Well done!');
 
 
     }
@@ -519,9 +513,7 @@ class formcontroller extends Controller
         'objection'=>'nullable|numeric',
         ]);
 
-        if($valid->fails()){
-            return redirect()->back()->withInput();
-        }
+
             $Vaction = new Vaction;
 
             $Vaction->name = request('name');
@@ -532,7 +524,7 @@ class formcontroller extends Controller
             $Vaction->Connected = request('connected');
             $Vaction->Objection = request('objection');
             $Vaction->save();
-            return back()->with('message', 'You successfully Sand the Report')->with('type', 'Well done!');
+            return back()->withInput()->with('message', 'You successfully Sand the Report')->with('type', 'Well done!');
 
 
     }
@@ -589,9 +581,7 @@ class formcontroller extends Controller
 
 
         ]);
-        if($valided->fails()){
-            return redirect()->back()->withInput();
-        }
+
             $reports = array();
 
             for ($i = 1; $i <= 5; $i++) {
@@ -621,7 +611,7 @@ class formcontroller extends Controller
                 $message->from('islamsalah1971@gmail.com');
             });
 
-            return back()->with('message', 'You successfully Sand the Report')->with('type', 'Well done!')->withInput();
+            return back()->withInput()->with('message', 'You successfully Sand the Report')->with('type', 'Well done!')->withInput();
 
     }
 
@@ -641,9 +631,7 @@ class formcontroller extends Controller
 
 
         ]);
-        if($valid->fails()){
-            return redirect()->back()->withInput();
-        }
+
             $statment = new Statment_Monthly_Report;
             $statment->work_days_pa = request('work_days_pa');
             $statment->doctors_clinic_pa = request('doctors_clinic_pa');
@@ -732,7 +720,7 @@ class formcontroller extends Controller
                 $message->from('islamsalah1971@gmail.com');
             });
 
-            return back()->with('message', 'You successfully Sand the Monthly Report')->with('type', 'Well done!');
+            return back()->withInput()->with('message', 'You successfully Sand the Monthly Report')->with('type', 'Well done!');
 
     }
     

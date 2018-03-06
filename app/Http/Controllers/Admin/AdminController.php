@@ -41,10 +41,7 @@ class AdminController extends Controller
            'desc'  => 'required|string',
            'url'   => 'required|image'
        ]);
-       if($valid->fails()){
-           return redirect()->back()->withInput();
-       }
-       else {
+
 
 
            $img_name = time() . '.' . request('url')->getClientOriginalExtension();
@@ -59,8 +56,8 @@ class AdminController extends Controller
            $event->save();
 
            \request('url')->move('image', $img_name);
-           return back();
-       }
+           return back()->withInput();
+
    }
     public function StoreMedecin()
     {
@@ -69,10 +66,7 @@ class AdminController extends Controller
             'MDesc' => 'required|string',
             'MUrl' => 'required|image'
         ]);
-        if($valid->fails()){
-            return redirect()->back()->withInput();
-        }
-        else {
+
             $img_name = time() . '.' . request('MUrl')->getClientOriginalExtension();
             $medecine = new Medication();
             $medecine->title = \request('MTitle');
@@ -81,8 +75,8 @@ class AdminController extends Controller
             $medecine->save();
 
             \request('MUrl')->move('image', $img_name);
-            return back();
-        }
+            return back()->withInput();
+
     }
 
     public function StoreImg(){
@@ -178,10 +172,8 @@ class AdminController extends Controller
             'select_name' => 'required',
         ]);
 
-        if($valid->fails()){
-            return redirect()->back()->withInput();
-        }
-        else {
+
+
             if (request('url')) {
                 $file_name = time() . '.' . request('url')->getClientOriginalExtension();
 
@@ -199,8 +191,8 @@ class AdminController extends Controller
             if (request('url')) {
                 \request('url')->move('image', $file_name);
             }
-            return back();
-        }
+            return back()->withInput();
+
     }
 
 

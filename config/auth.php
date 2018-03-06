@@ -92,11 +92,13 @@ return [
     */
 
     'passwords' => [
-        'users' => [
+        'challenge_team' => [
             'provider' => 'users',
             'table' => 'password_resets',
+            'email' => 'auth.emails.password',
             'expire' => 60,
-        ],
+
     ],
+        ],
 
 ];

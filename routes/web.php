@@ -19,6 +19,16 @@ Route::view('/permission', 'permission');
 Route::post('/', 'LoginController@store_register');
 Route::post('/login', 'SessionController@check');
 
+//resetting password
+Route::get('/reset',function (){
+    return view('auth/passwords.email');
+});
+
+Route::post('/password/email','Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+Route::get('/password/reset','Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
+Route::post('/password/reset','Auth\ResetPasswordController@reset');
+Route::get('/password/reset/{token}','Auth\ResetPasswordController@shoeResetForm')->name('password.reset');
+//end reset
 
 
 /*Role*/
@@ -271,3 +281,7 @@ Route::get('/cv',function (){
 
 
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

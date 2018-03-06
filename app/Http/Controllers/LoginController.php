@@ -58,10 +58,7 @@ class LoginController extends Controller
             'password_confirmation'=>'required',
             'url'=>'nullable',
         ]);
-   	if($valid->fails()){
-   	    return redirect()->back()->withInput();
-    }
-    else{
+
 
 
    	$user=new User();
@@ -97,8 +94,8 @@ class LoginController extends Controller
         auth()->login($user);
 
 
-        return redirect('/');
-    }
+        return redirect('/')->withInput();
+
    }
    public  function StorePost()
    {
@@ -109,10 +106,7 @@ class LoginController extends Controller
 
        ]);
 
-       if($valid->fails()){
-           return redirect()->back()->withInput();
-       }
-       else {
+
 
            if (request('url')) {
                $img_name = time() . '.' . request('url')->getClientOriginalExtension();
@@ -151,8 +145,8 @@ class LoginController extends Controller
                \request('file')->move('image', $file_name);
            }
 
-           return redirect()->back();
-       }
+           return redirect()->back()->withInput();
+
 
    }
 

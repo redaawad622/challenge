@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Password;
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
 
 class ForgotPasswordController extends Controller
@@ -29,4 +31,29 @@ class ForgotPasswordController extends Controller
     {
         $this->middleware('guest');
     }
+    /**
+     * Display the form to request a password reset link.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showLinkRequestForm()
+    {
+        return view('auth.passwords.email');
+    }
+    /**
+     * Get the broker to be used during password reset.
+     *
+     * @return PasswordBroker
+     */
+    protected function broker()
+    {
+        return Password::broker('challenge_team');
+    }
+    /**
+     * Display the form to request a password reset link.
+     *
+     * @return \Illuminate\Http\Response
+     */
+
+
 }

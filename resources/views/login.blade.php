@@ -836,9 +836,10 @@ class="close" title="Close Modal">&times;</span>
               {{$errors->first()}}
           @endif
       </div>
-
+      <a href={{route('password.request')}}>Forgot Password ?</a>
+      <strong style="    position: relative;top: 3px;">Remember  me ?</strong><input type="checkbox"  name="remember_me" > <br>
       <button type="submit">Login</button><br>
-      <input type="checkbox" checked="checked" name="checked"> <strong>Remember me</strong><br>
+
 
 
       <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn" style="background:#003a5a;width:100px;margin:auto;margin-bottom:20px;">Cancel</button>
