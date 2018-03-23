@@ -159,9 +159,21 @@ class LoginController extends Controller
    {
        $instructions=Instruction::where('user_id',Auth::user()->id)->orderBy('created_at','desc')->take(30)->get();
        $cvs=Cv::where('user_id',Auth::user()->id)->orderBy('created_at','desc')->get();
-       return view('profile',compact('instructions','cvs'));
+       return view('profile.profile',compact('instructions','cvs'));
    }
-
+    public function getCv()
+    {
+        $cvs=Cv::where('user_id',Auth::user()->id)->orderBy('created_at','desc')->get();
+        return view('profile.cv',compact('cvs'));
+    }
+    public function updateCv()
+    {
+        return view('profile.updateCv');
+    }
+    public function changeInfo()
+    {
+        return view('profile.changeInfo');
+    }
  public function storeCv(Request $request)
  {
      if ($request->ajax()) {

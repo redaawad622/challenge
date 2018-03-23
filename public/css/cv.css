@@ -3,12 +3,13 @@ body
     font-family: 'Arimo', sans-serif;
     color: #343434;
     cursor: auto;
-    overflow: scroll;
+    padding-top: 66px;
 }
 .pref
 {
     background-color: #05998D;
     color: #fff;
+    height: 100vh;
 }
 h1{
     font-weight: bold;
@@ -145,4 +146,52 @@ h4{
     padding-bottom: 11px;
 }
 
+
+.navbar
+{
+    background: #017c73;
+}
+/*nav*/
+
+
+.navbar-nav .nav-item .nav-link{
+    font-size: 14px;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+.navbar-nav .nav-item .nav-link:hover{
+    font-size: 14px;
+    color: #6495d7;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+.navbar-light .navbar-toggler
+{
+    border-color: #fff;
+    cursor: pointer;
+    background: #fff;
+    outline: 0;
+}
+.navbar-light .navbar-brand
+{
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    color: #fff;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out
+}
+
+/*end nav*/
 

@@ -496,45 +496,32 @@ bottom: 70px;
 /*feed style*/
 .he .feed
 {
-height: 200px;
-width: 40px;
-position: absolute;
-z-index: 50;
-background-color: #252d44;
-top: 484px;
-border-bottom-right-radius:15px; 
-border-top-right-radius:15px; 
+
+    position: absolute;
+    z-index: 50;
+    background-color: #252d44;
+    color: white;
+    top: 366px;
+    border-bottom-right-radius: 15px;
+}
+
+.he .feed  i
+{
+color: white;
+font-size: 33px;
+padding: 10px  15px 10px 15px;
 }
 .he .feed:hover
 {
-cursor: pointer;
-    opacity: .9;
-}
-.he .feed span
+    cursor: pointer;
+    background-color: #fff;
+    color: #fdcc52;
+}.he .feed:hover i
 {
-writing-mode:tb-rl;
-color: white;
-font-size: 25px;
-font-weight: bold;
-letter-spacing: 7px;
-padding-top: 15px;
-text-align: center;
-}
-@media (max-width:570px)
-{
-.he .feed
-{
-height: 160px;
-width: 25px;
-}
-.he .feed span
-{
-font-size:17px;
-font-weight: bold;
-letter-spacing: 10px;
+
+    color: #fdcc52;
 }
 
-}
 .send-icon i
 {
 padding-right: 20px;
@@ -671,10 +658,7 @@ font-family: 'Roboto', sans-serif;
             font-size: 14px;
 
         }
-        .mod-feed
-        {
-            width: 400px!important;
-        }
+
         .bod .rpost .file a,small
         {
             right: 68%!important;
@@ -694,10 +678,7 @@ font-family: 'Roboto', sans-serif;
         font-size: 14px;
         padding-left: 0;
     }
-    .mod-feed
-    {
-        width: 320px!important;
-    }
+
 
 }
 @media (max-width:325px)
@@ -716,10 +697,8 @@ font-family: 'Roboto', sans-serif;
         font-size: 11px;
 
     }
-    .mod-feed
-    {
-        width: 290px!important;
-    }
+
+
 
 }
 
@@ -727,15 +706,15 @@ font-family: 'Roboto', sans-serif;
 /*model feed*/
 .mod-feed
 {
-    width: 450px;
-    background: url("../image/sde.jpg") no-repeat ;
-    background-size: cover;
-    position: fixed;
-    z-index: 9999;
 
-    top: 85px;
-   padding: 20px;
-    box-shadow:0px 10px 0 0 rgba(37, 45, 68, 0.8705882352941177);
+position: relative;
+    z-index: 1;
+    padding: 20px;
+    box-shadow: 1px 4px 20px 0px rgb(50, 60, 81);
+    -webkit-transition: width 2s, height 4s; /* Safari */
+    transition: width 2s, height 4s;
+    transition-timing-function: ease;
+
 }
 .mod-feed h2
 {
@@ -770,16 +749,85 @@ padding-right: 10px;
 color: #252d44;
 
 }
-.mod-feed .bt
-{
-    width: 67%;
-    text-align: center;
+.fill{border:1px solid #252d44; color:#252d44;}
+.fill:hover{
+    color:#fff;
+    box-shadow:inset 20px 0px #252d44,inset -20px 0px #252d44,inset 0px 20px #252d44,inset 0px -20px #252d44;
 }
-.mod-feed .bt .primary
-{
-    background-color: #000;
-    color: white;
-}
+button{ transition:.2s; background:0; border:0; color:#fff;  height:32px;   }
+button:hover{cursor:pointer; }
 
 /*end feed*/
 
+@media (max-width:768px) {
+    .bod .rpost
+    {
+        margin-left:0;
+    }
+    .bod .posts
+    {
+        padding: 0;
+        margin-top: 0;
+        padding-top: 0;
+    }
+    .col, .col-1, .col-10, .col-11, .col-12, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-auto, .col-lg, .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-auto, .col-md, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-auto, .col-sm, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-auto, .col-xl, .col-xl-1, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-auto
+    {
+        padding: 0;
+    }
+    .container
+    {
+        padding: 0;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .bod .posts .inst
+    {
+        margin: 0;
+        padding: 25px;
+        border-radius: 0;
+        height: auto;
+    }
+    .bod .posts .inst .instruction-input
+    {
+        height: auto;
+        width: 98%;
+    }
+    .bod .posts .inst img
+    {
+        display: none;
+
+    }
+
+
+    .bod .posts .inst .bod-icon
+
+    {
+        display: none;
+    }
+
+    .bod .rpost .img
+    {
+        bottom: 0;
+        right: 0;
+        margin-left: 30px;
+        margin-bottom: 15px;
+        height: 65px;
+        width: 65px;
+    }
+    .bod .rpost
+    {
+        padding-top: 20px;
+        padding-right: 10px;
+    }
+    .bod .rpost h2
+    {
+        padding-left: 115px;
+    }
+    .he .inner
+    {
+        padding-left: 31px;
+
+    }
+
+}

@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Notifications\ResetPasswordNotification;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\CanResetPassword;
 use Illuminate\Auth\Notifications\ResetPassword as ResetPassword;
@@ -90,7 +91,7 @@ class User extends Authenticatable
         }
         else
         {
-            if($this->hasRole($role))
+            if($this->hasRole($roles))
             {
                 return true;
             }

@@ -864,21 +864,15 @@ class="close" title="Close Modal">&times;</span>
 
     <script src="js/popper.min.js"></script>
 
-    <script src="js/plugins.js"></script>
 
     <script src="js/wow.min.js"></script> 
     <script>new WOW().init();</script>  
     <script src="js/jquery.nicescroll.min.js"></script>   
     <script src="js/owl.carousel.min.js"></script>
-<script>
-    $("html").niceScroll({
-        cursorcolor:"rgb(16, 95, 126)",
-        cursorwidth:"12px",
-        cursorborder: "none", // css definition for cursor border
-        cursorborderradius: "0px", // border radius in pixel for cursor
-        background:"#eee",
-        zindex:'9999'
-    });
+ <script src="js/myjs.js" type="text/javascript"></script>
+
+ <script>
+
         @foreach($medications as $i=>$medication)
         $(".owwl .images{{$i+1}}").hover(function(){
             $(".owwl .images .hidd{{$i+1}}").toggle(600);

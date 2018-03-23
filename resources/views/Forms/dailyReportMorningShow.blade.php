@@ -69,126 +69,208 @@
 
 
 </head>
-<body style="padding-top: 70px">
+<body>
 <section class="option-box" style="top: 0">
     <div class="color-option">
-        <h4>Color option</h4>
-        <ul class="list-unstyled">
-            <li style="background:#000" data-value="../css/form/blackStyle-them.css"></li>
-            <li data-value="../css/form/pinkStyle-them.css"></li>
-            <li data-value="../css/form/blueStyle-them.css"></li>
-            <li data-value="../css/form/seaStyle-them.css"></li>
-            <li data-value="../css/form/greenStyle-them.css"></li>
-            <li data-value="../css/form/violetStyle-them.css"></li>
-        </ul>
-        <hr>
-        <div class="tool-box" style="text-align: left;">
-            <h5>text option</h5>
 
-                <h6>Font size</h6>
-            <input type="text" class="form-control" id="font">
-            <hr>
+        <div class="row">
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="single-option">
 
+                <h4>Color option</h4>
 
-
+                <ul class="list-unstyled">
+                    <li style="background:#000" data-value="../css/form/blackStyle-them.css"></li>
+                    <li data-value="../css/form/pinkStyle-them.css"></li>
+                    <li data-value="../css/form/blueStyle-them.css"></li>
+                    <li data-value="../css/form/seaStyle-them.css"></li>
+                    <li data-value="../css/form/greenStyle-them.css"></li>
+                    <li data-value="../css/form/violetStyle-them.css"></li>
+                </ul>
+                </div>
+            </div>
 
 
-            <h6>Font family</h6>
-            <select class="custom-select" id="change-family">
-                <option value="sans-serif">sans-serif</option>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="single-option">
+                        <label>heading & footer font size</label>
+                        <input type="text" class="form-control" id="font-head">
 
-                <option value="serif">serif</option>
-                <option value="cursive">cursive</option>
-                <option value="fantasy">fantasy</option>
-                <option value="initial">initial</option>
-                <option value="monospace">monospace</option>
-                <option value="-webkit-pictograph">-webkit-pictograph</option>
+                        <label>table head Font size</label>
+                        <input type="text" class="form-control" id="font-table-head">
 
-            </select>
-            <hr>
-
-            <h6 style="padding-top: 5px;">bold option</h6>
-            <select class="custom-select" id="change-bold">
-                <option value="100">100</option>
-                <option value="200">200</option>
-                <option value="300">300</option>
-                <option value="400">400</option>
-                <option value="500">500</option>
-                <option value="600">600</option>
-                <option value="700">700</option>
-                <option value="800">800</option>
-                <option value="900">900</option>
+                        <label>table body Font size</label>
+                        <input type="text" class="form-control" id="font">
 
 
-            </select>
-        </div>
+
+                    </div>
+
+
+                </div>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="single-option">
+
+
+                    <label>heading & footer bold option</label>
+                    <select class="custom-select" id="change-bold">
+                        <option value="100">100</option>
+                        <option value="200">200</option>
+                        <option value="300">300</option>
+                        <option value="400">400</option>
+                        <option value="500">500</option>
+                        <option value="600">600</option>
+                        <option value="700">700</option>
+                        <option value="800">800</option>
+                        <option value="900">900</option>
+
+
+                    </select>
+
+
+                    <label>table head bold option</label>
+                    <select class="custom-select" id="change-bold-th">
+                        <option value="100">100</option>
+                        <option value="200">200</option>
+                        <option value="300">300</option>
+                        <option value="400">400</option>
+                        <option value="500">500</option>
+                        <option value="600">600</option>
+                        <option value="700">700</option>
+                        <option value="800">800</option>
+                        <option value="900">900</option>
+
+
+                    </select>
+
+                    <label>table body bold option</label>
+                    <select class="custom-select" id="change-bold-tb">
+                        <option value="100">100</option>
+                        <option value="200">200</option>
+                        <option value="300">300</option>
+                        <option value="400">400</option>
+                        <option value="500">500</option>
+                        <option value="600">600</option>
+                        <option value="700">700</option>
+                        <option value="800">800</option>
+                        <option value="900">900</option>
+
+
+                    </select>
+                </div>
+            </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="single-option">
+
+                    <label>heading & footer Font family</label>
+                    <select class="custom-select" id="change-family">
+                        <option value="sans-serif">sans-serif</option>
+
+                        <option value="serif">serif</option>
+                        <option value="cursive">cursive</option>
+                        <option value="fantasy">fantasy</option>
+                        <option value="initial">initial</option>
+                        <option value="monospace">monospace</option>
+                        <option value="-webkit-pictograph">-webkit-pictograph</option>
+
+                    </select>
+                        <label>table head Font family</label>
+                    <select class="custom-select" id="change-family-th">
+                        <option value="sans-serif">sans-serif</option>
+
+                        <option value="serif">serif</option>
+                        <option value="cursive">cursive</option>
+                        <option value="fantasy">fantasy</option>
+                        <option value="initial">initial</option>
+                        <option value="monospace">monospace</option>
+                        <option value="-webkit-pictograph">-webkit-pictograph</option>
+
+                    </select>
+                        <label>table body Font family</label>
+                    <select class="custom-select" id="change-family-td">
+                        <option value="sans-serif">sans-serif</option>
+
+                        <option value="serif">serif</option>
+                        <option value="cursive">cursive</option>
+                        <option value="fantasy">fantasy</option>
+                        <option value="initial">initial</option>
+                        <option value="monospace">monospace</option>
+                        <option value="-webkit-pictograph">-webkit-pictograph</option>
+
+                    </select>
+                    </div>
+                </div>
+
+
+
+
+
+
     </div>
-    <i class="fa fa-gear fa-3x gear-ch" style="padding: 6px"></i>
+    </div>
+    <i class="fa fa-pencil-square-o fa-3x gear-ch"></i>
 </section>
 <section class="pri">
+<div class="icon-search">
+    <div class="search-f-div active-search">
+      <i  class="fa fa-search"></i> Basic
 
+    </div>
+    <div class="search-s-div">
+        <i  class="fa fa-search"></i> More Search
 
+    </div>
+</div>
 
-    <form id="h" style="margin-bottom: 30px;" class="container" action="/search" method="post">
+    <form class="f-form-search"  action="/search" method="post">
         {{csrf_field()}}
-        <div class="row">
 
-            <div class="col-sm-4"></div>
 
-            <div class="col-sm-3">
-                <label class="mr-sm-2" for="inlineFormCustomSelectPref">Member</label>
-
-                <select name='select_name' class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelectPref">
+        @if(Auth::user()->hasRole('admin'))
+                <select name='select_name'>
                     @foreach($users as $user)
                         <option value="{{$user->id}}">{{$user->name}}</option>
                     @endforeach
 
                 </select>
-            </div>
-            <div class="col-sm-2">
-
-                <button style="float: left;position: relative;" type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
-            </div>
-            <div class="col-sm-3">
-                <h5 id="sear"><i class="fa fa-caret-down "></i> More Search </h5>
-            </div>
-
+        @else
+    <input type="hidden" name="select_name" value="{{Auth::user()->id}}">
+        @endif
+        <div>
+            <button  type="submit" class=""><i class="fa fa-search"></i></button>
 
         </div>
+
+
+
 
 
         <input type="hidden" value="{{date('Y-m-d'),time()}}" name="date" class="form-control">
 
     </form>
-    <form id="form-sear" style="display: none;margin-bottom: 30px;" class="container" action="/Adsearch" method="post">
+    <form class="s-form-search"   action="/Adsearch" method="post">
         {{csrf_field()}}
-    <div class="row">
 
 
 
 
-        <div class="col-sm-4">
-            <label class="mr-sm-2" for="inlineFormCustomSelectPref">Member</label>
-
-            <select name='select_name' class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelectPref">
+        @if(Auth::user()->hasRole('admin'))
+            <select name='select_name'>
                 @foreach($users as $user)
                     <option value="{{$user->id}}">{{$user->name}}</option>
                 @endforeach
 
             </select>
-        </div>
-        <div class="col-sm-3">
+        @else
+            <input type="hidden" name="select_name" value="{{Auth::user()->id}}">
+        @endif
             <input type="date"   name="date" class="form-control">
-        </div>
-        <div class="col-sm-2">
-            <button style="float: left;position: relative;" type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
-        </div>
-        <div class="col-sm-3">
-            <h5 id="sear-up"><i class="fa fa-caret-up "></i> Less Search </h5>
+        <div>
+            <button type="submit"><i class="fa fa-search"></i></button>
         </div>
 
 
-    </div>
+
 
     </form>
 </section>
@@ -198,7 +280,7 @@
 <section class="container-fluid">
     @if(isset($reports_mornings))
 
-    <h3 class="bold" style="text-align: center;">  Daily Report </h3>
+    <h3 class="bold" style="text-align: center; margin-top: 50px;">  Daily Report </h3>
     <h3><img src="../image/LogoImageMasterPage.jpg"> Scientific Office</h3>
 
 
@@ -208,7 +290,7 @@
 
             <tbody>
             <tr>
-                <td>
+                <th>
                     <div class="form-inline padding-t-xl">
                         <div class="form-group">
                             <label class="padding-r" for="inputPassword6"> File No: </label>
@@ -216,8 +298,8 @@
                             <input type="text" value="{{$user_name->file_num}}" id="lin"  class="form-control mx-sm-3" >
                         </div>
                     </div>
-                </td>
-                <td>
+                </th>
+                <th>
                     <div class="form-inline padding-t-xl">
                         <div class="form-group">
                             <label class="padding-r" for="inputPassword6"> Name: </label>
@@ -225,8 +307,8 @@
                             <input type="text"  value="{{$user_name->name}}" id="lin" class="form-control mx-sm-3" >
                         </div>
                     </div>
-                </td>
-                <td>
+                </th>
+                <th>
                     <div class="form-inline padding-t-xl">
                         <div class="form-group">
                             <label class="padding-r" for="inputPassword6"> Date: </label>
@@ -234,8 +316,8 @@
                             <input type="text" id="lin" value="@if($count__headers>=1){{date('Y/m/d , l',strtotime($reports_headers[0]->created_at))}}@endif" class="form-control mx-sm-3" >
                         </div>
                     </div>
-                </td>
-                <td>
+                </th>
+                <th>
                     <div class="form-inline">
                         <div class="form-group">
                             <label class="padding-r" for="inputPassword6"> Area: </label>
@@ -251,7 +333,7 @@
                             <input type="text" id="lin" name="line" value="@if($count__headers>=1){{$reports_headers[0]->line}}@endif" class="form-control mx-sm-3 line" >
                         </div>
                     </div>
-                </td>
+                </th>
             </tr>
 
             </tbody>
@@ -263,11 +345,11 @@
             <thead>
             <tr>
 
-                <td> <h4 class="center"> Code No </h4></td>
-                <td colspan="3"> <h4 class="center">hospital or institute name</h4></td>
-                <td colspan="2"> <h4 class="center">Doctor name </h4></td>
-                <td colspan="3"> <h4 class="center"> Specialty</h4></td>
-                <td colspan="4">
+                <th> <h4 class="center"> Code No </h4></th>
+                <th colspan="3"> <h4 class="center">hospital or institute name</h4></th>
+                <th colspan="2"> <h4 class="center">Doctor name </h4></th>
+                <th colspan="3"> <h4 class="center"> Specialty</h4></th>
+                <th colspan="4">
                     <h4 class="center"> Products</h4>
                     <div class="row">
                         <div class="col-md-4">
@@ -281,8 +363,10 @@
                             R
                         </div>
                     </div>
-                </td>
-                <td id="hc">Remove</td>
+                </th>
+                @if(Auth::user()->hasRole('admin'))
+                <th id="hc">Remove</th>
+                    @endif
             </tr>
 
             </thead>
@@ -312,6 +396,7 @@
                         </div>
                     </div>
                 </td>
+                @if(Auth::user()->hasRole('admin'))
                 <td id="hc">
                     <form  method="get" action="/removeRow/{{$reports_morning->id}}">
                         <span hidden>{{csrf_token()}}</span>
@@ -320,6 +405,7 @@
                     </form>
 
                 </td>
+                    @endif
             </tr>
                 @endforeach
 
@@ -356,7 +442,7 @@
 
                     </div>
                 </td>
-                <td id="hc">Remove</td>
+                @if(Auth::user()->hasRole('admin'))<td id="hc">Remove</td>@endif
 
             </tr>
             </thead>
@@ -392,6 +478,7 @@
                         </div>
                     </div>
                 </td>
+                    @if(Auth::user()->hasRole('admin'))
                     <td id="hc">
                         <form  method="get" action="/removeRowM/{{$reports_evening->id}}">
                             <span hidden>{{csrf_token()}}</span>
@@ -400,6 +487,7 @@
                         </form>
 
                     </td>
+                        @endif
             </tr>
                 @endforeach
 
@@ -413,7 +501,9 @@
                 <td colspan=""> <h4 class="center"> Code </h4></td>
                 <td colspan="4"> <h4 class="center"> Pharmacy Name </h4></td>
                 <td colspan=""> <h4 class="center"> Address</h4></td>
+                @if(Auth::user()->hasRole('admin'))
                 <td id="hc">Remove</td>
+                    @endif
 
 
             </tr>
@@ -427,6 +517,7 @@
                 <td>{{$reports_pharmacy->code_p}}</td>
                 <td colspan="4"> {{$reports_pharmacy->pharmacy}}</td>
                 <td>{{$reports_pharmacy->address}}</td>
+                    @if(Auth::user()->hasRole('admin'))
                     <td id="hc">
                         <form  method="get" action="/removeRowP/{{$reports_pharmacy->id}}">
                             <span hidden>{{csrf_token()}}</span>
@@ -435,6 +526,7 @@
                         </form>
 
                     </td>
+                        @endif
 
 
             </tr>
@@ -609,15 +701,15 @@
             </tr>
         </table>
         
-        <p style="font-size:30px;margin-left: 30px;">  كم السيارة: <span style="border-bottom:2px dashed black;font-size:23px;padding:5px;
-    border-radius: 5px;"> @if($count__footers>=1) {{$reports_footers[0]->cm_all}}   @endif كم</span>    </p>
+        <h3 style="font-size:30px;margin-left: 30px;">  كم السيارة: <span style="border-bottom:2px dashed black;font-size:23px;padding:5px;
+    border-radius: 5px;"> @if($count__footers>=1) {{$reports_footers[0]->cm_all}}   @endif كم</span>    </h3>
  
 
-        <p><span style="margin-left: 30px;font-size:30px;">Signature :</span> <span style="float:right; margin-right:280px;font-size:30px;">Checked by :</span></p>
+        <h3><span style="margin-left: 30px;font-size:30px;">Signature :</span> <span style="float:right; margin-right:280px;font-size:30px;">Checked by :</span></h3>
 
 
     @else
-        <div class="alert alert-warning" style="text-align: center;" role="alert">
+        <div class="alert alert-warning" style="text-align: center; margin-top: 100px;" role="alert">
             No Result
         </div>
 
@@ -639,28 +731,15 @@
 <script src="{{asset('js/bootstrap.min.js')}}" integrity="" crossorigin="anonymous"></script>
 <script src="../js/jquery.nicescroll.min.js"></script>
 <script src="{{asset('js/wow.min.js')}}"></script>
-<script>
-    new WOW().init();
-</script>
+
 <script  src="../js/myjs.js" type="text/javascript">  </script>
 
 <script>
+    new WOW().init();
 
 
 
-    $('#sear').click(function () {
-        $('#h').slideToggle();
-        $('#form-sear').slideToggle();
 
-    });
-    $('#sear-up').click(function () {
-        $('#form-sear').slideToggle();
-        $('#h').slideToggle();
-
-    });
-    $(document).ready(function () {
-        $('.table-nh,.table-nb').fadeOut();
-    });
     $('.tab').click(function () {
         $('.table-nh,.table-nb').fadeToggle();
     });
@@ -668,64 +747,69 @@
     $("#printPage").click(function () {
         print()
     });
-    
-      /*option box*/
+
+
+    $('.search-f-div').click(function () {
+        $('.search-s-div').removeClass('active-search');
+        $('.search-f-div').addClass('active-search');
+        $('.f-form-search').show();
+        $('.s-form-search').hide();
+
+
+    });
+
+    $('.search-s-div').click(function () {
+        $('.search-f-div').removeClass("active-search");
+        $('.search-s-div').addClass("active-search");
+        $('.s-form-search').show();
+        $('.f-form-search').hide();
+
+    });
+
+
+    /*option box*/
 
     $('#font').change(function () {
         $('td,input').css('font-size',$('#font').val()+'px');
     });
+    $('#font-head').change(function () {
+        $('h3,h3 span').css('font-size',$('#font-head').val()+'px');
+    });
+    $('#font-table-head').change(function () {
+        $('th,h4').css('font-size',$('#font-table-head').val()+'px');
+    });
+
+
     $('#change-family').change(function () {
-        $('td,input').css('font-family',$('#change-family').val());
+        $('h3,h3 span').css('font-family',$('#change-family').val());
+
+    });
+$('#change-family-th').change(function () {
+        $('th,h4').css('font-family',$('#change-family-th').val());
+
+    });
+$('#change-family-td').change(function () {
+        $('td,input').css('font-family',$('#change-family-td').val());
 
     });
 
 $('#change-bold').change(function () {
-        $('td,input').css('font-weight',$('#change-bold').val());
+        $('h3,h3 span').css('font-weight',$('#change-bold').val());
 
     });
 
-    /*
 
-    for(var i=0; i<5;i++) {
+$('#change-bold-th').change(function () {
+        $('th,h4').css('font-weight',$('#change-bold-th').val());
 
-        $('.close' + i).click(function () {
-            $('#remov' + i).click();
-        });
+    });
 
 
-        //Remove Row
-        $('#removeRow' + i).on('submit', function (e) {
+$('#change-bold-td').change(function () {
+        $('td,input').css('font-weight',$('#change-bold-td').val());
 
-            e.preventDefault(e);
+    });
 
-            var id2 = $('#id' + i).val();
-
-
-            $.ajax({
-                headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
-
-                type: 'POST',
-                url: '/removeRow',
-
-                dataType: 'json',
-                data: {id: id2},
-                success: function (data) {
-
-                    if (data.success == true) {
-                        alert('remove Row Seccess');
-
-                    }
-
-                }
-
-
-            });
-
-
-            return false;
-        });
-    }
-    */
 
 
 </script>
