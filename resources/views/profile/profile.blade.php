@@ -142,27 +142,27 @@
                      <ul class="nav">
 
                          <li class="nav-item">
-                             <a class="nav-link hvr-shrink" href="/dailyReportMorning" target="_blank">Daily Report  <i class="fa fa-caret-down  fa-lg" id="ic" aria-hidden="true"></i></a>
+                             <a class="nav-link hvr-shrink" href="/dailyReportMorning" target="_blank">Daily Report  <i class="fa fa-caret-down  fa-lg" aria-hidden="true"></i></a>
                          </li>
                         <li class="nav-item">
-                           <a class="nav-link hvr-shrink" href="/monthReport" target="_blank">Month Report  <i class="fa fa-caret-down  fa-lg" id="ic" aria-hidden="true"></i></a>
+                           <a class="nav-link hvr-shrink" href="/monthReport" target="_blank">Month Report  <i class="fa fa-caret-down  fa-lg"  aria-hidden="true"></i></a>
                         </li>
 
 
                         <li class="nav-item">
-                           <a class="nav-link hvr-shrink" href="/weeklyPlan" target="_blank">Weekly Plan  <i class="fa fa-caret-down  fa-lg" id="ic" aria-hidden="true"></i></a>
+                           <a class="nav-link hvr-shrink" href="/weeklyPlan" target="_blank">Weekly Plan  <i class="fa fa-caret-down  fa-lg"  aria-hidden="true"></i></a>
                         </li>
                         <li class="nav-item" target="_blank">
-                           <a class="nav-link hvr-shrink" href="/monthPlan">  Monthly Plan <i class="fa fa-caret-down  fa-lg" id="ic" aria-hidden="true"></i></a>
+                           <a class="nav-link hvr-shrink" href="/monthPlan">  Monthly Plan <i class="fa fa-caret-down  fa-lg" aria-hidden="true"></i></a>
                         </li>
                          <li class="nav-item" target="_blank">
-                           <a class="nav-link hvr-shrink" href="/performance"> Performance <i class="fa fa-caret-down  fa-lg" id="ic" aria-hidden="true"></i></a>
+                           <a class="nav-link hvr-shrink" href="/performance"> Performance <i class="fa fa-caret-down  fa-lg" aria-hidden="true"></i></a>
                         </li>
                      </ul>
                      <!-- end nav-->
                      @foreach($instructions as $kay=> $instruction)
                      <div class="rpost" id="p{{ $kay}}">
-                         <a class="hide{{$kay}}"  href="#"><i id="icon-hover" class="fa fa-minus-circle" aria-hidden="true"></i>
+                         <a class="hide{{$kay}}"  href="#"><i id="my-h-i" class="fa fa-minus-circle" aria-hidden="true"></i>
                          </a>
                          @if(Auth::check()&&Auth::user()->hasRole('admin'))
                              <a  href="/removepost/{{$post->id}}"><i id="icon-hover" class="fa fa-trash" aria-hidden="true"></i> </a>
@@ -190,7 +190,7 @@
                                if(count($words2)>30)
                                {
 
-                                   echo '<span id="read" '.'class="readMore'.$kay.'"' .'>'. " Read More.........".'</span>' ;
+                                   echo '<span id="link" '.'class="readMore'.$kay.'"' .'>'. " Read More.........".'</span>' ;
 
                                }
 

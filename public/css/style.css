@@ -879,7 +879,7 @@ color:#fff;
 {
     margin-bottom: 50px;
 }
-.foot .fot ul i
+.foot .fot  i
 {
     margin-right: 5px;
     margin-left: 5px;
@@ -1171,3 +1171,18 @@ color:#fff;
 }
 
 
+.invalid-feedback
+{
+    color: #721c24 !important;
+
+    font-size: 14px !important;
+
+}
+.is-invalid
+{
+    border:2px solid #d72020 !important;
+}
+.navbar-inverse .navbar-nav > li > a:hover
+{
+    color:#2098D1 !important;
+}

@@ -229,7 +229,7 @@
                         <input type="text" name="file_name" style="display: none;" value="" id="select_file">
                         <div class="bod-icon ">
                          <i class="fa fa-folder-open fa-2x hvr-grow " id="i-file" aria-hidden="true"> </i>
-                           <i class="fa fa-camera fa-2x hvr-grow i2 " id="ic" aria-hidden="true"></i>
+                           <i class="fa fa-camera fa-2x hvr-grow i2 " id="i-icon" aria-hidden="true"></i>
                            <input type="submit" value="Post" id="sub"  class="btn btn-primary  hvr-round-corners">
                         </div>
 
@@ -251,10 +251,10 @@
                      <div class="rpost" id="p{{$kay}}">
 
 
-                        <a class="hide{{$kay}}"  href="#"><i id="icon-hover" class="fa fa-minus-circle" aria-hidden="true"></i>
+                        <a class="hide{{$kay}}"  href="#"><i id="icon-hover-s" class="fa fa-minus-circle" aria-hidden="true"></i>
                         </a>
                           @if(Auth::check()&&Auth::user()->hasRole('admin'))
-                                 <a  href="/removepost/{{$post->id}}"><i id="icon-hover" class="fa fa-trash" aria-hidden="true"></i> </a>
+                                 <a  href="/removepost/{{$post->id}}"><i id="icon-hover-f" class="fa fa-trash" aria-hidden="true"></i> </a>
                               @endif
 
                         <img src="image/@if(Auth::user()->url){{Auth::user()->url}} @else{{'user-placeholder.png'}} @endif" class="img" alt="personal">
@@ -279,12 +279,12 @@
                             if(count($words2)>30)
                                 {
 
-                                    echo '<span id="read" '.'class="readMore'.$kay.'"' .'>'. " Read More.........".'</span>' ;
+                                    echo '<span id="read1" '.'class="readMore'.$kay.'"' .'>'. " Read More.........".'</span>' ;
 
                                 }
 
                             ?></p>
-                        <p id="re{{$kay}}" style="display: none;">{{ucwords($post->instruction)}} <span id="read" class="readLess{{$kay}}"> Read Less</span></p>
+                        <p id="re{{$kay}}" style="display: none;">{{ucwords($post->instruction)}} <span id="read2" class="readLess{{$kay}}"> Read Less</span></p>
                         @endif
 
                         @if(isset($post->file))

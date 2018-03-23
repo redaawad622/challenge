@@ -193,7 +193,7 @@ font-weight: bold;
 margin-right: 40px;
 width: 100px;
 }
-.bod .bod-icon #ic
+.bod .bod-icon #i-icon
 {
 padding-left: 20px;
 color: #242b42;
@@ -286,7 +286,7 @@ margin-right:15px;
 margin-bottom: 70px;
 box-shadow: 1px 18px 20px rgba(221,222,227,0.72);
 }
-#icon-hover:hover
+#icon-hover-f:hover,#icon-hover-s:hover
 {
     color: #666666;
 }
@@ -312,11 +312,11 @@ bottom: 75px;
 }
 .bod .rpost p
 {padding-left: 50px;line-height: 35px;padding-top: 20px;letter-spacing: 1px;font-style: inherit;/* font-variant: small-caps; */width: 88%;font-family: 'Roboto';position: relative;bottom: 70px;}
-#read{
+#read1,#read2{
     color:#365899;
     cursor: pointer;
 }
-#read:hover
+#read1:hover,#read2:hover
 {
    border-bottom:1px solid #365899;
 }
