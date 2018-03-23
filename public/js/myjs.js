@@ -142,10 +142,7 @@ if($(".owwl  .imagesA").length) {
         cont1.click(function () {
             $("html,body").animate({scrollTop: 4400}, 600)
         });
-        var reg = $("#reg");
-        reg.click(function () {
-            $("html,body").animate({scrollTop: 2700}, 600)
-        });
+
         var reg1 = $("#reg1");
         reg1.click(function () {
             $("html,body").animate({scrollTop: 3100}, 600)

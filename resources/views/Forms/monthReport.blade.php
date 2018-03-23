@@ -53,8 +53,8 @@
          <td>
             <div class="form-inline left">
             <div class="form-group">
-               <label class="bold p" for="inputPassword6">تقرير  شهر  </label>
-               <input type="text" id="inputPassword6" class="form-control mx-sm-3 " value="<?php use App\Helper\AppHelper;echo date('F',time())?>" readonly>
+               <label class="bold p" >تقرير  شهر  </label>
+               <input type="text"  class="form-control mx-sm-3 " value="<?php use App\Helper\AppHelper;echo date('F',time())?>" readonly>
             </div>
             </div>
          </td>
@@ -63,8 +63,8 @@
          <td>
             <div class="form-inline">
                <div class="form-group">
-                  <label style="width: 86px;"   class="bold p" for="inputPassword6">  فرع:  </label>
-                  <input type="text" name="pranch" value="{{old('pranch')}}"id="inputPassword6" class="form-control mx-sm-3 sp_input" required>
+                  <label style="width: 86px;"   class="bold p" >  فرع:  </label>
+                  <input type="text" name="pranch" value="{{old('pranch')}}" class="form-control mx-sm-3 sp_input" required>
                </div>
             </div>
 
@@ -301,8 +301,8 @@
          <td>
             <div class="form-inline">
                <div class="form-group">
-                  <label  class="bold p" for="inputPassword6">  اسم المندوب:  </label>
-                  <input type="text" name="name" value="{{old('name')}}" id="inputPassword6" class="form-control mx-sm-3 sp_input" required>
+                  <label  class="bold p" >  اسم المندوب:  </label>
+                  <input type="text" name="name" value="{{old('name')}}"  class="form-control mx-sm-3 sp_input" required>
                </div>
             </div>
 
@@ -313,8 +313,8 @@
          <td>
             <div class="form-inline">
                <div class="form-group">
-                  <label style="width: 86px;"   class="bold p" for="inputPassword6">  مقر السكن:  </label>
-                  <input type="text"  name="place" value="{{old('place')}}"id="inputPassword6" class="form-control mx-sm-3 sp_input" required>
+                  <label style="width: 86px;"   class="bold p" >  مقر السكن:  </label>
+                  <input type="text"  name="place" value="{{old('place')}}" class="form-control mx-sm-3 sp_input" required>
                </div>
             </div>
 
@@ -324,8 +324,8 @@
          <td>
             <div class="form-inline">
                <div class="form-group">
-                  <label style="width: 86px;" class="bold p" for="inputPassword6">  المنطقة:  </label>
-                  <input type="text" name="area"value="{{old('area')}}" id="inputPassword6" class="form-control mx-sm-3 sp_input" required>
+                  <label style="width: 86px;" class="bold p" >  المنطقة:  </label>
+                  <input type="text" name="area"value="{{old('area')}}"  class="form-control mx-sm-3 sp_input" required>
                </div>
             </div>
 

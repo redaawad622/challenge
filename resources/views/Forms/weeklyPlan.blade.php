@@ -71,8 +71,8 @@
                 <td>
                     <div class="form-inline">
                         <div class="form-group">
-                            <label class="bold" for="inputPassword6">اسم المندوب </label>
-                            <input type="text" id="inputPassword6" class="form-control mx-sm-3 " value="{{Auth::user()->name}}" readonly>
+                            <label class="bold" >اسم المندوب </label>
+                            <input type="text"  class="form-control mx-sm-3 " value="{{Auth::user()->name}}" readonly>
 
                         </div>
                     </div>
@@ -81,7 +81,7 @@
                 <td>
                     <div class="form-inline">
                         <div class="form-group">
-                            <label class="bold" for="inputPassword6">  الفترة من  </label>
+                            <label class="bold" >  الفترة من  </label>
                             <input type="text"  value="<?php echo date('Y-m-d',strtotime('last Sunday')); ?>"  class="form-control  mx-sm-3" required readonly>
 
                         </div>
@@ -92,7 +92,7 @@
                 <td>
                     <div class="form-inline ">
                         <div class="form-group">
-                            <label class="bold" for="inputPassword6"> الي </label>
+                            <label class="bold" > الي </label>
                             <input type="text"  value="<?php echo date('Y-m-d',strtotime('last Sunday')+4*24*60*60); ?>"  class="form-control  mx-sm-3" required readonly>
 
                         </div>
@@ -102,8 +102,8 @@
                 <td>
                     <div class="form-inline">
                         <div class="form-group">
-                            <label class="bold" for="inputPassword6">المشرف د/ </label>
-                            <input type="text" name="leader" value="{{old('leader')}}" id="inputPassword6" class="form-control mx-sm-3 " required>
+                            <label class="bold" >المشرف د/ </label>
+                            <input type="text" name="leader" value="{{old('leader')}}"  class="form-control mx-sm-3 " required>
 
                         </div>
                     </div>
@@ -111,8 +111,8 @@
                 <td>
                     <div class="form-inline ">
                         <div class="form-group">
-                            <label class="bold p" for="inputPassword6">الاسبوع </label>
-                            <input type="text" name="week_number" id="inputPassword6" class="form-control mx-sm-3 " value="<?php
+                            <label class="bold p" >الاسبوع </label>
+                            <input type="text" name="week_number"  class="form-control mx-sm-3 " value="<?php
                             function weekOfMonth($date) {
                                 $firstOfMonth = date("Y-m-01", strtotime($date));
                                 return intval(date("W", strtotime($date))) - intval(date("W", strtotime($firstOfMonth)));

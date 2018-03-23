@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'LoginController@getall');
+Route::get('/home/getSlider', 'LoginController@getSlider');
 Route::get('/access', 'LoginController@acd');
 Route::view('/permission', 'permission');
 

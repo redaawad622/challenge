@@ -495,7 +495,7 @@ button{ transition:.2s; background:0; border:0; color:#fff;  height:32px;   }
 button:hover{cursor:pointer; }
 
 /*end feed*/
-#icon-hover:hover
+#icon-hover:hover,#my-h-i:hover
 {
     color: #666666;
 }

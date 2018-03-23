@@ -57,8 +57,8 @@
                      <!-- Navbar Menu -->
                      <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center custom-ul">
                         <li class="nav-item dropdown">
-                           <a id="notifications" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link"><i class="fa fa-cog"></i></a>
-                           <ul aria-labelledby="notifications" class="dropdown-menu">
+                           <a id="color" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link"><i class="fa fa-cog"></i></a>
+                           <ul aria-labelledby="color" class="dropdown-menu">
                               <li id="d">
                                  <a rel="nofollow" href="#" class="dropdown-item">
                                     <div class="notification">

@@ -4,63 +4,46 @@
     <title>CHALLENGE TEAM</title>
 
 <meta charset="utf-8">
-<meta name="Description" content="this website Related to Epico website and belong to epico company." />
+<meta name="description" content="this website Related to Epico website and belong to epico company." />
+    <meta property="og:title" content="this website Related to Epico website and belong to epico company." />
+    <meta property="og:description" content="this website Related to Epico website and belong to epico company" />
+    <meta property="og:image" content="https://epicoph.com/favicon-32x32.png" />
 
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
        <meta name="keywords" content="epico,eipico,epicoph,eipicoph,challeng team,challenge,team">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+
     <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="manifest" href="/manifest.json">
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 <meta name="theme-color" content="#ffffff">
-    
-    
+
+
 
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/bootstrap1.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/hover.css">
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/hover-min.css">
-   
+
     <link rel="stylesheet" href="css/demo-page.css">
     <link rel="stylesheet" href="css/animate.css">
         <link rel="stylesheet" href="css/style.css">
 
-    <style>
-    	 .invalid-feedback
-        {
-            color: #721c24 !important;
 
-            font-size: 14px !important;
-
-        }
-        .is-invalid
-        {
-            border:2px solid #d72020 !important;
-        }
-        .navbar-inverse .navbar-nav > li > a:hover
-        {
-        color:#2098D1 !important;
-        }
-
-
-    </style>
-   
 
 </head>
 <body>
 
 
- <!-- end nav section --> 
+ <!-- end nav section -->
 
 <div class="color visible-lg  visible-md"></div>
-    
-    
+
+
 <!--first nav-->
 <section class="fnav visible-lg  visible-md">
     <div class="container">
@@ -78,9 +61,9 @@
             </div>
         </div>
     </div>
-</section>   
-    
-    
+</section>
+
+
 <!--first nav-->
 
 
@@ -89,12 +72,12 @@
          <li><h2 style="color: #710909">{{$e}}</h2></li>
      @endforeach
  </ul>
-    
+
 <!-- start nav section -->
     <nav class="navbar navbar-inverse">
   <div class="container">
   <!-- Brand and toggle get grouped for better mobile display -->
-      
+
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#phonescreen">
         <span class="sr-only">Toggle navigation</span>
@@ -102,13 +85,13 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#" style="font-family:cursive;"><img src="image/md1.jpg" alt="image"><h5>
+      <a class="navbar-brand" href="#" style="font-family:cursive;"><img src="image/md1.jpg" alt="Nav logo"><h5>
        CHALLENGE TEAM</h5></a>
-       
+
     </div>
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="phonescreen">
-        
+
 <!-- For Large And Medium Screen -->
       <ul class="nav navbar-nav navbar-right hidden-xs hidden-ms">
           @if(Auth::check())
@@ -120,18 +103,18 @@
         <li id="gal"><a href="#">Gallery</a></li>
         <li id="abou"><a href="#">About</a></li>
          <li id="cont"><a href="#con">Contact</a></li>
-         
+
           @if(Auth::check())
               <li ><a href="/profile">{{Auth::user()->name}}</a></li>
               <li ><a href="/logout">Logout</a></li>
           @else
 
-              <li id="reg"><a href="#rege">Register</a></li>
-               <li><a href="#"><button onclick="document.getElementById('id01').style.display='block'">Login</button></a></li>
+              <li><a href="#rege">Register</a></li>
+                  <li><a onclick="document.getElementById('id01').style.display='block'" href="#">Login</a></li>
 
-		
+
           @endif
-          
+
           @if(Auth::check()&&Auth::user()->hasRole('admin'))
               <li><a href="/admin">Admin</a></li>
           @endif
@@ -153,8 +136,8 @@
               <li ><a href="/logout">Logout</a></li>
           @else
 
-              <li id="reg"><a href="#rege">Register</a></li>
-              <li><a href="#"><button onclick="document.getElementById('id01').style.display='block'">Login</button></a></li>
+              <li><a href="#rege">Register</a></li>
+              <li><a onclick="document.getElementById('id01').style.display='block'" href="#">Login</a></li>
 
           @endif
           @if(Auth::check()&&Auth::user()->hasRole('admin'))
@@ -165,17 +148,17 @@
 
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
-</nav>    
-    
+</nav>
 
-    
+
+
   <!--event-->
-  <section class="ssl text-center">  
-    
+  <section class="ssl text-center">
+
  <div class="slideshow-container">
   <div class="mySlides fade">
 
-    <img src="image/s4.jpg" style="width:100%" alt="image">
+    <img src="image/s4.jpg" style="width:100%" alt="mainImage">
     <div class="text">
                 <a href="https://www.facebook.com/Epico-411742395909139/"> <i class="fa fa-facebook  hidden-xs  wow flipInX"  data-wow-duration="1.5s" data-wow-offset="100" data-wow-dely="1.5s"></i></a>
                 <i class="fa fa-linkedin  hidden-xs  wow flipInX"  data-wow-duration="1.5s" data-wow-offset="100" data-wow-dely="1.5s"></i>
@@ -183,12 +166,12 @@
         <h2 style="font-size:60px;font-weight:bold;margin-top:0;font-family: 'Roboto', sans-serif;" class="  wow fadeInRightBig"  data-wow-duration="1.5s" data-wow-offset="100" data-wow-dely="1.5s">Welcome in our website</h2> <p class="lead wow fadeInLeftBig"  data-wow-duration="1.5s" data-wow-offset="100" data-wow-dely="1.5s" style="color:#000;">This is The Event Section Here You Can Show Our Event And Details About Each It<br>  I Hope You Enjoy in our wonderful website.</p>
       </div>
   </div>
-     @foreach($events as $event)
+     @foreach($events as $key=>$event)
 
   <div class="mySlides fade">
 
 
-    <img src="{{asset('image/'.$event->url)}}" style="width:100%" alt="image">
+    <img class="event_img{{$key}}" src="{{asset('image/defaultImg.jpg')}}" style="width:100%" alt="Slide {{$key+2}}">
     <div class="text">
         @if(Auth::check()&&Auth::user()->hasRole('admin'))
             <a href="/removeEvent/{{$event->id}}"> <i class="fa fa-times fa-2x" aria-hidden="true" style="z-index: 9999;position: absolute;float: right; left: 80%"></i></a>
@@ -207,28 +190,81 @@
 <br>
 
 <div class="sp_cars" style="text-align:center;position:relative;bottom:120px;">
-        <span class="dot" onclick="currentSlide(1)"><h5>00</h5> <h5>Month <i class="fa fa-star"></i></h5> <h5 class="o1">00:00pm</h5> </span>
+        <span style="text-align: left" class="dot" onclick="currentSlide(1)"><span>00</span><br> <span>Month <i class="fa fa-star"></i></span><br> <span class="o1">00:00pm</span> </span>
 
     @foreach($events as $key => $event)
 
-        <span class="dot" onclick="currentSlide({{$key+2}})"><h5><?php echo date('d',strtotime($event->date));?></h5> <h5><?php echo date('F',strtotime($event->date));?> <i class="fa fa-star"></i></h5> <h5 class="o1"><?php echo date('H:i a',strtotime($event->time));?></h5> </span>
+        <span style="text-align: left"  class="dot" onclick="currentSlide({{$key+2}})"><span><?php echo date('d',strtotime($event->date));?></span><br> <span><?php echo date('F',strtotime($event->date));?> <i class="fa fa-star"></i></span> <br><span class="o1"><?php echo date('H:i a',strtotime($event->time));?></span> </span>
     @endforeach
 
 </div>
 </section>
 
 <!------------------------------------------->
-    
-<!-- end owl carousel -->  
-    
+
+<!-- end owl carousel -->
+
     <!--medication-->
-<!-- start owl carousel -->    
+<!-- start owl carousel -->
 <div class="owwl text-center">
     <div class="container-fluid">
         <h2 style="margin-top: 20px;" class="h1 wow bounce"  data-wow-duration="1.5s" data-wow-offset="100" data-wow-dely="1.5s" >Medications</h2>
         <hr style="width:200px;height:2px;background:#22b6e9;margin-top:15px;">
         <p class="lead">This Is The Medication Section Here You Can See Our Medication And By Click On The Image You Can See The Details About It</p>
         <div class="owl-carousel owl-loaded owl-drag owl-theme owl-center">
+
+
+            <div class="item">
+                <div class="images imagesA">
+                  <div class="hiddA hidd">
+                        <p class="pp">Dec 13, 2017</p><br>
+                        <h3>This sildin </h3>
+                        <p class="lead">Be confident in you power </p>
+                        <i class="fa fa-plus-square"></i>
+                        <i class="fa fa-medkit"></i>
+                    </div>
+                    <img src="image/1513203718.jpg" class="img-responsive " alt="sliderImage 2">
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="images imagesB">
+                    <div class="hiddB hidd">
+                        <p class="pp">Dec 13, 2017</p><br>
+                        <h3>Vastaflam</h3>
+                        <p class="lead">potent analgesic / potent anti-inflammatory </p>
+                        <i class="fa fa-plus-square"></i>
+                        <i class="fa fa-medkit"></i>
+                    </div>
+                    <img src="image/1513203901.jpg" class="img-responsive" alt="sliderImage 3">
+                </div>
+            </div>
+
+              <div class="item">
+                <div class="images imagesC">
+                    <div class="hiddC hidd">
+                        <p class="pp">Dec 13, 2017</p><br>
+                        <h3>Flumox cap. </h3>
+                        <p class="lead">broad spectrum anti-biotic </p>
+                        <i class="fa fa-plus-square"></i>
+                        <i class="fa fa-medkit"></i>
+                    </div>
+                    <img src="image/1513203370.jpg" class="img-responsive" alt="sliderImage 4" >
+                  </div>
+            </div>
+
+              <div class="item">
+                <div class="images imagesD">
+                    <div class="hiddD hidd">
+                        <p class="pp">Dec 8, 2017</p><br>
+                        <h3> FLUMOX  FAMILY </h3>
+                        <p class="lead"> Amoxycillin + flucloxacillin</p>
+                        <i class="fa fa-plus-square"></i>
+                        <i class="fa fa-medkit"></i>
+                    </div>
+                    <img src="image/1512766983.jpg" class="img-responsive" alt="sliderImage 5">
+                  </div>
+            </div>
 
             @foreach($medications as $key=>$medication)
                 <div class="item">
@@ -244,95 +280,19 @@
                             <i class="fa fa-plus-square"></i>
                             <i class="fa fa-medkit"></i>
                         </div>
-                        <img src="image/{{$medication->url}}" class="img-responsive" alt="image">
+                        <img src="{{asset('image/defaultImg.jpg')}}" class="img-responsive slider_img{{$key}}" alt="sliderImage {{$key+5}}">
                     </div>
                 </div>
             @endforeach
-            <div class="item">
-                <div class="images imagesA">
-                  <div class="hiddA hidd">
-                        <p class="pp">Dec 13, 2017</p><br>
-                        <h3>This sildin </h3>
-                        <p class="lead">Be confident in you power </p>
-                        <i class="fa fa-plus-square"></i>
-                        <i class="fa fa-medkit"></i>
-                    </div>
-                    <img src="image/1513203718.jpg" class="img-responsive " alt="image">
-                </div>
-            </div>
-            
-            <div class="item">
-                <div class="images imagesB">
-                    <div class="hiddB hidd">
-                        <p class="pp">Dec 13, 2017</p><br>
-                        <h3>Vastaflam</h3>
-                        <p class="lead">potent analgesic / potent anti-inflammatory </p>
-                        <i class="fa fa-plus-square"></i>
-                        <i class="fa fa-medkit"></i>
-                    </div>
-                    <img src="image/1513203901.jpg" class="img-responsive" alt="image">
-                </div>
-            </div>
-            
-              <div class="item">
-                <div class="images imagesC">
-                    <div class="hiddC hidd">
-                        <p class="pp">Dec 13, 2017</p><br>
-                        <h3>Flumox cap. </h3>
-                        <p class="lead">broad spectrum anti-biotic </p>
-                        <i class="fa fa-plus-square"></i>
-                        <i class="fa fa-medkit"></i>
-                    </div>
-                    <img src="image/1513203370.jpg" class="img-responsive" alt="image" >
-                  </div>
-            </div>
-            
-              <div class="item">
-                <div class="images imagesD">
-                    <div class="hiddD hidd">
-                        <p class="pp">Dec 8, 2017</p><br>
-                        <h3> FLUMOX  FAMILY </h3>
-                        <p class="lead"> Amoxycillin + flucloxacillin</p>
-                        <i class="fa fa-plus-square"></i>
-                        <i class="fa fa-medkit"></i>
-                    </div>
-                    <img src="image/1512766983.jpg" class="img-responsive" alt="image">
-                  </div>
-            </div>
 
 
-            
+
             </div>
     </div>
 </div>
-    
-<!--------------------------------------------->
-    <section class="eight text-center">
-<div class="container">
-
-<div class="client col-lg-2 col-md-2 col-sm-2 col-xs-12">
-<img src="image/client-5.png" alt="image">
-</div>
-<div class="client col-lg-2 col-md-2 col-sm-2 col-xs-12">
-<img src="image/client-1.png" alt="image">
-</div>
-<div class="client col-lg-2 col-md-2 col-sm-2 col-xs-12">
-<img src="image/client-2.png" alt="image">
-</div>
-<div class="client col-lg-2 col-md-2 col-sm-2 col-xs-12">
-<img src="image/client-3.png" alt="image">
-</div>
-<div class="client col-lg-2 col-md-2 col-sm-2 col-xs-12">
-<img src="image/client-4.png" alt="image">
-</div>
-<div class="client col-lg-2 col-md-2 col-sm-2 col-xs-12">
-<img src="image/client-5.png" alt="image">
-</div>
 
 
-</div>
-</section>
-<!--------------------------------------------->
+ <!--==================================================-->
 
 <section class="obj">
     <div class="back">
@@ -340,7 +300,7 @@
         <div class="row">
             <div class="obj-main">
                 <div class="ob1 col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                    <img src="image/ra.png" class="img-responsive wow pulse" alt="image"  data-wow-duration="1s" data-wow-offset="100" data-wow-dely="1s">
+                    <img src="image/ra.png" class="img-responsive wow pulse" alt="person"  data-wow-duration="1s" data-wow-offset="100" data-wow-dely="1s">
                 </div>
                 <div class="ob2 col-lg-9 col-md-9 col-sm-12 col-xs-12">
                     <h2 class="h1">Objective</h2>
@@ -373,7 +333,7 @@
 
 
                                 <i class="fa fa-hospital-o fa-2x"></i><br>
-                                    <form  role="form" class="form-inline obj-form-edit"  action="/editObjective" method="post" style="margin-left: 120px;">
+                                    <form   class="form-inline obj-form-edit"  action="/editObjective" method="post" style="margin-left: 120px;">
                                         {{csrf_field()}}
 
                                         <div class="form-group mx-sm-3">
@@ -389,7 +349,7 @@
 
 
                                 <i class="fa fa-group fa-2x"></i><br>
-                                <form role="form"  class="form-inline obj-form-edit"  action="/editObjective" method="post" style="margin-left: 120px;">
+                                <form   class="form-inline obj-form-edit"  action="/editObjective" method="post" style="margin-left: 120px;">
                                     {{csrf_field()}}
 
                                     <div class="form-group mx-sm-3">
@@ -404,7 +364,7 @@
                             </div>
                             <div class="f1 col-lg-6 col-md-6 col-sm-6 col-xs-12" id="obj-item-edit2" style="display: none;">
                                 <i class="fa fa-life-ring fa-2x"></i><br>
-                                <form  role="form" class="form-inline obj-form-edit"  action="/editObjective" method="post" style="margin-left: 120px;">
+                                <form   class="form-inline obj-form-edit"  action="/editObjective" method="post" style="margin-left: 120px;">
                                     {{csrf_field()}}
 
                                     <div class="form-group mx-sm-3">
@@ -418,7 +378,7 @@
 
 
                                 <i class="fa fa-clipboard fa-2x"></i><br>
-                                <form role="form" class="form-inline obj-form-edit"  action="/editObjective" method="post" style="margin-left: 120px;">
+                                <form  class="form-inline obj-form-edit"  action="/editObjective" method="post" style="margin-left: 120px;">
                                     {{csrf_field()}}
 
                                     <div class="form-group mx-sm-3">
@@ -434,16 +394,16 @@
 
 
 
-                    </div>  
+                    </div>
                 </div>
             </div>
-        </div>  
+        </div>
     </div>
     </div>
 </section>
-    
-    
- <!----------------------------------------------->   
+
+
+ <!--==================================================-->
     <section class="about-us">
         <div class="gg1">
     <div class="container">
@@ -464,25 +424,25 @@
     </div>
     </div>
 </section>
-<!----------------------------------------------->
-    
-    
+ <!--==================================================-->
+
+
     <!--Register-->
  @if(!Auth::check())
 <div class="contact" id="rege">
    <div class="contact-bg">
 	<div class="container">
-        
+
 		<div class="contact-main">
 			 <div class="contact-top">
 			 	<h3 class=" wow bounce"  data-wow-duration="1.5s" data-wow-offset="100" data-wow-dely="1.5s">Register</h3>
 			 </div>
 			 <div class="contact-bottom">
-                 <form role="form" action="/" method="post"  enctype="multipart/form-data" >
+                 <form  action="/" method="post"  enctype="multipart/form-data" >
                     {{csrf_field()}}
                     <div class="row">
-                        
-                      <div class="co1 col-lg-6 col-md-6 col-sm-6"> 
+
+                      <div class="co1 col-lg-6 col-md-6 col-sm-6">
 			 		<input type="text" class="<?php if ($errors->has('name')) {echo 'is-invalid';} ?>"  name="name" value="{{old('name')}}" placeholder='Your Name that will appear in reports' required>
                           <div class="invalid-feedback">
                               @foreach ($errors->get('name') as $message)
@@ -501,9 +461,9 @@
                                   {{$message}}
                               @endforeach
                           </div>
-                    </div> 
-                        
-                     <div class="co1 col-lg-6 col-md-6 col-sm-6">   
+                    </div>
+
+                     <div class="co1 col-lg-6 col-md-6 col-sm-6">
 			 		<input type="text" name="email" value="{{old('email')}}" class="<?php if ($errors->has('email')){echo'is-invalid';} ?>"  placeholder='Your E-mail' required>
                          <div class="invalid-feedback">
                              @foreach ($errors->get('email') as $message)
@@ -523,10 +483,10 @@
                              @endforeach
                          </div>
                     </div>
-                        
+
                     </div>
 			 		<div class="con-send">
-                    </div>  
+                    </div>
 			 		<input type="submit" id="sub-register"  value="Register"/>
 			 	</form>
 			 </div>
@@ -537,65 +497,66 @@
 </div>
 @endif
 <!--contact end here-->
-    
-    
- <!-----------------------------------------------> 
-    
 
-    
-    
+
+ <!--==================================================-->
+
+
+
+
     <div class="owwll text-center">
     <div class="container-fluid">
         <h2 class="h1 wow bounce"  data-wow-duration="1.5s" data-wow-offset="100" data-wow-dely="1.5s">Gallery</h2>
         <hr style="width:150px;height:2px;background:#22b6e9;margin-top:-10px;">
         <p class="lead">This Is A Gellary Section Here You Can See Our Website Gallery Enjoy </p>
         <div class="owl-carousel owl-loaded owl-drag owl-theme owl-center ">
-            @foreach($galleries as $gallery)
-            <div class="items">
-                @if(Auth::check()&&Auth::user()->hasRole('admin'))
-                    <a href="/removegallery/{{$gallery->id}}"> <i class="fa fa-times fa-2x" aria-hidden="true" style="position: absolute;right:20px;z-index:555;float: right;"></i></a>
-                @endif
-                <div class="imagess">
-                    <img src="image/{{$gallery->url}}" class="img-responsive" alt="image">
-                </div>
-            </div>
-            @endforeach
-            
-            <div class="items">
-                <div class="imagess">
-                    <img src="image/1513204010.png" class="img-responsive" alt="image">
-                </div>
-            </div>
-            
-              <div class="items">
-                <div class="imagess">
-                    <img src="image/1513204353.jpg" class="img-responsive" alt="image">
-                  </div>
-            </div>
-            
-              <div class="items">
-                <div class="imagess">
-                    <img src="image/1512895358.jpg" class="img-responsive" alt="image">
-                  </div>
-            </div>
-            
-              <div class="items">
-                <div class="imagess">
-                    <img src="image/dr5.jpg" class="img-responsive" alt="image">
-                  </div>
-  
-            </div>
-            
 
-            
+
+            <div class="items">
+                <div class="imagess">
+                    <img src="image/1513204010.png" class="img-responsive" alt="gallery image 1">
+                </div>
+            </div>
+
+              <div class="items">
+                <div class="imagess">
+                    <img src="image/1513204353.jpg" class="img-responsive" alt="gallery image 2">
+                  </div>
+            </div>
+
+              <div class="items">
+                <div class="imagess">
+                    <img src="image/1512895358.jpg" class="img-responsive" alt="gallery image 3">
+                  </div>
+            </div>
+
+              <div class="items">
+                <div class="imagess">
+                    <img src="image/dr5.jpg" class="img-responsive" alt="gallery image 4">
+                  </div>
+
+            </div>
+            @foreach($galleries as $key=>$gallery)
+                <div class="items">
+                    @if(Auth::check()&&Auth::user()->hasRole('admin'))
+                        <a href="/removegallery/{{$gallery->id}}"> <i class="fa fa-times fa-2x" aria-hidden="true" style="position: absolute;right:20px;z-index:555;float: right;"></i></a>
+                    @endif
+                    <div class="imagess">
+                        <img src="{{asset('image/defaultImg.jpg')}}" class="img-responsive gallery_img{{$key}}" alt="gallery image {{$key+5}}">
+                    </div>
+                </div>
+            @endforeach
+
+
+
             </div>
     </div>
 </div>
 
-<!----------------------------------------------------->
-    
-<!-- start footer -->    
-    
+ <!--==================================================-->
+
+<!-- start footer -->
+
 <section class="foot" id='con'>
     <div class="dd">
     <div class="container">
@@ -604,17 +565,17 @@
         <div class="row">
             <div class="footer">
                 <div class="fot col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                    
+                    <h3>Contact Admin</h3>
+
                     <ul id="admin-c">
-                        <h3>Contact Admin</h3>
                         <li> <i class="fa fa-envelope"></i>{{$contacts[0]->A_mail1}}</li>
                         <li> <i class="fa fa-envelope"></i>{{$contacts[0]->A_mail2}}</li>
-                        <li><i class="fa fa-phone"></i>{{$contacts[0]->A_num}}</li><br>
-                       @if(Auth::check() && Auth::user()->hasRole('admin')) <li> <button class="btn btn-danger" id="admin-hide"  type="button">edit</button></li>@endif
+                        <li><i class="fa fa-phone"></i>{{$contacts[0]->A_num}}</li>
+                       @if(Auth::check() && Auth::user()->hasRole('admin')) <button class="btn btn-danger" id="admin-hide" style="display: flex;"  type="button">edit</button>@endif
                     </ul>
-                    <ul id="admin-c-e" style="display: none;">
-                        <h3>Contact Admin</h3>
-                        <form role="form" action="/editAdmin" method="post">
+                    <form id="admin-c-e" style="display: none;"  action="/editAdmin" method="post">
+
+                    <ul >
                             {{csrf_field()}}
                             <div class="form-inline">
                                 <div class="form-group">
@@ -629,14 +590,15 @@
 
                                 </div>
 
-                            </div> <div class="form-inline">
+                            </div>
+                        <div class="form-inline">
                                 <div class="form-group">
                                     <i class="fa fa-phone" style="background-color:#f5f5f5; margin-left:8px; "></i><input type="text" name="A_num" class="form-control"  value="{{ old( 'A_num', $contacts[0]->A_num)}}" />
 
                                 </div>
 
                             </div>
-                            <br>
+
                             <input type="hidden" name="id" value="{{$contacts[0]->id}}">
 
                                 <button style="display: none;"  class="btn btn-primary admin-submit"  type="submit">edit</button>
@@ -644,8 +606,8 @@
 
 
 
-                        </form>
-                        <br>
+
+
                         <div style="display: flex;">
                             <button  style="margin-left: 18px;" class="btn btn-primary"   id="admin-submit" type="bottom">edit</button>
                             <button style="margin-left: 10px;"  class="btn btn-danger"  id="admin-cancel" type="bottom">cancel</button>
@@ -654,21 +616,21 @@
                         </div>
 
                     </ul>
+                    </form>
 
                 </div>
                 <div class="fot col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                    
+                    <h3>Contact Company</h3>
+
                     <ul id="company-c">
-                        <h3>Contact Company</h3>
                         <li> <i class="fa fa-envelope"></i>{{$contacts[0]->c_mail1}}</li>
                         <li> <i class="fa fa-envelope"></i> {{$contacts[0]->c_mail2}}</li>
-                        <li><i class="fa fa-phone"></i>{{$contacts[0]->c_num}}</li><br>
-                        @if(Auth::check() && Auth::user()->hasRole('admin')) <li> <button class="btn btn-danger" id="company-hide"  type="button">edit</button></li>@endif
+                        <li><i class="fa fa-phone"></i>{{$contacts[0]->c_num}}</li>
+                        @if(Auth::check() && Auth::user()->hasRole('admin')) <button class="btn btn-danger" id="company-hide" style="display: flex;"  type="button">edit</button>@endif
 
                     </ul>
-                    <ul id="company-c-e" style="display: none;">
-                        <h3>Contact Company</h3>
-                        <form role="form" action="/editCompany" method="post">
+                    <form id="company-c-e" style="display: none;"  action="/editCompany" method="post">
+
                             {{csrf_field()}}
                             <div class="form-inline">
                                 <div class="form-group">
@@ -690,7 +652,7 @@
                                 </div>
 
                             </div>
-                            <br>
+
                             <input type="hidden" name="id" value="{{$contacts[0]->id}}">
 
                             <button style="display: none;"  class="btn btn-primary company-submit"  type="submit">edit</button>
@@ -698,30 +660,28 @@
 
 
 
-                        </form>
-                        <br>
+
                         <div style="display: flex;">
                             <button  style="margin-left: 18px;" class="btn btn-primary"   id="company-submit" type="bottom">edit</button>
                             <button style="margin-left: 10px;"  class="btn btn-danger"  id="company-cancel" type="bottom">cancel</button>
 
                         </div>
 
-                    </ul>
+                    </form>
+
                 </div>
                 <div class="fot col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                    
+                    <h3>Public Contact</h3>
+
                     <ul id="public-c">
-                        <h3>Public Contact</h3>
                         <li> <i class="fa fa-envelope"></i>{{$contacts[0]->p_mail1}}</li>
                         <li> <i class="fa fa-envelope"></i>{{$contacts[0]->p_mail2}}</li>
-                        <li> <i class="fa fa-phone"></i> {{$contacts[0]->p_num}}</li><br>
-                        @if(Auth::check() && Auth::user()->hasRole('admin')) <li> <button class="btn btn-danger" id="public-hide"  type="button">edit</button></li>@endif
+                        <li> <i class="fa fa-phone"></i> {{$contacts[0]->p_num}}</li>
+                        @if(Auth::check() && Auth::user()->hasRole('admin'))  <button class="btn btn-danger" id="public-hide" style="display: flex;"  type="button">edit</button>@endif
 
                     </ul>
+                    <form id="public-c-e" style="display: none;" action="/editPublic" method="post">
 
-                    <ul id="public-c-e" style="display: none;">
-                        <h3>Public Contact</h3>
-                        <form role="form" action="/editPublic" method="post">
                             {{csrf_field()}}
                             <div class="form-inline">
                                 <div class="form-group">
@@ -743,7 +703,7 @@
                                 </div>
 
                             </div>
-                            <br>
+
                             <input type="hidden" name="id" value="{{$contacts[0]->id}}">
 
                             <button style="display: none;"  class="btn btn-primary public-submit"  type="submit">edit</button>
@@ -751,29 +711,29 @@
 
 
 
-                        </form>
-                        <br>
+
                         <div style="display: flex;">
                             <button  style="margin-left: 18px;" class="btn btn-primary"   id="public-submit" type="bottom">edit</button>
                             <button style="margin-left: 10px;"  class="btn btn-danger"  id="public-cancel" type="bottom">cancel</button>
 
                         </div>
 
-                    </ul>
+                    </form>
+
                 </div>
                 <div class="fot col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                    <h3>Developer Contact</h3>
 
                     <ul>
-                        <h3>Developer Contact</h3>
                         <li> <i class="fa fa-envelope"></i>redaawad622@gmail.com</li>
                         <li> <i class="fa fa-envelope"></i>onlyelhefny@gmail.com</li>
                         <li> <i class="fa fa-phone"></i>+2 01091258609</li>
                     </ul>
                 </div>
                 <div  style="text-align: center;" class="fot  col-xs-12">
-                    
+                    <h3>Follow Us</h3>
+
                     <ul>
-                        <h3>Follow Us</h3>
                         <a href="https://www.facebook.com/Epico-411742395909139/"><i class="fa fa-facebook"></i></a>
 
                         <i class="fa fa-linkedin"></i>
@@ -785,42 +745,42 @@
     </div>
     </div>
 </section>
-    
-<!-- end footer --> 
 
-    
-    
-    
-<!----------------------------------------------------->   
-    
+<!-- end footer -->
+
+
+
+
+ <!--==================================================-->
+
 <div class="log text-center">
     <div class="container">
         <div class="loog">
-            <img src="image/md1.jpg" class=" wow rubberBand" alt="image"  data-wow-duration="1.5s" data-wow-offset="100" data-wow-dely="1.5s">
+            <img src="image/md1.jpg" class=" wow rubberBand" alt="logo"  data-wow-duration="1.5s" data-wow-offset="100" data-wow-dely="1.5s">
             <h1 class="h1">CHALLENGE TEAM</h1>
             <div class="copy">
                 <div class="copy1 text-center">copyrights © <strong>Challenge Team</strong> Resources          Trading, All rights reserved.</div>
                 <div class="copy2 text-center">designed & developed by <strong>rowStars team</strong></div>
             </div>
         </div>
-    </div>  
-</div>   
-    
-<!----------------------------------------------------->    
+    </div>
+</div>
+
+ <!--==================================================-->
     <section class="h1h text-center">
 
     <div class="container">
-        
+
     <!-- Button to open the modal login form -->
 
 
 <!-- The Modal -->
 <div id="id01" class="modal">
-  <span onclick="document.getElementById('id01').style.display='none'" 
+  <span onclick="document.getElementById('id01').style.display='none'"
 class="close" title="Close Modal">&times;</span>
 
   <!-- Modal Content -->
-  <form  role="form" class="modal-content animate" method="post" action="/login">
+  <form   class="modal-content animate" method="post" action="/login">
       {{ csrf_field() }}
     <div class="imgcontainer">
       <img src="image/md1.jpg" alt="Avatar" class="avatar">
@@ -843,10 +803,10 @@ class="close" title="Close Modal">&times;</span>
 
 
       <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn" style="background:#003a5a;width:100px;margin:auto;margin-bottom:20px;">Cancel</button>
- 
+
   </form>
-</div>    
-        </div>     
+</div>
+        </div>
  </section>
 
 
@@ -865,15 +825,29 @@ class="close" title="Close Modal">&times;</span>
     <script src="js/popper.min.js"></script>
 
 
-    <script src="js/wow.min.js"></script> 
-    <script>new WOW().init();</script>  
-    <script src="js/jquery.nicescroll.min.js"></script>   
+    <script src="js/wow.min.js"></script>
+    <script src="js/jquery.nicescroll.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
  <script src="js/myjs.js" type="text/javascript"></script>
 
  <script>
+     $(document).ready(function () {
+         $('[id]').each(function(){
+             var ids = $('[id="'+this.id+'"]');
+             if(ids.length>1 && ids[0]==this)
+             {
+                 console.log('Multiple IDs #'+this.id);
 
-        @foreach($medications as $i=>$medication)
+             }
+
+         });
+
+     });
+
+
+
+
+     @foreach($medications as $i=>$medication)
         $(".owwl .images{{$i+1}}").hover(function(){
             $(".owwl .images .hidd{{$i+1}}").toggle(600);
         });
@@ -980,10 +954,10 @@ $('#obj-cancel').click(function () {
 
 
         });
-        
-        
-       
-        
+
+
+
+
         var slideIndex = 1;
 showSlides(slideIndex);
 
@@ -1002,15 +976,48 @@ function showSlides(n){
   if (n > slides.length) {slideIndex = 1}
   if (n < 1) {slideIndex = slides.length}
   for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none"; 
+      slides[i].style.display = "none";
   }
   for (i = 0; i < dots.length; i++) {
       dots[i].className = dots[i].className.replace(" active", "");
   }
-  slides[slideIndex-1].style.display = "block"; 
+  slides[slideIndex-1].style.display = "block";
   dots[slideIndex-1].className += " active";
 }
 
+
+     $(window).on('load', function() {
+        $.ajax({
+            headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') },
+
+            type:'get',
+            url:'/home/getSlider',
+
+            dataType:'json',
+            success:function (data) {
+                $.each(data.meds,function (index,med) {
+                    $(".slider_img"+index).attr("src","image/"+med['url']);
+
+
+
+                });
+                $.each(data.events,function (index,event) {
+                    $(".event_img"+index).attr("src","image/"+event['url']);
+
+
+
+                });
+                $.each(data.gallerys,function (index,gallery) {
+                    $(".gallery_img"+index).attr("src","image/"+gallery['url']);
+
+
+
+                });
+
+            }
+
+        });
+     });
 
 </script>
 </body>

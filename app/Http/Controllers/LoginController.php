@@ -41,6 +41,21 @@ class LoginController extends Controller
    	 return view('login',compact('events','galleries','medications','objectives','objectives_count','contacts'));
 
    }
+   public function getSlider()
+   {
+       $medications=Medication::select('url')->get();
+       $events=Event::select('url')->get();
+       $gallerys=Gallery::select('url')->get();
+
+       return  response()->json ([
+           'success'=>true,
+           'meds' => $medications,
+           'events' => $events,
+           'gallerys' => $gallerys,
+
+       ]);
+
+   }
    public function acd()
    {
 
@@ -207,7 +222,7 @@ class LoginController extends Controller
                  'success'=>false,
                  'errors' => $validation->errors()->toArray(),
 
-             ]);
+             ],200);
          }
 
      $cv=new Cv();
