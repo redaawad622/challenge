@@ -19,8 +19,7 @@
       <!-- Favicon-->
       <link rel="shortcut icon" href="{{asset('image/favicon.ico')}}">
       <!-- Font Awesome CDN-->
-      <!-- you can replace it by local Font Awesome-->
-      <script src="{{asset('js/front.js')}}"></script>
+
       <!-- Font Icons CSS-->
       <link rel="stylesheet" href="{{asset('css/icons.css')}}">
       <link rel="stylesheet" href="{{asset('css/animate.css')}}">
@@ -120,17 +119,19 @@
 
                         <!-- Notifications-->
                         <li class="nav-item dropdown push_notifay">
-                           <a  id="notifications" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link no_notify"><i class="fa fa-bell-o"></i><span class="badge bg-red num"></span></a>
-                           <ul aria-labelledby="notifications" class="dropdown-menu ">
+                           <a  id="notifications" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link no_notify"><i class="fa fa-bell-o"></i><span id="N_count" class="badge bg-red num">{{count(auth()->user()->unreadNotifications)}}</span></a>
+                           <ul aria-labelledby="notifications" class="dropdown-menu all_notifay ">
 
-                              @foreach($notifies as $notf)
+                              @foreach (auth()->user()->notifications as $notification)
                                  <li>
-                                    <a rel="nofollow" href="#" class="dropdown-item ">
+                                    <a rel="nofollow" href="#" class="dropdown-item {{$notification->read_at==null ?'unRead':''}} ">
                                        <div class="notification">
-                                          <div class="notification-content"><i class="fa fa-envelope bg-green"></i>{{$notf->content}}</div>
-                                           <div class="notification-time "><small>{{$notf->created_at}}</small></div>'
+                                          <div class="notification-content"><i class="fa fa-envelope bg-green"></i>{{$notification->data['data']}}</div>
+                                          <div class="notification-time "><small>{{$notification->created_at}}</small></div>'
 
-                                          </div></a></li>
+                                       </div>
+                                    </a>
+                                 </li>
                                  @endforeach
 
                               <li>
@@ -276,10 +277,11 @@
          
       </div>
 
+
       <!-- Javascript files-->
       
       <script language="JavaScript" type="text/javascript" src="{{asset('js/jquery.min.js')}}"></script>
-       <script language="JavaScript" type="text/javascript" src="{{asset('js/popper.min.js')}}" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+       <script language="JavaScript" type="text/javascript" src="{{asset('js/popper.min.js')}}" integrity="" crossorigin="anonymous"></script>
       <script language="JavaScript" type="text/javascript" src="{{asset('js/jquery.cookie.js')}}"></script>
       <script language="JavaScript" type="text/javascript" src="{{asset('js/jquery.validate.min.js')}}"></script>
       <script src="{{asset('js/tether.min.js')}}"></script>
@@ -287,11 +289,28 @@
       <script src="{{asset('js/wow.min.js')}}"></script>
 
       <script src="{{asset('js/front.js')}}"></script>
+      <script src="{{asset('StreamLab/StreamLab.js')}}"></script>
 
-      
+
+
       <script>
-          new WOW().init();
 
+
+
+         $(document).ready(function () {
+             var sln = new StreamLabNotification();
+             sln.browserNotification = true;
+             var count=$('#N_count');
+             if(parseInt(count.html())==0)
+             {
+                 count.hide();
+             }
+
+         });
+
+
+          new WOW().init();
+         /*color*/
          $(function() {
              $("#d").click(function() {
                  $('#theme-stylesheet').attr("href", "css/style.default.css");
@@ -327,6 +346,10 @@
                  $('#theme-stylesheet').attr("href", "css/style.violet.css");
              });
          });
+
+
+         /*end color*/
+
          $('.list-c').click(function () {
             $('#pro-drop').fadeToggle();
          });
@@ -334,160 +357,9 @@
             $('#pro-drop2').fadeToggle();
          });
 
-         $('.no_notify').click(function () {
-             $.ajax({
-                 headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') },
 
-                 type:'get',
-                 url:'/changeReading',
 
-                 dataType:'json',
-
-                 success:function (data) {
-
-                     if(data.success==true)
-                     {
-                         $('.num').html('');
-
-                     }
-
-                 }
-
-             });
-
-
-
-         });
-
-
-         $('.no_notify2').click(function () {
-             $.ajax({
-                 headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') },
-
-                 type:'get',
-                 url:'/changeReadingEmail',
-
-                 dataType:'json',
-
-                 success:function (data) {
-
-                     if(data.success==true)
-                     {
-                         $('.num2').html('');
-
-                     }
-
-                 }
-
-             });
-
-
-
-         });
-
-         function getNotify () {
-             $.ajax({
-                 headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') },
-
-                 type:'get',
-                 url:'/getNotify',
-
-                 dataType:'json',
-
-                 success:function (data) {
-
-                     if(data.success==true)
-                     {
-                         $('.num').html(data.notifies_count);
-                         $.each(data.notifies,function (index,notify) {
-                             $('.push_notifay').find('ul').prepend('<li>' +
-                                 '<a rel="nofollow" href="#" class="dropdown-item ">' +
-                                 ' <div class="notification">' +
-                                 ' <div class="notification-content"><i class="fa fa-envelope bg-green"></i>'+notify["content"]+'</div>'+
-                                  ' <div class="notification-time "><small>'+notify["created_at"]+'</small></div>'
-
-                                 +' </div></a></li>');
-
-                             $('#pop_notify').attr('data-content',notify["content"]);
-                             $('#pop_notify').show();
-                             $('.hide_notify').show();
-                             $('#pop_notify').click();
-
-
-                         });
-
-
-                     }
-
-                 }
-
-             });
-
-
-         }
-         function getNotifyE () {
-             $.ajax({
-                 headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') },
-
-                 type:'get',
-                 url:'/getNotifyE',
-
-                 dataType:'json',
-
-                 success:function (data) {
-
-                     if(data.success==true)
-                     {
-                         $('.num2').html(data.notifies_count);
-                         $.each(data.notifies,function (index,email) {
-                             $('.push_notifayE').find('ul').prepend('<li>' +
-                                 '<a rel="nofollow" href="#" class="dropdown-item d-flex">' +
-                                 '<div class="msg-profile"> <img src="image/'+email['url']+'"'+' alt="..." width="45px" height="45px" class="image-fluid rounded-circle"></div>' +
-                                 ' <div class="msg-body">'+
-                                  ' <h3 class="h5">'+email['name']+'<span style="font-size: 10px;padding-left: 88px;">'+email['created_at']+'</span></h3>'+
-                                    '<span>Sent You Message Check Your Gmail</span>'
-
-                                 +' </div></a></li>');
-
-
-                         });
-
-
-
-                     }
-
-                 }
-
-             });
-
-
-         }
-
-
-
-         $(document).ready(function () {
-             $('.heading').click(function () {
-                $('.heading-ul').fadeToggle();
-             });
-
-             getNotify();
-             getNotifyE();
-             $('[data-toggle="popover"]').popover();
-
-
-
-
-         });
-         $('.hide_notify').click(function () {
-             $('.hide_notify').hide();
-         });
-
-
-         //setInterval(getNotify, 10000);
-         //setInterval(getNotifyE, 30000);
-
-
-
+         /*Search in table*/
          $("#search").on("keyup", function() {
              var value = $(this).val().toLowerCase();
 
@@ -507,6 +379,65 @@
                  }
              });
          });
+      /*end search*/
+
+         /*real time notification*/
+
+
+          var message,notify=$('.all_notifay'),count=$('#N_count'),c;
+          var sls = new StreamLabSocket({
+              appId:"{{ config('stream_lab.app_id') }}",
+              channelName:"challenge",
+              event:"*",
+          });
+
+          var slh = new StreamLabHtml()
+          sls.socket.onmessage = function(res){
+
+              slh.setData(res);
+              if(slh.getSource()=== 'messages')
+              {
+                  count.show();
+                  c=parseInt(count.html());
+                  count.html(c+1);
+
+                  message=slh.getMessage();
+                  notify.prepend('<li>' +
+                      '<a rel="nofollow" href="#" class="dropdown-item unRead">' +
+                      '<div class="notification">\n' +
+                      '<div class="notification-content"><i class="fa fa-envelope bg-green"></i>'+message+'</div>\n' +
+                      '<div class="notification-time "><small>{{date('Y-m-d h:i:s')}}</small></div>\'\n' +
+
+                      '</div>\n' +
+                      '</a>\n' +
+                      '</li>');
+                  var sln = new StreamLabNotification();
+                  sln.icon = "/StreamLab/fb-pro.png";
+                  sln.time = 1000
+                  sln.makeNotification('challeng team notification' , message);
+
+              }
+
+
+
+          }
+          $('#notifications').click(function () {
+
+              $.get('/allSeen',function () {
+
+                  setTimeout(function () {
+
+                      count.html('0');
+                      $('.unRead').each(function () {
+                          $(this).removeClass('unRead');
+                      });
+
+                  },10000);
+
+              });
+
+          });
+
 
 
       </script>

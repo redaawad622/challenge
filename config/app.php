@@ -170,6 +170,7 @@ return [
          */
         Spatie\Backup\BackupServiceProvider::class,
         UxWeb\SweetAlert\SweetAlertServiceProvider::class,
+        StreamLab\StreamLabProvider\StreamLabServiceProvider::class,
 
 
 
@@ -180,9 +181,10 @@ return [
          */
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
-        App\Providers\BroadcastServiceProvider::class,
+       // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+
 
     ],
 

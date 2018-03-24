@@ -56,7 +56,7 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'islamsalah1971@gmail.com'),
+        'address' => env('MAIL_FROM_ADDRESS', 'redaawad622@gmail.com'),
         'name' => env('MAIL_FROM_NAME', 'challengeTeam'),
     ],
 
@@ -84,9 +84,9 @@ return [
     |
     */
 
-    'username' => env('onlyelhefny@gmail.com'),
+    'username' => env('redaawad622@gmail.com'),
 
-    'password' => env('01007248655**MeMoo'),
+    'password' => env('@raaa0645'),
 
     /*
     |--------------------------------------------------------------------------
@@ -111,6 +111,13 @@ return [
     | of the emails. Or, you may simply stick with the Laravel defaults!
     |
     */
+    'stream' => [
+        'ssl' => [
+            'allow_self_signed' => true,
+            'verify_peer' => false,
+            'verify_peer_name' => false,
+        ],
+    ],
 
     'markdown' => [
         'theme' => 'default',

@@ -38,16 +38,13 @@ Route::get('/password/reset/{token}','Auth\ResetPasswordController@shoeResetForm
 
 Route::group(['middleware'=>'roles','roles'=>['admin']],function()
 {
+    Route::get('/showCV/{id}','LoginController@ShowCV');
+    Route::post('/post', 'LoginController@StorePost');
 
 
     Route::namespace('Admin')->group(function (){
-        Route::get('/removeNotifay','AdminController@removeNotifay');
-        Route::get('/showCV/{id}','LoginController@ShowCV');
-        Route::get('/changeReading','AdminController@changeReading');
-        Route::get('/changeReadingEmail','AdminController@changeReadingEmail');
-        Route::get('/getNotify','AdminController@getNotify');
-        Route::get('/getNotifyE','AdminController@getNotifyE');
 
+        Route::get('/allSeen','AdminController@allSeen');
 
 
         Route::post('/editObjective', 'AdminController@EditObjective');
@@ -58,7 +55,6 @@ Route::group(['middleware'=>'roles','roles'=>['admin']],function()
         Route::get('/removeMedication/{id}','AdminController@deleteMedication');
         Route::get('/removegallery/{id}','AdminController@deleteGallery');
         Route::get('/removeobject/{id}','AdminController@deleteObject');
-        Route::post('/post', 'LoginController@StorePost');
         Route::get('/removepost/{id}','AdminController@deletepost');
         Route::get('/removeRow/{id}','AdminController@removeRow');
         Route::get('/removeRowM/{id}','AdminController@removeRowM');
@@ -153,6 +149,8 @@ $users=\App\User::all();
     Route::get('/Anthor',function(){
         return view('Forms.Anthor');
     });
+
+
 
 
 
@@ -295,4 +293,3 @@ Route::get('/cv',function (){
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');

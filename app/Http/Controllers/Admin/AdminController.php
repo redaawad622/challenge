@@ -128,9 +128,14 @@ class AdminController extends Controller
 
     }
 
-    public function removeNotifay()
+    public function allSeen()
     {
-        DB::table('notifies')->delete();
+        foreach (auth()->user()->unreadNotifications  as $n)
+        {
+            $n->markAsRead();
+        }
+        return response('',200);
+
     }
 
 
@@ -290,47 +295,6 @@ public function editPublic()
     }
 
 
-    public function changeReading()
-    {
-        DB::table('notifies')->update(['reading' => '2']);
-        return response()->json(['success'=>true],200);
-    }
-
-
-   public function changeReadingEmail()
-    {
-        DB::table('email_notifies')->update(['reading' => '2']);
-        return response()->json(['success'=>true],200);
-    }
-
-    public function getNotify()
-    {
-        $notifies=Notify::where('reading','0')->orderBy('created_at','desc')->get();
-        $notifies_count=Notify::where('reading','1')->count();
-        DB::table('notifies')->where('reading','0')->update(['reading' => '1']);
-
-        return response()->json([
-            'success'=>true,
-            'notifies' => $notifies->toArray(),
-            'notifies_count'   => $notifies_count
-        ],200);
-
-    }
-
-
- public function getNotifyE()
-    {
-        $notifies=EmailNotify::where('reading','0')->orderBy('created_at','desc')->get();
-        $notifies_count=EmailNotify::where('reading','1')->count();
-        DB::table('email_notifies')->where('reading','0')->update(['reading' => '1']);
-
-        return response()->json([
-            'success'=>true,
-            'notifies' => $notifies->toArray(),
-            'notifies_count' => $notifies_count
-        ],200);
-
-    }
 
 
 

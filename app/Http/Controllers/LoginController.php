@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Contact;
 use App\Cv;
 use App\Instruction;
+use App\Notifications\databaseNotifiy;
 use Illuminate\Http\Request;
 use App\Event;
 use App\Gallery;
@@ -17,6 +18,8 @@ use App\Post;
 use Auth;
 use Illuminate\Support\Facades\Input;
 
+use Illuminate\Support\Facades\Notification;
+use StreamLab\StreamLabProvider\Facades\StreamLabFacades;
 use Validator;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Log;
@@ -97,10 +100,18 @@ class LoginController extends Controller
         {
            \request('url')->move('image',$img_name);
         }
-        $notify=new Notify();
-        $notify->content=\request('name').' registe in your users';
-        $notify->reading='0';
-        $notify->save();
+
+        /*send notification*/
+
+       $admins = User::whereHas('roles', function ($query) {
+
+           $query->where('name', '=', 'admin');
+
+       })->get();
+       $data=\request('name').' register in your website';
+       StreamLabFacades::pushMessage('challenge','databaseNotifiy',$data);
+
+        Notification::send($admins,new databaseNotifiy($data));
 
        //add role
 
@@ -247,13 +258,18 @@ class LoginController extends Controller
 
      $cv->user_id=Auth::user()->id;
      $cv->save();
-         $notify=new Notify();
-         $notify->content=Auth::user()->name.' Update his CV';
-         $notify->reading='0';
-         $notify->save();
 
+         /*send notification*/
 
+         $admins = User::whereHas('roles', function ($query) {
 
+             $query->where('name', '=', 'admin');
+
+         })->get();
+         $data=Auth::user()->name.' Update his CV';
+         StreamLabFacades::pushMessage('challenge','databaseNotifiy',$data);
+
+         Notification::send($admins,new databaseNotifiy($data));
 
 
          return response()->json(['success' => true], 200);

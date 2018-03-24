@@ -3,9 +3,12 @@
 namespace App\Providers;
 
 use App\Event;
+use App\User;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\DB;
+use Illuminate\View\View;
+
 
 
 class AppServiceProvider extends ServiceProvider
@@ -33,6 +36,11 @@ public function boot()
         });
 
     }
+
+
+
+
+
 }
 
     /**

@@ -9,8 +9,11 @@ use App\DailyReportNots;
 use App\DailyReportPharmacy;
 use App\info_Monthly_Report;
 use App\MonthlyPlanInfo;
+use App\Notifications\databaseNotifiy;
+use App\Notifications\emailNotification;
 use App\Statment_Monthly_Report;
 use App\sumtion_monthly;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -21,13 +24,14 @@ use App\Letter;
 use App\PriceShow;
 use App\PromotionPlan;
 use App\Vaction;
-use App\Notify;
 use Auth;
 use App\Comparison;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Notification;
+use StreamLab\StreamLabProvider\Facades\StreamLabFacades;
 use Validator;
 use Illuminate\Support\Facades\Input;
-use Mail;
+
 
 
 
@@ -78,19 +82,23 @@ class formcontroller extends Controller
             DB::table('monthly__plans')->insert($reports);
 
 
-            /*send notifay*/
 
-            $notify = new Notify();
-            $notify->content = Auth::user()->name . ' sand a Monthly Plan';
-            $notify->reading = '0';
-            $notify->save();
-            /*send mail*/
-            /*
-            Mail::raw(Auth::user()->name.' sand a Monthly Plan  Please check it ',function ($message){
-                $message->to('islamsalah1971@gmail.com')->subject('Monthly Plan Report');
-                $message->from('islamsalah1971@gmail.com');
-            });
-            */
+        /*send notification*/
+
+        $admins = User::whereHas('roles', function ($query) {
+
+            $query->where('name', '=', 'admin');
+
+        })->get();
+        $data=Auth::user()->name . ' sand a Monthly Plan';
+
+
+        StreamLabFacades::pushMessage('challenge','databaseNotifiy',$data);
+
+        Notification::send($admins,new databaseNotifiy($data));
+
+
+
 
             return back()->withInput()->with('message', 'You successfully Sand the Monthly Report')->with('type', 'Well done!');
 
@@ -137,19 +145,22 @@ class formcontroller extends Controller
             $dailyReport->user_id=Auth::user()->id;
             $dailyReport->save();
 
-            /*send notifay*/
-            $notify=new Notify();
-            $notify->content= Auth::user()->name.' sand a Morning Daily Report';
-            $notify->reading='0';
+            /*send notification*/
 
-            $notify->save();
+            $admins = User::whereHas('roles', function ($query) {
+
+                $query->where('name', '=', 'admin');
+
+            })->get();
+            $data=Auth::user()->name.' sand a Morning Daily Report';
 
 
-            /*send mail*/
-            Mail::raw(Auth::user()->name.' sand a Morning Daily Report  ',function ($message){
-                $message->to('islamsalah1971@gmail.com')->subject('Morning Daily Report ');
-                $message->from('islamsalah1971@gmail.com');
-            });
+            StreamLabFacades::pushMessage('challenge','databaseNotifiy',$data);
+
+            Notification::send($admins,new databaseNotifiy($data));
+
+
+
             return response()->json(['success' => true], 200);
 
 
@@ -202,17 +213,38 @@ class formcontroller extends Controller
             $dailyReport->user_id=Auth::user()->id;
             $dailyReport->save();
 
-            /*send notifay*/
-            $notify=new Notify();
-            $notify->content= Auth::user()->name.' sand a Evening Daily Report';
-            $notify->reading='0';
 
-            $notify->save();
-            /*send mail*/
-            Mail::raw(Auth::user()->name.' sand a Evening Daily Report  ',function ($message){
-                $message->to('islamsalah1971@gmail.com')->subject('Evening Daily Report ');
-                $message->from('islamsalah1971@gmail.com');
-            });
+            /*send notification*/
+
+            $admins = User::whereHas('roles', function ($query) {
+
+                $query->where('name', '=', 'admin');
+
+            })->get();
+            $data=Auth::user()->name.' sand a Evening Daily Report';
+
+
+            StreamLabFacades::pushMessage('challenge','databaseNotifiy',$data);
+
+            Notification::send($admins,new databaseNotifiy($data));
+
+
+ /*send notification email*/
+
+            $admins = User::whereHas('roles', function ($query) {
+
+                $query->where('name', '=', 'admin');
+
+            })->get();
+            $data=Auth::user()->name.' sand a Evening Daily Report';
+            $path='/dailyReportMorningShow';
+            $subject='Evening Daily Report ';
+
+
+            Notification::send($admins,new emailNotification($subject,$data,$path));
+
+
+
 
             return response()->json(['success' => true], 200);
 
@@ -253,11 +285,23 @@ class formcontroller extends Controller
             $dailyReport->user_id=Auth::user()->id;
             $dailyReport->save();
 
-            /*send mail*/
-            Mail::raw(Auth::user()->name.' sand a Pharmacy Daily Report  ',function ($message){
-                $message->to('islamsalah1971@gmail.com')->subject('Pharmacy Daily Report ');
-                $message->from('islamsalah1971@gmail.com');
-            });
+
+
+            /*send notification*/
+
+            $admins = User::whereHas('roles', function ($query) {
+
+                $query->where('name', '=', 'admin');
+
+            })->get();
+            $data=Auth::user()->name.' sand a Pharmacy Daily Report  ';
+
+
+            StreamLabFacades::pushMessage('challenge','databaseNotifiy',$data);
+
+            Notification::send($admins,new databaseNotifiy($data));
+
+
 
 
             return response()->json(['success' => true], 200);
@@ -361,11 +405,24 @@ class formcontroller extends Controller
             $dailyReport->user_id=Auth::user()->id;
             $dailyReport->save();
 
-            /*send mail*/
-            Mail::raw(Auth::user()->name.' Complete Daily Report  ',function ($message){
-                $message->to('islamsalah1971@gmail.com')->subject('Complete Daily Report ');
-                $message->from('islamsalah1971@gmail.com');
-            });
+
+
+            /*send notification*/
+
+            $admins = User::whereHas('roles', function ($query) {
+
+                $query->where('name', '=', 'admin');
+
+            })->get();
+            $data=Auth::user()->name.' Complete Daily Report  ';
+
+
+            StreamLabFacades::pushMessage('challenge','databaseNotifiy',$data);
+
+            Notification::send($admins,new databaseNotifiy($data));
+
+
+
 
 
             return response()->json(['success' => true], 200);
@@ -402,11 +459,21 @@ class formcontroller extends Controller
             $dailyReportheader->area=$request->input('area');
             $dailyReportheader->line=$request->input('line');
             $dailyReportheader->date=date('Y-m-d',time());
-            /*send mail*/
-            Mail::raw(Auth::user()->name.' Start  Daily Report  ',function ($message){
-                $message->to('islamsalah1971@gmail.com')->subject('Daily Report ');
-                $message->from('islamsalah1971@gmail.com');
-            });
+
+
+            /*send notification*/
+
+            $admins = User::whereHas('roles', function ($query) {
+
+                $query->where('name', '=', 'admin');
+
+            })->get();
+            $data=Auth::user()->name.' Start  Daily Report  ';
+
+
+            StreamLabFacades::pushMessage('challenge','databaseNotifiy',$data);
+
+            Notification::send($admins,new databaseNotifiy($data));
 
 
 
@@ -600,19 +667,23 @@ class formcontroller extends Controller
             DB::table('weekly_plans')->insert($reports);
 
 
-            /*send notifay*/
-            $notify = new Notify();
-            $notify->content = Auth::user()->name . ' sand a Weekly Plan';
-            $notify->reading = '0';
 
-            $notify->save();
-            /*send mail*/
-            Mail::raw(Auth::user()->name . ' sand a Weekly Plan  ', function ($message) {
-                $message->to('islamsalah1971@gmail.com')->subject('Weekly Plan ');
-                $message->from('islamsalah1971@gmail.com');
-            });
+        /*send notification*/
 
-            return back()->withInput()->with('message', 'You successfully Sand the Report')->with('type', 'Well done!')->withInput();
+        $admins = User::whereHas('roles', function ($query) {
+
+            $query->where('name', '=', 'admin');
+
+        })->get();
+        $data=Auth::user()->name . ' sand a Weekly Plan';
+
+
+        StreamLabFacades::pushMessage('challenge','databaseNotifiy',$data);
+
+        Notification::send($admins,new databaseNotifiy($data));
+
+
+        return back()->withInput()->with('message', 'You successfully Sand the Report')->with('type', 'Well done!')->withInput();
 
     }
 
@@ -708,18 +779,19 @@ class formcontroller extends Controller
             DB::table('monthly__reports')->insert($reports);
 
 
-            /*send notifay*/
-            $notify = new Notify();
-            $notify->content = Auth::user()->name . ' sand a Monthly Reports';
-            $notify->reading = '0';
+        /*send notification*/
 
-            $notify->save();
+        $admins = User::whereHas('roles', function ($query) {
 
-            /*send mail*/
-            Mail::raw(Auth::user()->name . ' sand a Monthly  Report  ', function ($message) {
-                $message->to('islamsalah1971@gmail.com')->subject(' Monthly  Report  ');
-                $message->from('islamsalah1971@gmail.com');
-            });
+            $query->where('name', '=', 'admin');
+
+        })->get();
+        $data=Auth::user()->name . ' sand a Monthly Reports';
+
+        StreamLabFacades::pushMessage('challenge','databaseNotifiy',$data);
+
+        Notification::send($admins,new databaseNotifiy($data));
+
 
             return back()->withInput()->with('message', 'You successfully Sand the Monthly Report')->with('type', 'Well done!');
 
